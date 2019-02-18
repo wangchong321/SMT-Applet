@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx96ac5be718727257",
-	"projectname": "miniprogram-test-1",
+	"projectname": "MSApp-Applet",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
