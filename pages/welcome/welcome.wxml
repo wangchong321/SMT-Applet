@@ -1,0 +1,8 @@
+<view class='container'>
+  <image class='user-avatar' src='/images/avatar/1.png'></image>
+  <text class='user-name'>{{username}}</text>
+  <view class='description-container' catchtap='onTap'>
+    <button class='description' open-type='getUserInfo'>啥也别说了</button>
+  </view>
+
+</view>

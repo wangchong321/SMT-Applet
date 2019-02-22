@@ -1,0 +1,13 @@
+/* pages/ocr/ocr.wxss */
+.view_show{
+  display:block;
+}
+.view_hide{
+  display:none;
+  
+
+}
+
+.weui-weui-cell__bd,weui-cell__ft,weui-cell__ft_in-access{
+  background-color: red;
+}

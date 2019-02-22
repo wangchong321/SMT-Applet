@@ -1,0 +1,7 @@
+<view>
+  <view>
+    <image src='/images/avatar/2.png'></image>
+    <text>老王</text>
+  </view>
+
+</view>
