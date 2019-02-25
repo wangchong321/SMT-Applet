@@ -1,0 +1,7 @@
+<view class='line'></view>
+<view class='container'>
+  <image class='face-img' src='/images/sign-up-guide/face.png' bindtap='onFace'></image>
+  <image class='back-img' src='/images/sign-up-guide/back.png' bindtap='onBack'></image>
+  <image class='ask-img' src='/images/sign-up-guide/ask.png'></image>
+  <button class='affirm' bindtap='onAffirm'>确认使用</button>
+</view>

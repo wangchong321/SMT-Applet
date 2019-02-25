@@ -11,3 +11,7 @@
 button::after {
   border: 0;
 } 
+
+button{
+    border-radius: 0;
+}
