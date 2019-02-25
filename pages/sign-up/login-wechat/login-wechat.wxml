@@ -1,0 +1,8 @@
+<view class='container'>
+    <text class='title'>欢迎使用捷信推客</text>
+    <view class='message'>
+      <text>请点击<text class='blod'>“注册成为捷信推客”</text>进行注册,</text>
+      <text>如果您已经是捷信推客,请点击<text class='blod'>“捷信推客登录”</text></text>
+    </view>
+    
+</view>

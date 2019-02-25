@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/sign-up/login-wechat/login-wechat",
+    "pages/sign-up/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
