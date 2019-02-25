@@ -1,0 +1,6 @@
+@import "post-item/post-item-template.wxss";
+
+swiper-item{
+  width: 100%;
+}
+

@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
   /**
@@ -5,23 +6,47 @@ Page({
    */
   data: {
     ///username_key:post_content[0].username,
+    userInfo:{},
+    hasUserInfo:false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var post_content = [
-      {
-        username: "除了帅一无是处",
-      },
-      {
-
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
       }
-    ]
-    this.setData(post_content[0]);
+    }else{
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
   },
-
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
   /** 
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -71,7 +96,7 @@ Page({
     
   },
 
-  onTap:function(){
+  bindViewTap:function(){
     wx.navigateTo({
       url: '../../pages/posts/posts',
     })

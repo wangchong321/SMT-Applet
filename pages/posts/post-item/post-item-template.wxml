@@ -1,0 +1,27 @@
+<template name="postItem">
+  <view class='post-container'>
+      <!-- 头像与时间 -->
+      <view class='post-author-date'>
+        <image class='post-author' src="/images/avatar/1.png"></image>
+        <text class='post-date'>时间</text>
+      </view>
+
+      <!-- 标题 -->
+      <text class='post-title'>怎么改怎么改怎么改</text>
+      <!-- 图片 -->
+      <view>
+        <image class='post-image' src='/images/post/bl.png'></image>
+      </view>
+      <!-- 正文 -->
+      <text class='post-content'>菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满</text>
+      <!-- 下面两个按钮 -->
+      <view class='post-like'>
+        <image class='post-like-image' src='/images/icon/chat.png'></image>
+        <text class="post-like-font">111</text>
+
+        <image class="post-like-image" src="/images/icon/view.png"></image>
+        <text class="post-like-font">222</text>
+      </view>
+
+    </view>
+</template>

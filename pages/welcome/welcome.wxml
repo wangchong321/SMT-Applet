@@ -1,8 +1,10 @@
 <view class='container'>
-  <image class='user-avatar' src='/images/avatar/1.png'></image>
-  <text class='user-name'>{{username}}</text>
-  <view class='description-container' catchtap='onTap'>
-    <button class='description' open-type='getUserInfo'>啥也别说了</button>
+  <view class='description-container'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="loginButton"> 点击登录 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="user-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="user-name">{{userInfo.nickName}}</text>
+      <button class='jumpTo' bindtap="bindViewTap">点击跳转</button>
+    </block>
   </view>
-
 </view>
