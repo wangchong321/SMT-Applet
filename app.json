@@ -1,13 +1,14 @@
 {
-  "pages":[
+  "pages": [
     "pages/sign-up/sign-up-guide/sign-up-guide",
     "pages/sign-up/login-wechat/login-wechat",
-    "pages/sign-up/index/index"
+    "pages/sign-up/index/index",
+    "pages/sign-up/submit-sucess/submit-sucess"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "SMT-Applet",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
