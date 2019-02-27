@@ -1,0 +1,50 @@
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #D8D8D8;
+}
+
+.title{
+  font-size: 50rpx;
+  color: #4A4A4A;
+  margin-top: 234rpx;
+  font-weight: bold
+}
+
+.message{
+  font-size: 28rpx;
+  color: #929292;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80rpx;
+  line-height: 45rpx;
+}
+.bold{
+  font-weight: bold;
+}
+
+
+button{
+  font-size: 32rpx;
+  width: 591rpx;
+  height: 80rpx;
+  border-radius: 0px;
+  background-color: #ffffff;
+  border-color: #fff;
+}
+.button-signup{
+  margin-top: 120rpx;
+  color: #ffffff;
+  background-color: #4A90E2;
+  font-size: 32rpx;
+}
+
+.button-signin{
+  margin-top: 30rpx;
+  color: #4A90E2;
+  background-color: #ffffff;
+  border-color: #4A90E2;
+  border: 1px solid #4A90E2;
+  border-radius: 0px;
+}

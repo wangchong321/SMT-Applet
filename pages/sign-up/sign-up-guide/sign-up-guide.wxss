@@ -1,0 +1,31 @@
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #D8D8D8;
+}
+
+.face-img{
+  width: 503rpx;
+  height: 325rpx;
+  margin-top: 60rpx;
+}
+
+.back-img{
+  height: 325rpx;
+  width: 503rpx;
+  margin-top: 50rpx;
+}
+
+.ask-img{
+  width: 500rpx;
+  height: 159rpx;
+  margin-top: 50rpx;
+}
+
+.affirm{
+  width: 550rpx;
+  height: 96rpx;
+  margin-top: 90rpx;
+  color: #ffffff;
+  background-color: #A2A2A2;
+}
