@@ -4,6 +4,7 @@
     "pages/sign-up/sign-up-guide/sign-up-guide",
     "pages/sign-up/submit-sucess/submit-sucess",
     "pages/sign-up/sign-up-supplement/sign-up-supplement",
+    "pages/sign-up/smt-login/smt-login",
     "pages/sign-up/index/index"
 
   ],
