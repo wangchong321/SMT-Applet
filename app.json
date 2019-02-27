@@ -1,10 +1,17 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/sign-up/login-wechat/login-wechat",
     "pages/sign-up/sign-up-guide/sign-up-guide",
     "pages/sign-up/submit-sucess/submit-sucess",
     "pages/sign-up/index/index"
     
+=======
+    "pages/sign-up/sign-up-guide/sign-up-guide",
+    "pages/sign-up/login-wechat/login-wechat",
+    "pages/sign-up/index/index",
+    "pages/sign-up/submit-sucess/submit-sucess"
+>>>>>>> develop
   ],
   "window": {
     "backgroundTextStyle": "light",
