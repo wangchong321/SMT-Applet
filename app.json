@@ -1,15 +1,10 @@
 {
   "pages": [
-    "pages/sign-up/sign-up-supplement/sign-up-supplement",
     "pages/sign-up/login-wechat/login-wechat",
     "pages/sign-up/sign-up-guide/sign-up-guide",
     "pages/sign-up/submit-sucess/submit-sucess",
-<<<<<<< HEAD
-    
-=======
-    "pages/sign-up/sign-up-supplement/sign-up-supplement",
     "pages/sign-up/smt-login/smt-login",
->>>>>>> develop
+    "pages/sign-up/sign-up-supplement/sign-up-supplement",
     "pages/sign-up/index/index"
 
   ],
