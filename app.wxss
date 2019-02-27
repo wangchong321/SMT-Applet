@@ -15,3 +15,9 @@ button::after {
 button{
     border-radius: 0;
 }
+
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #D8D8D8;
+}

@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    faceData: null,// 身份证正面
+    backData: null // 身份证反面
   }
 })
