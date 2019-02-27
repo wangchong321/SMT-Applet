@@ -32,9 +32,9 @@
       <view>
         <text class='text-tip'>短信验证码</text>
       </view>
-      <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input> 
+      <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input>
+      <button class='buttonLarge' formType="submit">登录</button>
     </form>
-    <button class='buttonLarge' formType="submit">登录</button>
   </view>
 
   <view class='footerContainer'>
