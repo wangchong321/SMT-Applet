@@ -11,7 +11,8 @@
     "pages/main/store/store",
     "pages/main/service-charge/service-charge",
     "pages/sign-up/check-user-info/check-user-info",
-    "pages/sign-up/assign-stores/assign-stores"
+    "pages/sign-up/assign-stores/assign-stores",
+    "pages/sign-up/select-stores/select-stores"
   ],
   "window": {
     "backgroundTextStyle": "light",
