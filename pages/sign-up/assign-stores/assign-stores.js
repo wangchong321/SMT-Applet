@@ -1,4 +1,4 @@
-// pages/sign-up/check-user-info/check-user-info.js
+// pages/sign-up/assign-stores/assign-stores.js
 Page({
 
   /**
@@ -7,27 +7,24 @@ Page({
   data: {
     checkInfoTip: '请检查以下捷信推客信息，点击通过或拒绝按钮',
     nameTitle: '姓名',
-    nameValue: '张三很开心',
-    phoneTitle: '电话',
-    phoneValue: '12345678901'
+    nameValue: '请选择',
+    dsmName: 'DSM姓名',
+    dsmValue: '12345',
+    stores: [
+      { storeId: '', mainStore: '' },
+      { storeId: '', secondStore: '天津一家很不错的手机和蛋糕店' },
+      { storeId: '', thirdStore: '' }
+    ]
   },
 
   /**
-   * 点击通过按钮，会跳转到让推客设置地址页面
+   * 确认按钮事件，跳转到注册成功页面
+   * 灰色状态不可点击，蓝色可点击
    */
-  passRequest: function () {
+  confirmRequest: function () {
     //TODO
-    console.log('tap the pass button, it will jump to address setting page');
   },
 
-  /**
-   * 点击通过按钮，跳转到错误页面吧
-   */
-  rejectRequest: function () {
-    //TODO
-    console.log('tap the reject button');
-  },
-  
   /**
    * 生命周期函数--监听页面加载
    */

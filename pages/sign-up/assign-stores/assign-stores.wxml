@@ -1,0 +1,40 @@
+<!--pages/sign-up/assign-stores/assign-stores.wxml-->
+<view class='base-container'>
+  <view class='operation-tip'>
+    <text class='tip-text'>{{checkInfoTip}}</text>
+  </view>
+  <view class='item-container'>
+    <image class='entry-title-icon' src='/images/title-icon1.png'></image>
+    <view class='info-container'>
+      <view class='entry'>
+        <text class='text-left'>{{dsmName}}</text>
+        <text class='text-right'>{{dsmValue}}</text>
+      </view>
+    </view>
+  </view>
+    <view class='item-container'>
+    <image class='entry-title-icon' src='/images/title-icon2.png'></image>
+    <view class='info-container'>
+      <navigator class='entry' url='/pages/select-stores/select-stores'>
+        <view class='text-left'>
+          <text >主要门店</text>
+          <text class='main-tip'>必选</text>
+        </view>
+
+        <text class='text-right'>{{stores[0].mainStore == '' ? nameValue: stores[0].mainStore}}</text>
+        <view class='right-arrow'>  </view>
+      </navigator>
+      <navigator class='entry' url='/pages/select-stores/select-stores'>
+        <text class='text-left'>门店2</text>
+        <text class='text-right'>{{stores[1].secondStore == '' ? nameValue: stores[1].secondStore}}</text>
+        <view class='right-arrow'></view>
+      </navigator>
+      <navigator class='entry' url='/pages/select-stores/select-stores?storeType={{3}}'>
+        <text class='text-left'>门店3</text>
+        <text class='text-right'>{{stores[2].thirdStore == '' ? nameValue: stores[2].thirdStore}}</text>
+        <view class='right-arrow'></view>
+      </navigator>
+    </view>
+  </view>
+  <button class='bt-confirm' bindtap='confirmRequest'>确认</button>
+</view>

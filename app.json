@@ -10,7 +10,8 @@
     "pages/main/customer/customer",
     "pages/main/store/store",
     "pages/main/service-charge/service-charge",
-    "pages/sign-up/check-user-info/check-user-info"
+    "pages/sign-up/check-user-info/check-user-info",
+    "pages/sign-up/assign-stores/assign-stores"
   ],
   "window": {
     "backgroundTextStyle": "light",
