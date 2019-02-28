@@ -1,16 +1,52 @@
 {
   "pages": [
+    "pages/main/basic-information/basic-information",
     "pages/sign-up/sign-up-supplement/sign-up-supplement",
     "pages/sign-up/login-wechat/login-wechat",
     "pages/sign-up/sign-up-guide/sign-up-guide",
     "pages/sign-up/submit-sucess/submit-sucess",
     "pages/sign-up/smt-login/smt-login",
-    "pages/sign-up/index/index"
+    "pages/sign-up/index/index",
+    "pages/main/customer/customer",
+    "pages/main/store/store",
+    "pages/main/service-charge/service-charge"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "SMT-Applet",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#4A90E2",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "selectedIconPath": "images/main/main_tabbar_Selected_0.png",
+        "iconPath": "images/main/main_tabbar_0.png",
+        "pagePath": "pages/main/basic-information/basic-information",
+        "text": "基本信息"
+      },
+      {
+        "selectedIconPath": "images/main/main_tabbar_Selected_1.png",
+        "iconPath": "images/main/main_tabbar_1.png",
+        "pagePath": "pages/main/store/store",
+        "text": "门店选择"
+      },
+      {
+        "selectedIconPath": "images/main/main_tabbar_Selected_2.png",
+        "iconPath": "images/main/main_tabbar_2.png",
+        "pagePath": "pages/main/customer/customer",
+        "text": "客户状态"
+      },
+      {
+        "selectedIconPath": "images/main/main_tabbar_Selected_3.png",
+        "iconPath": "images/main/main_tabbar_3.png",
+        "pagePath": "pages/main/service-charge/service-charge",
+        "text": "居间服务费"
+      }
+    ]
   }
 }
