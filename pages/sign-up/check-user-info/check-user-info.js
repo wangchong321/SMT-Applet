@@ -18,7 +18,7 @@ Page({
   passRequest: function () {
     //TODO
     wx.navigateTo({
-      url: '/pages/assign-stores/assign-stores',
+      url: '/pages/sign-up/assign-stores/assign-stores',
     })
     console.log('tap the pass button, it will jump to address setting page');
   },

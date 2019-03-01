@@ -8,7 +8,7 @@
     <form class='form-view ' bindsubmit="formSubmit">
       <view class='id-content'> 
         <view>
-          <image class='item-image' src='/images/default-portrait.png'></image>
+          <image class='item-image' src='/images/sign-up-guide/default-portrait.png'></image>
         </view>
         <block wx:for="{{idLength}}" wx:key="item"> 
           <input class='iptbox' value="{{idValue.length>=index+1?idValue[index]:''}}" disabled password='{{ispassword}}' catchtap='tapID'></input> 
@@ -22,7 +22,7 @@
 
       <view class='code-content'> 
         <view>
-          <image class='item-image' src='/images/phone.png'></image>
+          <image class='item-image' src='/images/sign-up-guide/phone.png'></image>
         </view>
         <block wx:for="{{codeLength}}" wx:key="item"> 
           <input class='iptbox' value="{{codeValue.length>=index+1?codeValue[index]:''}}" disabled password='{{ispassword}}' catchtap='tapCode'></input> 

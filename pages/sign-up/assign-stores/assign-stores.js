@@ -29,7 +29,7 @@ Page({
     //TODO
     let that = this;
     wx.navigateTo({
-      url: '/pages/sign-up-done/sign-up-done',
+      url: '/pages/sign-up/sign-up-done/sign-up-done',
     })
   },
 

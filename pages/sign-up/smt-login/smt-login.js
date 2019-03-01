@@ -71,7 +71,7 @@ Page({
       codeValue: e.detail.value.messagecode
     })
     wx.navigateTo({
-      url: '/pages/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
+      url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
     })
     console.log("ID:" + e.detail.value.homerid + ",Code:" + e.detail.value.messagecode);
   },

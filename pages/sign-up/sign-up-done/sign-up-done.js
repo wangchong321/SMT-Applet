@@ -28,7 +28,13 @@ Page({
    * 确认按钮事件，使用支付宝账号登录
    */
   confirmRequest: function () {
-    //TODO
+    //TODO 
+    console.log('tap confirmRequest');
+    let that = this;
+    wx.switchTab({
+      url: '/pages/main/basic-information/basic-information'
+    })
+    console.log('confirmRequest done');
   },
   /**
    * 生命周期函数--监听页面加载

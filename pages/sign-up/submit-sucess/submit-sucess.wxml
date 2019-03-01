@@ -1,5 +1,5 @@
 <!--pages/sign-up/submit-sucess/submit-sucess.wxml-->
-<view class='container'>
+<view class='base-container'>
   <view class='image-container'>
     <image class='sucess-image' src='/images/sign-up-guide/submitted.png'></image>
   </view>

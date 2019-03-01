@@ -56,7 +56,7 @@ Page({
     prePage.data.callBackStoreId = that.data.storeSelected;
     prePage.data.callBackStoreName = that.data.storeSelectedName;
     wx.navigateBack({
-      url: '/pages/assign-stores/assign-stores'
+      url: '/pages/sign-up/assign-stores/assign-stores'
     })
   },
 
