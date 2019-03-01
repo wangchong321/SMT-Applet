@@ -5,7 +5,48 @@ Page({
    * 页面的初始数据
    */
   data: {
+    selectableStores: [
+      { storeId: '1000', storeName: '第一个条目天津市红桥区陆家嘴金融中心店' },
+      { storeId: '1001', storeName: '天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店' },
+      { storeId: '1002', storeName: '天津市红桥区陆家嘴金融中心过桥米线' },
+      { storeId: '1003', storeName: '天津市红桥区陆家嘴金融中心店2222222' },
+      { storeId: '1004', storeName: '天津市红桥区陆家嘴金融中心店44444' },
+      { storeId: '1005', storeName: '天津市红桥区陆家嘴金融中心店55555' },
+      { storeId: '1006', storeName: '天津市红桥区陆家嘴金融中心店66666' },
+      { storeId: '1007', storeName: '天津市红桥区陆家嘴金融中心店77777' },
+      { storeId: '1008', storeName: '天津市红桥区陆家嘴金融中心店88888' },
+      { storeId: '1009', storeName: '天津市红桥区陆家嘴金融中心店999999' },
+      { storeId: '1010', storeName: '天津市红桥区陆家嘴金融中心店10101010' },
+      { storeId: '1011', storeName: '天津市红桥区陆家嘴金融中心店11111111' },
+      { storeId: '1012', storeName: '天津天津天津天津' },
+      { storeId: '1013', storeName: '天津市红桥区陆家嘴' },
+      { storeId: '1014', storeName: '天津市红桥区美食城' },
+      { storeId: '1015', storeName: '最后一个条目天津市红桥区米线店' }
+    ],
+    storeSelected: '',
+    storeSelectedName: ''
 
+  },
+
+  /**
+   * 点击了某一个店铺条目，修改当前storeSelected值为选中的storeId
+   */
+  selectStore: function (e) {
+    //TODO
+    console.log(e);
+    let that = this;
+    that.setData({
+
+      storeSelected: e.target.dataset.storei,
+      storeSelectedName: e.target.dataset.storen,
+    })
+    console.log('活动订单id = ' + that.data.storeSelected);
+  },
+  /**
+   * 选中店铺后确认，返回选择的返回结果到选择店铺页面
+   */
+  confirmSelectResult: function () {
+    //TODO
   },
 
   /**
