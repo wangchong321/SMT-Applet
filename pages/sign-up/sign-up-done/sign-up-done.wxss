@@ -1,0 +1,95 @@
+/* pages/sign-up/sign-up-done/sign-up-done.wxss */
+.base-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background: whitesmoke
+}
+
+.bt-confirm{
+  position: fixed;
+  bottom: 50rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: rgb(70, 128, 236);
+  color: white;
+  border-radius: 0;
+}
+
+.operation-tip {
+  width: 100%;
+  height: 80rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1rpx solid grey;
+  border-bottom: 1rpx solid grey;
+  background-color: white;
+}
+
+.tip-text {
+  padding: 20rpx;
+  color: grey;
+}
+
+.entry-title-icon {
+  width: 200rpx;
+  height: 50rpx;
+}
+
+.text-left{
+  width: 30%;
+  text-align-last: left;
+  font-size: 24rpx;
+  color: rgb(185, 180, 180);
+  font-weight: bold;
+}
+
+.text-right {
+  width: 70%;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.main-tip {
+  width: 40rpx;
+  height: 20rpx;
+  font-size: 15rpx;
+  background: orangered;
+  color: black;
+}
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  border-bottom: 1rpx solid  silver;
+  padding: 20rpx  0rpx 20rpx 0rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.last-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.info-container {
+  background-color: white;
+  padding: 10rpx;
+}
+
+.item-container {
+  margin: 30rpx;
+  width: 90%;
+}
