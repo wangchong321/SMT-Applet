@@ -10,12 +10,22 @@
   background: whitesmoke
 }
 
-.bt-confirm{
+.bt-confirm-grey{
   position: fixed;
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
   background-color: grey;
+  color: white;
+  border-radius: 0;
+}
+
+.bt-confirm-blue{
+  position: fixed;
+  bottom: 50rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: rgb(47, 139, 245);
   color: white;
   border-radius: 0;
 }

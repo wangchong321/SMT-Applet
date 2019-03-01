@@ -65,6 +65,14 @@ Page({
    */
   formSubmit(e) {
     //TODO
+    let that = this;
+    that.setData({
+      idValue: e.detail.value.homerid,
+      codeValue: e.detail.value.messagecode
+    })
+    wx.navigateTo({
+      url: '/pages/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
+    })
     console.log("ID:" + e.detail.value.homerid + ",Code:" + e.detail.value.messagecode);
   },
   /**

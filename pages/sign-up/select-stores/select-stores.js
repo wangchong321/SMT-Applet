@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentSelectType: '',
     selectableStores: [
       { storeId: '1000', storeName: '第一个条目天津市红桥区陆家嘴金融中心店' },
       { storeId: '1001', storeName: '天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店' },
@@ -47,13 +48,24 @@ Page({
    */
   confirmSelectResult: function () {
     //TODO
+    let that = this;
+    let pages = getCurrentPages();
+    let prePage = pages[pages.length - 2];
+    console.log('页数：' + prePage + ',xxttype:' + that.data.currentSelectType);
+    prePage.data.callBackStoreType = that.data.currentSelectType;
+    prePage.data.callBackStoreId = that.data.storeSelected;
+    prePage.data.callBackStoreName = that.data.storeSelectedName;
+    wx.navigateBack({
+      url: '/pages/assign-stores/assign-stores'
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    that.data.currentSelectType = options.storeType;
   },
 
   /**

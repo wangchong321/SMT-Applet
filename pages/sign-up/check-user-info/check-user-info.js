@@ -13,10 +13,13 @@ Page({
   },
 
   /**
-   * 点击通过按钮，会跳转到让推客设置地址页面
+   * 点击通过按钮，会跳转到让推客设置门店页面
    */
   passRequest: function () {
     //TODO
+    wx.navigateTo({
+      url: '/pages/assign-stores/assign-stores',
+    })
     console.log('tap the pass button, it will jump to address setting page');
   },
 

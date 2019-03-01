@@ -71,6 +71,9 @@ Page({
    */
   jumpSMTLogin: function () {
     //TODO
+    wx.navigateTo({
+      url: '/pages/smt-login/smt-login',
+    })
     console.log('it will jump to SMT Login page');
   }
 })

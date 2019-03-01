@@ -12,17 +12,25 @@ Page({
     dsmValue: '12345',
     stores: [
       { storeId: '', mainStore: '' },
-      { storeId: '', secondStore: '天津一家很不错的手机和蛋糕店' },
+      { storeId: '', secondStore: '' },
       { storeId: '', thirdStore: '' }
-    ]
+    ],
+    callBackStoreType: '',
+    callBackStoreId: '',
+    callBackStoreName: '',
+    mainStoreSelected: false
   },
 
   /**
-   * 确认按钮事件，跳转到注册成功页面
+   * 确认按钮事件，上传用户的选择的数据，然后跳转到注册成功页面
    * 灰色状态不可点击，蓝色可点击
    */
   confirmRequest: function () {
     //TODO
+    let that = this;
+    wx.navigateTo({
+      url: '/pages/sign-up-done/sign-up-done',
+    })
   },
 
   /**
@@ -43,7 +51,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this;
+    if (that.data.callBackStoreType == null) {
+      //currently do nothing
+    } else {
+      switch (that.data.callBackStoreType) {
+        case 'mainStore':
+          that.data.stores[0].storeId = that.data.callBackStoreId;
+          that.data.stores[0].mainStore = that.data.callBackStoreName;
+          that.data.mainStoreSelected = true;
+          break;
+        case 'secondStore':
+          that.data.stores[1].storeId = that.data.callBackStoreId;
+          that.data.stores[1].secondStore = that.data.callBackStoreName;
+          break;
+        case 'thirdStore':
+          that.data.stores[2].storeId = that.data.callBackStoreId;
+          that.data.stores[2].thirdStore = that.data.callBackStoreName;
+          break;
+      }
+      that.setData({
+        stores: that.data.stores,
+        mainStoreSelected: that.data.mainStoreSelected
+      })
+    }
   },
 
   /**
