@@ -1,0 +1,130 @@
+/* pages/sign-up/assign-stores/assign-stores.wxss */
+.base-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background: whitesmoke
+}
+
+.bt-confirm-grey{
+  position: fixed;
+  bottom: 50rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: grey;
+  color: white;
+  border-radius: 0;
+}
+
+.bt-confirm-blue{
+  position: fixed;
+  bottom: 50rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: rgb(47, 139, 245);
+  color: white;
+  border-radius: 0;
+}
+
+.operation-tip {
+  width: 100%;
+  height: 80rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1rpx solid grey;
+  border-bottom: 1rpx solid grey;
+  background-color: white;
+}
+
+.tip-text {
+  padding: 20rpx;
+  color: grey;
+}
+
+.entry-title-icon {
+  width: 200rpx;
+  height: 50rpx;
+}
+
+.text-left{
+  width: 30%;
+  text-align-last: left;
+  font-size: 24rpx;
+  color: grey;
+  font-weight: bold;
+}
+
+.text-right {
+  width: 70%;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.main-tip {
+  width: 40rpx;
+  height: 20rpx;
+  font-size: 15rpx;
+  background: orangered;
+  color: black;
+}
+
+.first-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  border-bottom: 1rpx solid grey;
+  padding-bottom: 20rpx;
+}
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 20rpx;
+}
+.last-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding-top: 20rpx;
+}
+
+.info-container {
+  border: 1rpx solid  silver;
+  background-color: white;
+}
+
+.item-container {
+  margin: 20rpx;
+  width: 90%;
+}
+
+.right-arrow {
+    display :inline-block;
+    position: relative;
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 20rpx;
+}
+
+.right-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 18rpx;
+    width: 18rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #c7c7cc;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    right: 6rpx;
+    margin-top: -9rpx;
+}

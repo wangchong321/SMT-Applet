@@ -1,0 +1,23 @@
+<view class='line'></view>
+<view class='store-container' wx:for="{{stores}}" wx:key="unique">
+  <view class='item-container'>
+    <view class='item-left-container'>
+      <text class='store-title'>{{item.storeTitle}}</text>
+      <text class='store-name'>{{item.storeName}}</text>
+    </view>
+    <view class='item-right-container' bindtap='showStoreQrcode' data-storeN = '{{item.storeName}}'>
+      <image class='img-qrcode' src='/images/main/main_store_qrcode_0.jpg'></image>
+      <text class='qrcode-tip'>查看二维码</text>
+    </view>
+  </view>
+</view>
+<view class='footer-tip'>{{tipMessage}}</view>
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideQRcodePopup" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='qrcode-detail-text_area'>
+    <text class='qrcode-detail-text'>{{storeSelectedName}}</text>
+  </view>
+  <image class='qrcode-detail-image' src='/images/main/main_store_qrcode_0.jpg'></image>
+</view>

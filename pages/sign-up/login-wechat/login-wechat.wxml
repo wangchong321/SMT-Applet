@@ -1,0 +1,11 @@
+<view class='container'>
+    <view class='line'></view>
+    <text class='title'>欢迎使用捷信推客</text>
+    <view class='message'>
+      <text>请点击<text class='bold'>“注册成为捷信推客”</text>进行注册,</text>
+      <text>如果您已经是捷信推客,请点击<text class='bold'>“捷信推客登录”</text></text>
+    </view>
+    
+    <button class='button-signup' bindtap='onSignUpGuide'>注册成为捷信推客</button>
+    <button class='button-signin'>捷信推客登录</button>
+</view>

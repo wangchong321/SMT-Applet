@@ -1,0 +1,21 @@
+<!--pages/sign-up/check-user-info/check-user-info.wxml-->
+<view class='base-container'>
+  <view class='operation-tip'>
+    <text class='tip-text'>{{checkInfoTip}}</text>
+  </view>
+  <view class='item-container'>
+    <image class='entry-title-icon' src='/images/sign-up-guide/title-icon1.png'></image>
+    <view class='info-container'>
+      <view class='first-entry'>
+        <text class='text-left'>{{nameTitle}}</text>
+        <text class='text-right'>{{nameValue}}</text>
+      </view>
+      <view class='last-entry'>
+        <text class='text-left'>{{phoneTitle}}</text>
+        <text class='text-right'>{{phoneValue}}</text>
+      </view>
+    </view>
+  </view>
+  <button class='bt-pass' bindtap='passRequest'>通过</button>
+  <button class='bt-reject' bindtap='rejectRequest'>拒绝</button>
+</view>

@@ -1,0 +1,109 @@
+/* pages/sign-up/smt-login/smt-login.wxss */
+.base-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 150rpx 0;
+  box-sizing: border-box;
+} 
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageLayout {
+  width: 350rpx;
+  height: 100rpx;
+  top: 60rpx;
+  position: absolute;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+}
+
+.buttonLarge {
+  background: rgb(0, 132, 255);
+  color: white;
+  width: 550rpx;
+  height: 90rpx;
+  font-size: 30rpx;
+  bottom: 480rpx;
+  left: 100rpx;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 0;
+}
+
+.footerContainer{
+  bottom: 25px;
+  position: absolute;
+}
+
+.textFooter {
+  color: grey;
+  font-size: 25rpx;
+}
+
+.item-image {
+  width: 70rpx;
+  height: 70rpx;
+  flex: 1;
+  padding: 0rpx 10rpx 0rpx 0rpx;
+  margin-top: 10rpx;
+}
+
+.text-tip {
+  font-size: 22rpx; 
+  text-align: left;
+  color: grey;
+}
+
+.id-content{ 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  border: 2rpx solid rgb(23, 138, 247);
+  padding: 10rpx 50rpx 10rpx 10rpx;
+}
+
+.code-content{ 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  border: 2rpx solid rgb(23, 138, 247);
+  padding: 10rpx;
+} 
+
+.iptbox{ 
+  width: 60rpx; 
+  height: 70rpx; 
+  border-bottom:1rpx solid grey;
+  display: flex; 
+  margin-right: 10rpx;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+}
+
+.ipt{ 
+  width: 0; 
+  height: 0; 
+} 
+
+.send-button {
+  width: 120rpx;
+  height: 75rpx;
+  background: grey;
+  color: white;
+  font-size: 30rpx;
+  border-radius: 0;
+  margin-left: 50rpx;
+}

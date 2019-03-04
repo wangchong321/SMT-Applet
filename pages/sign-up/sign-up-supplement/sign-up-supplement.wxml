@@ -1,0 +1,61 @@
+<view class='line'></view>
+
+<view class='container-all'>
+  <!-- 姓名 -->
+  <view class='container-view'>
+    <text class='text-top'>姓名</text>
+    <view class='inside-view'>
+      <input placeholder='请输入您的姓名' type='text' placeholder-class='placeholder' bindinput='inputName'></input>
+      <view class='inpout-line'></view>
+    </view>
+  </view>
+  <!-- 手机号 -->
+   <view class='container-view'>
+    <text class='text-top'>手机号码</text>
+    <view class='inside-view'>
+      <input bindinput='inputNumber' placeholder='请输入您的手机号码' type='text' placeholder-class='placeholder' style='color:{{color}}' type='number' disabled='{{numberButtonStatus}}'></input>
+      <view class='inpout-line'></view>
+    </view>
+  </view>
+  <!-- 短信验证码 -->
+  <view class='container-view'>
+    <text class='text-top'>短信验证码</text>
+    <view class='inside-view'>
+      <input placeholder='请输入您的短信验证码' type='number' placeholder-class='placeholder' bindinput='inputVerificationCode' maxlength='6'></input>
+      <view class='inpout-line'></view>
+    </view>
+    
+    <view class='container-button'>
+      <button 
+      class='verification-code' 
+      catchtap='onSendVerificationCode' 
+      disabled= '{{verificationCodeButtonStatus}}'
+      >{{buttonTittle}}
+      </button>
+    </view>
+  </view>
+  <!-- 身份证号码 -->
+  <view class='container-view'>
+    <text class='text-top'>身份证号码</text>
+    <view class='inside-view'>
+      <input placeholder='请输入您的身份证号码' type='text' placeholder-class='placeholder' bindinput='inputIDCard'></input>
+      <view class='inpout-line'></view>
+    </view>
+  </view>
+  <!-- 支付宝昵称 -->
+  <view class='container-view'>
+    <text class='text-top'>支付宝昵称</text>
+    <view class='inside-view'>
+      <input placeholder='请输入您的支付宝昵称' type='text' placeholder-class='placeholder' bindinput='inputAilPay'></input>
+      <view class='inpout-line'></view>
+    </view>
+  </view>
+
+  <view class='bottom-view'>
+      <text class='bottom-text' catchtap='onProtocol'>点击下面“注册”，表明您已经阅读并同意捷信消费金融有限公司的 
+        <text class='underline-text'>《捷信推客居间服务协议》</text> 
+      </text>
+    <button class='bottom-button' catchtap='onSignUp' disabled='{{signUpButtonStatus}}'>注册</button>
+  </view>
+
+</view>

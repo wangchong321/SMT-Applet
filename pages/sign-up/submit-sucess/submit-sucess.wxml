@@ -1,0 +1,13 @@
+<!--pages/sign-up/submit-sucess/submit-sucess.wxml-->
+<view class='base-container'>
+  <view class='image-container'>
+    <image class='sucess-image' src='/images/sign-up-guide/submitted.png'></image>
+  </view>
+  <view class='text-container'>
+    <text class='header-text-font'>{{sucessHeader}}</text>
+    <text class='detail-text-font'>{{sucessHeaderDetail}}</text>
+  </view>
+  <view class='button-container' bindtap='jumpSMTLogin'>
+    <button class='button-large'>{{buttonName}}</button>
+  </view>
+</view>

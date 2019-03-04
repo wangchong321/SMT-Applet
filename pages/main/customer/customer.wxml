@@ -1,0 +1,43 @@
+<view class='container'>
+  <view class='container-header'>
+    <text class='totle-title'>客户访问总数</text>
+    <text class='totle-number'>{{accessNumberList.totol}}</text>
+
+    <view class='containter-item'>
+      <view class='item haveRightLine'>
+        <text class='item-title'>主要门店客户访问数</text>
+        <text class='item-number'>{{accessNumberList.store1}}</text>
+      </view>
+      <view class='item haveRightLine'>
+        <text class='item-title'>门店2客户访问数</text>
+        <text class='item-number'>{{accessNumberList.store2}}</text>
+      </view>
+      <view class='item'>
+        <text class='item-title'>门店3客户访问数</text>
+        <text class='item-number'>{{accessNumberList.store3}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='list'>
+  <view class='customer-item' wx:for-items='{{customers}}' wx:for-index='idx' wx:for-key='id'>
+    <view class='item-cell'>
+      <view class='item-left'>客户姓氏</view>
+      <view class='item-right'>{{item.name}}</view>
+    </view>
+    <view class='item-cell'>
+      <view class='item-left'>剩余办单时间</view>
+      <view class='item-right'>{{item.time}}</view>
+    </view>
+    <view class='item-cell'>
+      <view class='item-left'>门店名称</view>
+      <view class='item-right'>{{item.storeName}}</view>
+    </view>
+    <view class='item-cell'>
+      <view class='item-left'>扫描二维码时间</view>
+      <view class='item-right'>{{item.scanTime}}</view>
+    </view>
+  </view>
+</view>

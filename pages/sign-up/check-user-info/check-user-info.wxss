@@ -1,0 +1,96 @@
+/* pages/sign-up/check-user-info/check-user-info.wxss */
+.base-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background: whitesmoke
+}
+
+.bt-pass{
+  position: fixed;
+  bottom: 250rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: rgb(75, 164, 247);
+  color: white;
+  border: 0rpx solid rgb(75, 164, 247);
+  border-radius: 0;
+}
+
+.bt-reject{
+  position: fixed;
+  bottom: 120rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: white;
+  color: black;
+  border: 1rpx solid rgb(75, 164, 247);
+  border-radius: 0;
+}
+
+.operation-tip {
+  width: 100%;
+  height: 80rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1rpx solid grey;
+  border-bottom: 1rpx solid grey;
+  background-color: white;
+}
+
+.tip-text {
+  padding: 20rpx;
+  color: grey;
+}
+
+.entry-title-icon {
+  width: 200rpx;
+  height: 50rpx;
+}
+
+.text-left{
+  width: 50%;
+  text-align-last: left;
+  font-size: 24rpx;
+  color: grey;
+  font-weight: bold;
+}
+
+.text-right {
+  width: 50%;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.first-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  border-bottom: 1rpx solid grey;
+  padding-bottom: 20rpx;
+}
+
+.last-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding-top: 20rpx;
+}
+
+.info-container {
+  border: 1rpx solid  silver;
+  padding: 20rpx;
+  background-color: white;
+}
+
+.item-container {
+  margin: 20rpx;
+  width: 90%;
+}

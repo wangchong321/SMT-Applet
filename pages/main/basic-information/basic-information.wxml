@@ -1,0 +1,31 @@
+
+<view class="main">
+  <view style="height:20rpx;background: #f6f6f6;width:100%;"></view>
+  <view class='my-item'>
+    <text class='item-left'>捷信推客姓名</text>
+    <text class='item-right'>朝阳艾弗森</text>
+  </view>
+
+  <view class='my-item'>
+    <text class='item-left'>DSM姓名</text>
+    <text class='item-right'>123456</text>
+  </view>
+
+  <view style="height:20rpx;background: #f6f6f6;width:100%;"></view>
+
+  <view class='my-item'>
+    <text class='item-left'>分配的主要门店</text>
+    <text class='item-right'>大庆市龙凤区红中泰大庆市龙凤区红中泰大庆市龙凤区红中泰大庆市龙凤区红中泰</text>
+  </view>
+
+  <view class='my-item'>
+    <text class='item-left'>分配的门店2</text>
+    <text class='item-right'>大庆市龙凤区红中泰龙风洪忠泰大庆市龙凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰</text>
+  </view>
+
+  <view class='my-item'>
+    <text class='item-left'>分配的门店3</text>
+    <text class='item-right'>大庆市龙凤区红中泰龙风洪忠泰大庆市龙凤区红中泰龙风洪忠泰</text>
+  </view>
+  <button class='sign-out-button' catchtap='onSignOut'>退出登录</button>
+</view>
