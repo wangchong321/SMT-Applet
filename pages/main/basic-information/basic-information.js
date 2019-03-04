@@ -4,7 +4,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    dataList: [
+      { id: 1, name: 'title1' },
+      { id: 2, name: 'title2' },
+      { id: 3, name: 'title3' },
+      { id: 4, name: 'title431232133333333333aaa2zsssas' },
+      { id: 5, name: 'title5' },
+    ],
   },
 
   /**
