@@ -33,7 +33,7 @@ page{
   width: 420rpx;
   text-align: right;
   text-overflow:ellipsis;
-  line-height: 33rpx;
+  line-height: 40rpx;
   -webkit-line-clamp: 2;
   display: -webkit-box;
   overflow: hidden;

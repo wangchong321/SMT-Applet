@@ -28,7 +28,7 @@ Page({
     this.isClick = true;
     
     let that = this;
-    var times = 5
+    var times = 60
     let i = setInterval(function () {
       times--;
       console.log(times);
