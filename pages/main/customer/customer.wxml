@@ -1,3 +1,5 @@
+<import src='../../../template/basic-cell-template/basic-cell-template' />
+
 <view class='container'>
   <view class='container-header'>
     <text class='totle-title'>客户访问总数</text>
@@ -23,21 +25,9 @@
 
 <view class='list'>
   <view class='customer-item' wx:for-items='{{customers}}' wx:for-index='idx' wx:for-key='id'>
-    <view class='item-cell'>
-      <view class='item-left'>客户姓氏</view>
-      <view class='item-right'>{{item.name}}</view>
-    </view>
-    <view class='item-cell'>
-      <view class='item-left'>剩余办单时间</view>
-      <view class='item-right'>{{item.time}}</view>
-    </view>
-    <view class='item-cell'>
-      <view class='item-left'>门店名称</view>
-      <view class='item-right'>{{item.storeName}}</view>
-    </view>
-    <view class='item-cell'>
-      <view class='item-left'>扫描二维码时间</view>
-      <view class='item-right'>{{item.scanTime}}</view>
-    </view>
+    <template is='basicCell' data="{{title:'客户姓氏',message:item.name}}" />
+    <template is='basicCell' data="{{title:'剩余办单时间',message:item.time}}" />
+    <template is='basicCell' data="{{title:'门店名称',message:item.storeName}}" />
+    <template is='basicCell' data="{{title:'扫描二维码时间',message:item.scanTime}}" />
   </view>
 </view>

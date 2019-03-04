@@ -1,3 +1,5 @@
+@import "../../../template/basic-cell-template/basic-cell-template";
+
 page{
   min-height: 100%;
   background-color: #f6f6f6;
@@ -71,26 +73,4 @@ page{
   margin-bottom: 15rpx;
   background-color: #ffffff;
   box-shadow: 0rpx 1rpx 10rpx  2rpx rgba(1, 1, 1, 0.1);
-}
-
-.item-left{
-  color: #8B8B8B;
-  font-size: 24rpx;
-  margin-left: 20rpx;
-  line-height: 70rpx;
-}
-
-.item-right{
-  color: #4A4A4A;
-  font-size: 28rpx;
-  margin-right: 20rpx;
-  line-height: 70rpx;
-}
-
-.item-cell{
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-  height:70rpx;
-  border-bottom: 0.5rpx solid #f6f6f6;
 }

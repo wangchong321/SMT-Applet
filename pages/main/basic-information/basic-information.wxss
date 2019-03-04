@@ -1,17 +1,19 @@
+@import "../../../template/basic-cell-template/basic-cell-template";
 
-page{
+page {
   min-height: 100%;
   background-color: #f6f6f6;
 }
-.main{
+
+.main {
   min-height: 100%;
   overflow: hidden;
   overflow-y: hidden;
 }
 
-.my-item{
+/* .my-item {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 95rpx;
   border-bottom: 1px solid #f6f6f6;
   display: flex;
@@ -19,36 +21,36 @@ page{
   justify-content: space-between;
 }
 
-.item-left{
+.item-left {
   margin-left: 30rpx;
-  color: #8B8B8B;
+  color: #8b8b8b;
   font-size: 24rpx;
   line-height: 95rpx;
 }
 
-.item-right{
+.item-right {
   margin-right: 30rpx;
-  color: #4A4A4A;
+  color: #4a4a4a;
   font-size: 28rpx;
   width: 420rpx;
   text-align: right;
-  text-overflow:ellipsis;
-  line-height: 40rpx;
+  text-overflow: ellipsis;
+  line-height: 33rpx;
   -webkit-line-clamp: 2;
   display: -webkit-box;
   overflow: hidden;
-  display: -webkit-box; 
+  display: -webkit-box;
   word-break: break-all;
   -webkit-box-orient: vertical;
-  }
+} */
 
-  .sign-out-button{
-    position: absolute;
-    height: 96rpx;
-    color: #ffffff;
-    background-color: #4A90E2;
-    line-height: 96rpx;
-    bottom: 30rpx;
-    left: 100rpx;
-    right: 100rpx;
-  }
+.sign-out-button {
+  position: absolute;
+  height: 96rpx;
+  color: #fff;
+  background-color: #4a90e2;
+  line-height: 96rpx;
+  bottom: 30rpx;
+  left: 100rpx;
+  right: 100rpx;
+}

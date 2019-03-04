@@ -69,7 +69,7 @@ Page({
     
   },
   getCustomers:function () {
-    let netStr = [{ "name": "老王", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.08 14:50" }, { "name": "老李", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.20 20:50" }, { "name": "老张", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.11 08:30"}]
+    let netStr = [{ "name": "老王", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.08 14:50" }, { "name": "老李", "time": "2小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.20 20:50" }, { "name": "老张", "time": "10小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.11 08:30"}]
     this.setData({
       customers:netStr,
     })

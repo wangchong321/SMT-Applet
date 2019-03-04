@@ -1,0 +1,32 @@
+.item-left{
+  margin-left: 30rpx;
+  color: #8B8B8B;
+  font-size: 24rpx;
+  line-height: 95rpx;
+}
+
+.item-right{
+  margin-right: 30rpx;
+  color: #4A4A4A;
+  font-size: 28rpx;
+  width: 420rpx;
+  text-align: right;
+  text-overflow:ellipsis;
+  line-height: 40rpx;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  display: -webkit-box; 
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  }
+
+  .my-item{
+  width: 100%;
+  background-color: #ffffff;
+  height: 95rpx;
+  border-bottom: 1px solid #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

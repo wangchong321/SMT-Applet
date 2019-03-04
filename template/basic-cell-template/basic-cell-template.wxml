@@ -1,0 +1,6 @@
+ <template name='basicCell'>
+  <view class='my-item'>
+      <text class='item-left'>{{title}}</text>
+      <text class='item-right'>{{message}}</text>
+    </view>
+  </template>
