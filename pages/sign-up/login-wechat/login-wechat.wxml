@@ -7,5 +7,6 @@
     </view>
     
     <button class='button-signup' bindtap='onSignUpGuide'>注册成为捷信推客</button>
-    <button class='button-signin'>捷信推客登录</button>
+    <button class='button-signin' bindtap='onSignInTwitter'>捷信推客登录</button>
+    <button class='button-signin' bindtap='onSignIn'>直接登录测试</button>
 </view>

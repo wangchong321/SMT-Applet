@@ -24,5 +24,15 @@ Page({
     wx.navigateTo({
       url: "../sign-up-guide/sign-up-guide",
     })
+  },
+  onSignInTwitter: function () {
+    wx.navigateTo({
+      url: "../smt-login/smt-login",
+    })
+  },
+  onSignIn: function () {
+    wx.switchTab({
+      url: "../../main/basic-information/basic-information",
+    })
   }
 })

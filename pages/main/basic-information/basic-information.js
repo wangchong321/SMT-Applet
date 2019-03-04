@@ -67,5 +67,10 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  onSignOut: function() {
+    wx.reLaunch({
+      url: "../../sign-up/login-wechat/login-wechat",
+    })
   }
 })
