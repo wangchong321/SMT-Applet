@@ -1,4 +1,4 @@
-/* pages/sign-up/check-user-info/check-user-info.wxss */
+/* pages/sign-up/assign-stores/assign-stores.wxss */
 .base-container {
   width: 100%;
   height: 100%;
@@ -10,25 +10,23 @@
   background: whitesmoke
 }
 
-.bt-pass{
+.bt-confirm-grey{
   position: fixed;
-  bottom: 250rpx;
+  bottom: 50rpx;
   width: 75%;
   height: 100rpx;
-  background-color: rgb(75, 164, 247);
+  background-color: grey;
   color: white;
-  border: 0rpx solid rgb(75, 164, 247);
   border-radius: 0;
 }
 
-.bt-reject{
+.bt-confirm-blue{
   position: fixed;
-  bottom: 120rpx;
+  bottom: 50rpx;
   width: 75%;
   height: 100rpx;
-  background-color: white;
-  color: black;
-  border: 1rpx solid rgb(75, 164, 247);
+  background-color: rgb(47, 139, 245);
+  color: white;
   border-radius: 0;
 }
 
@@ -56,7 +54,7 @@
 }
 
 .text-left{
-  width: 50%;
+  width: 30%;
   text-align-last: left;
   font-size: 24rpx;
   color: grey;
@@ -64,9 +62,17 @@
 }
 
 .text-right {
-  width: 50%;
+  width: 70%;
   text-align: right;
   font-size: 28rpx;
+}
+
+.main-tip {
+  width: 40rpx;
+  height: 20rpx;
+  font-size: 15rpx;
+  background: orangered;
+  color: black;
 }
 
 .first-entry {
@@ -77,6 +83,12 @@
   padding-bottom: 20rpx;
 }
 
+.entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 20rpx;
+}
 .last-entry {
   display: flex;
   flex-direction: row;
@@ -86,11 +98,33 @@
 
 .info-container {
   border: 1rpx solid  silver;
-  padding: 20rpx;
   background-color: white;
 }
 
 .item-container {
   margin: 20rpx;
   width: 90%;
+}
+
+.right-arrow {
+    display :inline-block;
+    position: relative;
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 20rpx;
+}
+
+.right-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: 18rpx;
+    width: 18rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #c7c7cc;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    right: 6rpx;
+    margin-top: -9rpx;
 }

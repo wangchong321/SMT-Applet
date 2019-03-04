@@ -1,0 +1,82 @@
+/* pages/sign-up/select-stores/select-stores.wxss */
+.base-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1rpx solid black;
+}
+.scroll-out-container {
+  height: 85%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+.select-image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-left: 30rpx;
+  margin-right: 50rpx;
+}
+.inline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1rpx solid grey;
+}
+
+.store-text {
+  color: grey;
+  font-size: 25rpx;
+  text-align: center;
+  margin: 30rpx 0rpx 30rpx 0rpx;
+}
+
+.store-text-selected {
+  color: rgb(46, 147, 230);
+  font-size: 25rpx;
+  text-align: center;
+  margin: 30rpx 0rpx 30rpx 0rpx;
+}
+
+.bt-confirm_grey{
+  position: fixed;
+  bottom: 50rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: grey;
+  color: white;
+  border-radius: 0;
+}
+
+.bt-confirm_blue{
+  position: fixed;
+  bottom: 50rpx;
+  width: 75%;
+  height: 100rpx;
+  background-color: rgb(46, 147, 230);
+  color: white;
+  border-radius: 0;
+}
+
+.in-row-test {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
