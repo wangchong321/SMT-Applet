@@ -1,2 +1,2 @@
-# MSApp-Applet
-MSApp Applet
+# SMT-Applet
+SMT-Applet
