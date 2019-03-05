@@ -22,7 +22,6 @@
   </view>
 </view>
 
-
 <view class='list'>
   <view class='customer-item' wx:for-items='{{customers}}' wx:for-index='idx' wx:for-key='id'>
     <template is='basicCell' data="{{title:'客户姓氏',message:item.name}}" />
