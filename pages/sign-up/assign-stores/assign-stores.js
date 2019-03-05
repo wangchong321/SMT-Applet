@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    checkInfoTip: '请检查以下捷信推客信息，点击通过或拒绝按钮',
+    checkInfoTip: '请选择门店并推荐给捷信推客',
     nameTitle: '姓名',
     nameValue: '请选择',
     dsmName: 'DSM姓名',

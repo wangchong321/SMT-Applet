@@ -112,4 +112,5 @@
   width: 650rpx;
   height: 650rpx;
   margin: 50rpx;
+  border: 1rpx solid grey;
 }

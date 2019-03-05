@@ -5,12 +5,13 @@
   </view>
   <view class='item-container'>
     <image class='entry-title-icon' src='/images/sign-up-guide/title-icon1.png'></image>
-    <view class='info-container' wx:for='{{userInfoTotal}}' wx:key='unique'>
-      <view class="{{index == 4 ? 'last-entry' : 'entry'}}">
+    <view class='info-container'>
+      <view class="{{index == 4 ? 'last-entry' : 'entry'}}" wx:for='{{userInfoTotal}}' wx:key='unique'>
         <text class='text-left'>{{item.title}}</text>
         <text class='text-right'>{{item.value}}</text>
       </view>
     </view>
+    
   </view>
-  <button class='bt-confirm' bindtap='confirmRequest'>确认并使用微信账号登录</button>
+  <button class='bt-confirm' bindtap='confirmRequest'>确认并使用支付宝账号登录</button>
 </view>

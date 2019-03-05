@@ -1,0 +1,71 @@
+.title-area {
+  width: 100%;
+  height: 200rpx;
+  box-sizing:border-box;
+  background-color: #4A90E2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40rpx;
+}
+
+.title-header {
+  font-size: 24rpx;
+  color: white;
+  margin-bottom: 10rpx;
+}
+
+.title-sub-header {
+  font-size: 60rpx;
+  color: white;
+}
+
+.charge-list {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.card-container {
+  background-color: white;
+  padding: 10rpx;
+  margin-top: 10rpx;
+  box-shadow: 0rpx 1rpx 10rpx  2rpx rgba(1, 1, 1, 0.1);
+}
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  border-bottom: 1rpx solid  silver;
+  padding: 20rpx  0rpx 20rpx 0rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.last-entry {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.text-left{
+  width: 30%;
+  text-align-last: left;
+  font-size: 20rpx;
+  color: rgb(185, 180, 180);
+  font-weight: bold;
+}
+
+.text-right {
+  width: 70%;
+  text-align: right;
+  font-size: 24rpx;
+}
+
+.text-right-margin{
+  margin-right: 5rpx;
+}
