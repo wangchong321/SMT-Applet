@@ -4,11 +4,11 @@
     <image class='imageLayout' src='/images/sign-up-guide/SMTLogo.png'></image>
   </view>
 
-  <view class='buttonContainer'>
+  <view>
     <form class='form-view ' bindsubmit="formSubmit">
-      <view class='id-content'> 
+      <view class="{{isIdFocus ? 'id-content-focus' : 'id-content-grey'}}"> 
         <view>
-          <image class='item-image' src='/images/sign-up-guide/default-portrait.png'></image>
+          <image class='item-image-photo' src='/images/sign-up-guide/default-portrait.png'></image>
         </view>
         <block wx:for="{{idLength}}" wx:key="item"> 
           <input class='iptbox' value="{{idValue.length>=index+1?idValue[index]:''}}" disabled password='{{ispassword}}' catchtap='tapID'></input> 
@@ -20,9 +20,9 @@
       </view>
       <input name="homerid" password="{{true}}" class='ipt' maxlength="{{idLength}}" focus="{{isIdFocus}}" bindinput="idFocus"></input> 
 
-      <view class='code-content'> 
+      <view class="{{isCodeFocus ? 'code-content-focus' : 'code-content-grey'}}"> 
         <view>
-          <image class='item-image' src='/images/sign-up-guide/phone.png'></image>
+          <image class='item-image-phone' src='/images/sign-up-guide/phone.png'></image>
         </view>
         <block wx:for="{{codeLength}}" wx:key="item"> 
           <input class='iptbox' value="{{codeValue.length>=index+1?codeValue[index]:''}}" disabled password='{{ispassword}}' catchtap='tapCode'></input> 

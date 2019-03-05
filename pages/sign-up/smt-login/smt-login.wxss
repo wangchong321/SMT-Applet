@@ -1,90 +1,112 @@
 /* pages/sign-up/smt-login/smt-login.wxss */
 .base-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 150rpx 0;
-  box-sizing: border-box;
 } 
 
 .imageContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: red;
 }
 
 .imageLayout {
   width: 350rpx;
-  height: 100rpx;
-  top: 60rpx;
+  height: 90rpx;
+  top: 90rpx;
   position: absolute;
 }
 
-.buttonContainer {
+.form-view{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100rpx;
+  margin-top: 110rpx;
+  background-color: yellow;
 }
 
 .buttonLarge {
-  background: rgb(0, 132, 255);
+  background: #4A90E2;
   color: white;
   width: 550rpx;
-  height: 90rpx;
+  height: 95rpx;
   font-size: 30rpx;
-  bottom: 480rpx;
-  left: 100rpx;
-  box-sizing: border-box;
-  position: absolute;
   border-radius: 0;
+  vertical-align: middle;
 }
 
 .footerContainer{
-  bottom: 25px;
+  bottom: 30rpx;
   position: absolute;
 }
 
 .textFooter {
-  color: grey;
-  font-size: 25rpx;
+  color: rgb(153, 147, 147);
+  font-size: 22rpx;
 }
 
-.item-image {
-  width: 70rpx;
-  height: 70rpx;
+.item-image-photo {
+  width: 60rpx;
+  height: 60rpx;
   flex: 1;
-  padding: 0rpx 10rpx 0rpx 0rpx;
-  margin-top: 10rpx;
+  padding: 0rpx 10rpx 0rpx 10rpx;
+  margin: 10rpx 20rpx 0 0;
+}
+
+.item-image-phone {
+  width: 50rpx;
+  height: 60rpx;
+  flex: 1;
+  padding: 0rpx 10rpx 0rpx 10rpx;
+  margin: 10rpx 20rpx 5rpx 0;
 }
 
 .text-tip {
   font-size: 22rpx; 
   text-align: left;
   color: grey;
+  background-color: green;
 }
 
-.id-content{ 
+.id-content-focus { 
   display: flex; 
   justify-content: space-around; 
   align-items: center; 
-  border: 2rpx solid rgb(23, 138, 247);
-  padding: 10rpx 50rpx 10rpx 10rpx;
+  border: 2rpx solid #4A90E2;
+  padding: 10rpx;
 }
 
-.code-content{ 
+.id-content-grey { 
   display: flex; 
   justify-content: space-around; 
   align-items: center; 
-  border: 2rpx solid rgb(23, 138, 247);
+  border: 2rpx solid rgb(130, 132, 134);
+  padding: 10rpx;
+}
+
+.code-content-focus { 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  border: 2rpx solid #4A90E2;
+  padding: 10rpx;
+  background-color: red;
+}
+
+.code-content-grey { 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  border: 2rpx solid rgb(130, 132, 134);
   padding: 10rpx;
 } 
 
 .iptbox{ 
-  width: 60rpx; 
-  height: 70rpx; 
+  width: 65rpx; 
+  height: 50rpx; 
   border-bottom:1rpx solid grey;
   display: flex; 
   margin-right: 10rpx;
@@ -99,11 +121,15 @@
 } 
 
 .send-button {
-  width: 120rpx;
+  width: 130rpx;
   height: 75rpx;
-  background: grey;
+  background: rgb(187, 181, 181);
   color: white;
-  font-size: 30rpx;
+  font-size: 26rpx;
   border-radius: 0;
-  margin-left: 50rpx;
+  margin-left: 90rpx;
+}
+
+.space-view {
+  width: 60rpx;
 }
