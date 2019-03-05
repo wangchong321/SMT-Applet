@@ -7,9 +7,9 @@ Page({
   data: {
     checkInfoTip: '请检查以下捷信推客信息，点击通过或拒绝按钮',
     nameTitle: '姓名',
-    nameValue: '张三很开心',
+    nameValue: '欧阳森道哥',
     phoneTitle: '电话',
-    phoneValue: '12345678901'
+    phoneValue: '13312345678'
   },
 
   /**

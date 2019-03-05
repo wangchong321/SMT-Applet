@@ -7,28 +7,27 @@
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
-  background: whitesmoke
 }
 
 .bt-pass{
   position: fixed;
-  bottom: 250rpx;
+  bottom: 175rpx;
   width: 75%;
   height: 100rpx;
-  background-color: rgb(75, 164, 247);
+  background-color: #4A90E2;
   color: white;
-  border: 0rpx solid rgb(75, 164, 247);
+  border: 0rpx solid#4A90E2;
   border-radius: 0;
 }
 
 .bt-reject{
   position: fixed;
-  bottom: 120rpx;
+  bottom: 40rpx;
   width: 75%;
   height: 100rpx;
   background-color: white;
-  color: black;
-  border: 1rpx solid rgb(75, 164, 247);
+  color: #4A90E2;
+  border: 2rpx solid #4A90E2;
   border-radius: 0;
 }
 
@@ -40,26 +39,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1rpx solid grey;
-  border-bottom: 1rpx solid grey;
+  border-top: 1rpx solid rgb(204, 200, 200);
+  border-bottom: 1rpx solid rgb(228, 221, 221);
   background-color: white;
 }
 
 .tip-text {
   padding: 20rpx;
-  color: grey;
+  color: rgb(150, 142, 142);
 }
 
 .entry-title-icon {
-  width: 200rpx;
-  height: 50rpx;
+  width: 220rpx;
+  height: 45rpx;
 }
 
 .text-left{
   width: 50%;
   text-align-last: left;
   font-size: 24rpx;
-  color: grey;
+  color: rgb(190, 183, 183);
   font-weight: bold;
 }
 
@@ -73,24 +72,25 @@
   display: flex;
   flex-direction: row;
   align-content: center;
-  border-bottom: 1rpx solid grey;
-  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgb(209, 207, 207);
+  padding-bottom: 25rpx;
 }
 
 .last-entry {
   display: flex;
   flex-direction: row;
   align-content: center;
-  padding-top: 20rpx;
+  padding-top: 25rpx;
 }
 
 .info-container {
   border: 1rpx solid  silver;
-  padding: 20rpx;
+  padding: 25rpx;
   background-color: white;
+  box-shadow: 0rpx 1rpx 10rpx  2rpx rgba(1, 1, 1, 0.1);
 }
 
 .item-container {
   margin: 20rpx;
-  width: 90%;
+  width: 95%;
 }

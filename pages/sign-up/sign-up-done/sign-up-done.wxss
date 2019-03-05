@@ -7,7 +7,6 @@
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
-  background: whitesmoke
 }
 
 .bt-confirm{
@@ -15,7 +14,7 @@
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
-  background-color: rgb(70, 128, 236);
+  background-color: #4A90E2;
   color: white;
   border-radius: 0;
 }
@@ -57,19 +56,11 @@
   font-size: 28rpx;
 }
 
-.main-tip {
-  width: 40rpx;
-  height: 20rpx;
-  font-size: 15rpx;
-  background: orangered;
-  color: black;
-}
-
 .entry {
   display: flex;
   flex-direction: row;
   align-content: center;
-  border-bottom: 1rpx solid  silver;
+  border-bottom: 1rpx solid  rgb(223, 215, 215);
   padding: 20rpx  0rpx 20rpx 0rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -87,9 +78,10 @@
 .info-container {
   background-color: white;
   padding: 10rpx;
+  box-shadow:  0rpx 1rpx 10rpx  2rpx rgba(1, 1, 1, 0.1);
 }
 
 .item-container {
   margin: 30rpx;
-  width: 90%;
+  width: 95%;
 }

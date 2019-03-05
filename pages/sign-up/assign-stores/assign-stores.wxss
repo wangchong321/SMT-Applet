@@ -7,7 +7,6 @@
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
-  background: whitesmoke
 }
 
 .bt-confirm-grey{
@@ -15,8 +14,8 @@
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
-  background-color: grey;
-  color: white;
+  background-color: rgb(160, 155, 155) !important;
+  color: white !important;
   border-radius: 0;
 }
 
@@ -25,8 +24,8 @@
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
-  background-color: rgb(47, 139, 245);
-  color: white;
+  background-color: #4A90E2 !important;
+  color: white !important;
   border-radius: 0;
 }
 
@@ -38,18 +37,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1rpx solid grey;
-  border-bottom: 1rpx solid grey;
+  border-top: 1rpx solid rgb(207, 201, 201);
+  border-bottom: 1rpx solid rgb(207, 201, 201);
   background-color: white;
 }
 
 .tip-text {
   padding: 20rpx;
-  color: grey;
+  color: rgb(182, 178, 178);
 }
 
 .entry-title-icon {
-  width: 200rpx;
+  width: 230rpx;
   height: 50rpx;
 }
 
@@ -57,53 +56,67 @@
   width: 30%;
   text-align-last: left;
   font-size: 24rpx;
-  color: grey;
+  color: rgb(175, 169, 169);
   font-weight: bold;
+}
+
+.text-right-before {
+  width: 70%;
+  text-align: right;
+  font-size: 28rpx;
+  color: rgb(187, 182, 182);
 }
 
 .text-right {
   width: 70%;
   text-align: right;
   font-size: 28rpx;
+  color: black;
 }
 
 .main-tip {
-  width: 40rpx;
+  width: 50rpx;
   height: 20rpx;
-  font-size: 15rpx;
-  background: orangered;
+  font-size: 20rpx;
+  background: rgb(233, 182, 72);
   color: black;
+  margin: 10rpx;
+  border-radius: 4rpx;
 }
 
 .first-entry {
   display: flex;
   flex-direction: row;
   align-content: center;
-  border-bottom: 1rpx solid grey;
-  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgb(197, 192, 192);
+  padding: 25rpx 0 25rpx 0;
 }
 
 .entry {
   display: flex;
   flex-direction: row;
   align-content: center;
-  margin: 20rpx;
+  padding: 25rpx 0 25rpx 0;
+  border-bottom: 1rpx solid rgb(197, 192, 192);
 }
+
 .last-entry {
   display: flex;
   flex-direction: row;
   align-content: center;
-  padding-top: 20rpx;
+  padding: 25rpx 0 25rpx 0;
 }
 
 .info-container {
-  border: 1rpx solid  silver;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
   background-color: white;
+  box-shadow: 0rpx 1rpx 10rpx  2rpx rgba(1, 1, 1, 0.1);
 }
 
 .item-container {
-  margin: 20rpx;
-  width: 90%;
+  margin: 20rpx 20rpx 0 20rpx;
+  width: 95%;
 }
 
 .right-arrow {
