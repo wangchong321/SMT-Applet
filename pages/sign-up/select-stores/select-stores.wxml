@@ -5,7 +5,7 @@
       <view class='item-container' wx:for="{{selectableStores}}" wx:key="unique">
         <view class='inline-container'>
         <view class='in-row-test'>
-          <icon hidden='{{storeSelected ==item.storeId ? false:true}}' type="success" size="20" color="skyblue"/>
+          <icon hidden='{{storeSelected ==item.storeId ? false:true}}' type="success_no_circle" size="12" color='#4A90E2'/>
           <text class="{{storeSelected == item.storeId ? 'store-text-selected' : 'store-text'}}" bindtap='selectStore' data-storeI ='{{item.storeId}}' data-storeN = '{{item.storeName}}'>{{item.storeName}}</text>
         </view>
         </view>

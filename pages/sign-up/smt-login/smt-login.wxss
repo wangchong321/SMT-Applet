@@ -32,6 +32,9 @@
   width: 550rpx;
   height: 95rpx;
   border-radius: 0;
+  margin-top: 60rpx;
+  line-height: 95rpx;
+  font-size: 30rpx;
 }
 
 .footerContainer{
@@ -78,7 +81,7 @@
   display: flex; 
   justify-content: space-around; 
   align-items: center; 
-  border: 2rpx solid rgb(130, 132, 134);
+  border: 2rpx solid rgb(170, 173, 175);
   padding: 10rpx;
 }
 
@@ -88,14 +91,16 @@
   align-items: center; 
   border: 2rpx solid #4A90E2;
   padding: 10rpx;
+  margin-top: 20rpx;
 }
 
 .code-content-grey { 
   display: flex; 
   justify-content: space-around; 
   align-items: center; 
-  border: 2rpx solid rgb(130, 132, 134);
+  border: 2rpx solid rgb(206, 209, 212);
   padding: 10rpx;
+  margin-top: 20rpx;
 } 
 
 .iptbox{ 
@@ -122,6 +127,7 @@
   font-size: 26rpx;
   border-radius: 0;
   margin-left: 90rpx;
+  line-height: 75rpx;
 }
 
 .space-view {

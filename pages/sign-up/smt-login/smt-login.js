@@ -20,7 +20,7 @@ Page({
   /**
    *获取id区域输入值
    */
-  idFocus(e) {
+  idFocus: function (e) {
     let that = this;
     console.log(e.detail.value);
     let inputValue = e.detail.value;
@@ -31,7 +31,7 @@ Page({
   /**
    *获取验证码区域输入值
    */
-  codeFocus(e) {
+  codeFocus: function (e) {
     let that = this;
     console.log(e.detail.value);
     let inputValue = e.detail.value;
@@ -42,7 +42,7 @@ Page({
   /**
    *点击ID输入区域，获取focus
    */
-  tapID() {
+  tapID: function () {
     let that = this;
     that.setData({
       isIdFocus: true,
@@ -52,7 +52,7 @@ Page({
   /**
    *点击二维码区域，获取focus
    */
-  tapCode() {
+  tapCode: function () {
     let that = this;
     that.setData({
       isCodeFocus: true,
@@ -63,7 +63,7 @@ Page({
   /**
    *提交输入信息，如果成功，跳转到核查信息界面
    */
-  formSubmit(e) {
+  formSubmit: function (e) {
     //TODO
     let that = this;
     that.setData({
@@ -78,7 +78,7 @@ Page({
   /**
   *发送验证码短信给输入ID的用户
   */
-  sendMessageCode(e) {
+  sendMessageCode: function (e) {
     //TODO
     console.log("发送验证码短信给用户:");
   },

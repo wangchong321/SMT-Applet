@@ -52,7 +52,7 @@
   color: rgb(46, 147, 230);
   font-size: 25rpx;
   text-align: center;
-  margin: 30rpx 0rpx 30rpx 0rpx;
+  margin: 30rpx 0rpx 30rpx 5rpx;
 }
 
 .bt-confirm_grey{
@@ -70,7 +70,7 @@
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
-  background-color: rgb(46, 147, 230);
+  background-color: #4A90E2;
   color: white;
   border-radius: 0;
 }

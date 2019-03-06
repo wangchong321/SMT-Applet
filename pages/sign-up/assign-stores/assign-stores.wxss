@@ -14,6 +14,8 @@
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
   background-color: rgb(160, 155, 155) !important;
   color: white !important;
   border-radius: 0;
@@ -24,6 +26,8 @@
   bottom: 50rpx;
   width: 75%;
   height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
   background-color: #4A90E2 !important;
   color: white !important;
   border-radius: 0;
@@ -33,12 +37,11 @@
   width: 100%;
   height: 80rpx;
   font-size: 28rpx;
-  font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1rpx solid rgb(207, 201, 201);
-  border-bottom: 1rpx solid rgb(207, 201, 201);
+  border-top: 1rpx solid rgb(204, 200, 200);
+  border-bottom: 1rpx solid rgb(228, 221, 221);
   background-color: white;
 }
 
@@ -77,25 +80,18 @@
 .main-tip {
   width: 50rpx;
   height: 20rpx;
-  font-size: 20rpx;
+  font-size: 18rpx;
   background: rgb(233, 182, 72);
-  color: black;
+  color: rgb(39, 38, 38);
+  padding: 3rpx 5rpx 3rpx 5rpx;
   margin: 10rpx;
   border-radius: 4rpx;
-}
-
-.first-entry {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  border-bottom: 1rpx solid rgb(197, 192, 192);
-  padding: 25rpx 0 25rpx 0;
 }
 
 .entry {
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   padding: 25rpx 0 25rpx 0;
   border-bottom: 1rpx solid rgb(197, 192, 192);
 }
@@ -103,7 +99,7 @@
 .last-entry {
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
   padding: 25rpx 0 25rpx 0;
 }
 
@@ -132,7 +128,7 @@
     content: " ";
     height: 18rpx;
     width: 18rpx;
-    border-width: 4rpx 4rpx 0 0;
+    border-width: 2rpx 2rpx 0 0;
     border-color: #c7c7cc;
     border-style: solid;
     transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);

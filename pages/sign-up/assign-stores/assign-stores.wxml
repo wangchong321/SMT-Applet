@@ -6,7 +6,7 @@
   <view class='item-container'>
     <image class='entry-title-icon' src='/images/sign-up-guide/title-icon1.png'></image>
     <view class='info-container'>
-      <view class='entry'>
+      <view class='last-entry'>
         <text class='text-left'>{{dsmName}}</text>
         <text class='text-right'>{{dsmValue}}</text>
       </view>

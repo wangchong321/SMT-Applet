@@ -13,26 +13,28 @@
         <block wx:for="{{idLength}}" wx:key="item"> 
           <input class='iptbox' value="{{idValue.length>=index+1?idValue[index]:''}}" disabled password='{{ispassword}}' catchtap='tapID'></input> 
         </block> 
+        <input name="homerid" password="{{true}}" class='ipt' maxlength="{{idLength}}" focus="{{isIdFocus}}" bindinput="idFocus"></input> 
         <view class='space-view'></view>
       </view> 
       <view>
         <text class='text-tip'>Homer ID</text>
       </view>
-      <input name="homerid" password="{{true}}" class='ipt' maxlength="{{idLength}}" focus="{{isIdFocus}}" bindinput="idFocus"></input> 
+      
 
       <view class="{{isCodeFocus ? 'code-content-focus' : 'code-content-grey'}}"> 
         <view>
           <image class='item-image-phone' src='/images/sign-up-guide/phone.png'></image>
         </view>
         <block wx:for="{{codeLength}}" wx:key="item"> 
-          <input class='iptbox' value="{{codeValue.length>=index+1?codeValue[index]:''}}" disabled password='{{ispassword}}' catchtap='tapCode'></input> 
+        <input class='iptbox' value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}" disabled password='{{ispassword}}' catchtap='tapCode'></input> 
         </block>
+        <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input>
         <button class='send-button' bindtap='sendMessageCode'>发送</button>
       </view> 
       <view>
         <text class='text-tip'>短信验证码</text>
       </view>
-      <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input>
+      
       <button class='buttonLarge' formType="submit">登录</button>
     </form>
   </view>
