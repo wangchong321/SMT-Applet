@@ -28,14 +28,14 @@
         <block wx:for="{{codeLength}}" wx:key="item"> 
         <input class='iptbox' value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}" disabled password='{{ispassword}}' catchtap='tapCode'></input> 
         </block>
-        <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input>
-        <button class='send-button' bindtap='sendMessageCode'>发送</button>
+        <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" disabled='{{!codeAreaStatus}}' bindinput="codeFocus"></input>
+        <button class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}" bindtap='sendMessageCode' disabled= '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</button>
       </view> 
       <view>
         <text class='text-tip'>短信验证码</text>
       </view>
       
-      <button class='buttonLarge' formType="submit">登录</button>
+      <button class="{{loginButtonStatus ? 'button-large-blue':'button-large-grey'}}" formType="submit" disabled='{{!loginButtonStatus}}'>登录</button>
     </form>
   </view>
 
