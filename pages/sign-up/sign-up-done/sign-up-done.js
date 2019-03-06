@@ -36,11 +36,29 @@ Page({
     })
     console.log('confirmRequest done');
   },
+
+  getSelectStoreInfo: function () {
+    let that = this;
+    wx.getStorage({
+      key: 'selectedStores',
+      success: function(res) {
+        let mainStore = 'userInfoTotal[2].value'
+        let secondStore = 'userInfoTotal[3].value'
+        let thirdStore = 'userInfoTotal[4].value'
+        that.setData({
+          [mainStore] : res.data[0].storeName,
+          [secondStore]: res.data[1].storeName,
+          [thirdStore]: res.data[2].storeName
+        })
+      },
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getSelectStoreInfo()
   },
 
   /**

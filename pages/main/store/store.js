@@ -1,3 +1,6 @@
+const QRCode = require('../../../utils/weapp-qrcode.js')
+let qrcode;
+
 Page({
 
   /**
@@ -5,13 +8,19 @@ Page({
    */
   data: {
     tipMessage: '温馨提示：请确保您选择了正确的门店，若客户购买门店与推荐门店不符，您将无法收到居间服务费。',
-    stores: [
-      { storeId: '1001', storeTitle: '主要门店', storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰' },
-      { storeId: '1002', storeTitle: '门店2', storeName: '大庆市龙凤区鸿中泰龙凤区鸿' },
-      { storeId: '1004', storeTitle: '门店3', storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰鸿中泰大庆市龙凤区鸿中泰' }
+    storesTitle: ['主要门店', '门店2','门店3'],
+    sStores: [
+      { storeId: '1001', storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰' },
+      { storeId: '1002', storeName: '大庆市龙凤区鸿中泰龙凤区鸿' },
+      { storeId: '1004', storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰鸿中泰大庆市龙凤区鸿中泰' }
     ],
     showModalStatus: false,
-    storeSelectedName: ''
+    storeSelectedName: '',
+
+    //
+    image: '',
+    // 用于设置wxml里canvas的width和height样式
+    imgsrc: ''
   },
 
   /**
@@ -24,6 +33,11 @@ Page({
     that.setData({
       storeSelectedName: options.currentTarget.dataset.storen,
     })
+
+    that.confirmHandler(that.data.storeSelectedName);
+
+    
+
     that.showQRcodePopup();
   },
 
@@ -74,11 +88,38 @@ Page({
       })
     }.bind(that), 200)
   },
+
+  getStoresInfo: function () {
+    let that = this;
+    wx.getStorage({
+      key: 'selectedStores',
+      success: function (res) {
+        that.setData({
+          sStores : res.data
+        })
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getStoresInfo()
+
+    qrcode = new QRCode('canvas', {
+      // usingIn: this,
+      text: this.data.storeSelectedName,
+      image: '/images/main/main_store_qrcode_1.png',
+      width: 250,
+      height: 250,
+      colorDark: "black",
+      colorLight: "white",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+  },
+
+  confirmHandler: function (text) {
+    qrcode.makeCode(text)
   },
 
   /**

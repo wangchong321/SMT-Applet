@@ -11,9 +11,9 @@ Page({
     dsmName: 'DSM姓名',
     dsmValue: '12345',
     stores: [
-      { storeId: '', mainStore: '' },
-      { storeId: '', secondStore: '' },
-      { storeId: '', thirdStore: '' }
+      { storeId: '', storeName: '' },
+      { storeId: '', storeName: '' },
+      { storeId: '', storeName: '' }
     ],
     callBackStoreType: '',
     callBackStoreId: '',
@@ -28,6 +28,11 @@ Page({
   confirmRequest: function () {
     //TODO
     let that = this;
+    //先把数据存储到本地，以供后面使用
+    wx.setStorage({
+      key: 'selectedStores',
+      data: that.data.stores
+    })
     wx.navigateTo({
       url: '/pages/sign-up/sign-up-done/sign-up-done',
     })
@@ -58,16 +63,16 @@ Page({
       switch (that.data.callBackStoreType) {
         case 'mainStore':
           that.data.stores[0].storeId = that.data.callBackStoreId;
-          that.data.stores[0].mainStore = that.data.callBackStoreName;
+          that.data.stores[0].storeName = that.data.callBackStoreName;
           that.data.mainStoreSelected = true;
           break;
         case 'secondStore':
           that.data.stores[1].storeId = that.data.callBackStoreId;
-          that.data.stores[1].secondStore = that.data.callBackStoreName;
+          that.data.stores[1].storeName = that.data.callBackStoreName;
           break;
         case 'thirdStore':
           that.data.stores[2].storeId = that.data.callBackStoreId;
-          that.data.stores[2].thirdStore = that.data.callBackStoreName;
+          that.data.stores[2].storeName = that.data.callBackStoreName;
           break;
       }
       that.setData({

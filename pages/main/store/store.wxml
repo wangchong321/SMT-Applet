@@ -1,8 +1,8 @@
 <view class='line'></view>
-<view class='store-container' wx:for="{{stores}}" wx:key="unique">
+<view class='store-container' wx:for="{{sStores}}" wx:key="unique">
   <view class='item-container'>
     <view class='item-left-container'>
-      <text class='store-title'>{{item.storeTitle}}</text>
+      <text class='store-title'>{{storesTitle[index]}}</text>
       <text class='store-name'>{{item.storeName}}</text>
     </view>
     <view class='item-right-container' bindtap='showStoreQrcode' data-storeN = '{{item.storeName}}'>
@@ -19,5 +19,9 @@
   <view class='qrcode-detail-text_area'>
     <text class='qrcode-detail-text'>{{storeSelectedName}}</text>
   </view>
-  <image class='qrcode-detail-image' src='/images/main/main_store_qrcode_1.png'></image>
+  <view class='qrcode-detail-area'>
+    <canvas class='qrcode-detail-image' canvas-id='canvas' ></canvas>
+  </view>
+  
+  
 </view>
