@@ -55,15 +55,14 @@
 .text-left{
   width: 30%;
   text-align-last: left;
-  font-size: 20rpx;
+  font-size: 24rpx;
   color: rgb(185, 180, 180);
-  font-weight: bold;
 }
 
 .text-right {
   width: 70%;
   text-align: right;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 
 .text-right-margin{
