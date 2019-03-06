@@ -1,3 +1,5 @@
+let app = getApp();
+
 Page({
 
   /**
@@ -69,9 +71,28 @@ Page({
     
   },
   getCustomers:function () {
-    let netStr = [{ "name": "朝阳艾弗森", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.08 14:50" }, { "name": "通州吴彦祖", "time": "2小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.20 20:50" }, { "name": "梨园吴亦凡", "time": "10小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.11 08:30"}]
-    this.setData({
-      customers:netStr,
+    let that = this;
+
+    wx.request({
+      url: app.globalData.baseUrl +'/customerStatus',
+      data: {
+
+      },
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res){
+        console.log(res.data.data);
+        that.setData({
+          customers: res.data.data,
+        })
+      }
     })
+
+
+    // let netStr = [{ "name": "朝阳艾弗森", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.08 14:50" }, { "name": "通州吴彦祖", "time": "2小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.20 20:50" }, { "name": "梨园吴亦凡", "time": "10小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.11 08:30"}]
+    // this.setData({
+    //   customers:netStr,
+    // })
   }
 })

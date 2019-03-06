@@ -38,5 +38,6 @@ App({
     faceData: null,// 身份证正面
     backData: null, // 身份证反面
     userInfoObj:new Object(), // 个人信息对象
+    baseUrl: "https://mobile-ms.uat.homecreditcfc.cn/mock/5c7f3b17595ac40027559f1b/smtapi",
   }
 })
