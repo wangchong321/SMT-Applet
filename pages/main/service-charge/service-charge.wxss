@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: row;
   align-content: center;
-  border-bottom: 1rpx solid  silver;
+  border-bottom: 1rpx solid  rgb(235, 227, 227);
   padding: 20rpx  0rpx 20rpx 0rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
@@ -56,7 +56,7 @@
   width: 30%;
   text-align-last: left;
   font-size: 24rpx;
-  color: rgb(185, 180, 180);
+  color: grey;
 }
 
 .text-right {

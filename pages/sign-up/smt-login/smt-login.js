@@ -37,6 +37,10 @@ Page({
         codeAreaStatus: true,
         sendCodeButtonStatus: true
       })
+    } else {
+      that.setData({
+        loginButtonStatus: false
+      })
     }
   },
   /**
