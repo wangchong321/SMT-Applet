@@ -15,7 +15,12 @@ Page({
     isCodeFocus: false,
     idValue: "", //输入的内容 
     codeValue: "",
-    ispassword: false //是否密文显示 true为密文， false为明文。
+    buttonTittle: '发送',
+    ispassword: false, //是否密文显示 true为密文， false为明文。
+    isSendClicked: false, //
+    codeAreaStatus: false, //
+    loginButtonStatus: false, //
+    sendCodeButtonStatus: false, //发送按钮是否可点击状态
   },
   /**
    *获取id区域输入值
@@ -27,6 +32,12 @@ Page({
     that.setData({
       idValue: inputValue,
     })
+    if (inputValue.length >= 6){
+      that.setData({
+        codeAreaStatus: true,
+        sendCodeButtonStatus: true
+      })
+    }
   },
   /**
    *获取验证码区域输入值
@@ -35,9 +46,15 @@ Page({
     let that = this;
     console.log(e.detail.value);
     let inputValue = e.detail.value;
+    console.log(inputValue);
     that.setData({
       codeValue: inputValue,
     })
+    if (inputValue.length >= 4) {
+      that.setData({
+        loginButtonStatus: true
+      })
+    }
   },
   /**
    *点击ID输入区域，获取focus
@@ -81,6 +98,31 @@ Page({
   sendMessageCode: function (e) {
     //TODO
     console.log("发送验证码短信给用户:");
+    if (this.isSendClicked) {
+      return;
+    }
+    this.isSendClicked = true;
+
+    let that = this;
+    var times = 60
+    let i = setInterval(function () {
+      times--;
+      console.log(times);
+      if (times <= 0) {
+        that.isSendClicked = false;
+        that.setData({
+          sendCodeButtonStatus: true,
+          buttonTittle: "发送"
+        })
+        clearInterval(i);
+      } else {
+        that.setData({
+          sendCodeButtonStatus: false,
+          buttonTittle: times + "秒",
+          numberButtonStatus: true
+        })
+      }
+    }, 1000)
   },
 
   /**

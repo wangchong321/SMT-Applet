@@ -26,9 +26,20 @@
   margin-top: 110rpx;
 }
 
-.buttonLarge {
-  background: #4A90E2;
-  color: white;
+.button-large-blue {
+  background: #4A90E2 !important;
+  color: white !important;
+  width: 550rpx;
+  height: 95rpx;
+  border-radius: 0;
+  margin-top: 60rpx;
+  line-height: 95rpx;
+  font-size: 30rpx;
+}
+
+.button-large-grey {
+  background: rgb(148, 149, 150) !important;
+  color: white !important;
   width: 550rpx;
   height: 95rpx;
   border-radius: 0;
@@ -119,11 +130,22 @@
   height: 0; 
 } 
 
-.send-button {
+.send-button-blue {
   width: 130rpx;
   height: 75rpx;
-  background: rgb(187, 181, 181);
-  color: white;
+  background: #4A90E2 !important;
+  color: white !important;
+  font-size: 26rpx;
+  border-radius: 0;
+  margin-left: 90rpx;
+  line-height: 75rpx;
+}
+
+.send-button-grey {
+  width: 130rpx;
+  height: 75rpx;
+  background: rgb(187, 181, 181) !important;
+  color: white !important;
   font-size: 26rpx;
   border-radius: 0;
   margin-left: 90rpx;
