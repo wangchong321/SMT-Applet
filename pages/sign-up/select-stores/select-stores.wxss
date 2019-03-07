@@ -7,6 +7,7 @@
   align-items: center;
   border-top: 1rpx solid black;
 }
+
 .scroll-out-container {
   height: 85%;
   position: absolute;
@@ -14,7 +15,9 @@
   flex-direction: column;
   align-items: center;
 }
+
 .scroll-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -27,17 +30,12 @@
   height: 50rpx;
 }
 
-.item-container {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  margin-left: 30rpx;
-  margin-right: 50rpx;
-}
 .inline-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 30rpx;
+  margin-right: 50rpx;
   border-bottom: 1rpx solid grey;
 }
 
@@ -75,7 +73,7 @@
   border-radius: 0;
 }
 
-.in-row-test {
+.in-row-text {
   display: flex;
   flex-direction: row;
   align-items: center;

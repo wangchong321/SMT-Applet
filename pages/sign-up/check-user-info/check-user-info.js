@@ -1,4 +1,6 @@
 // pages/sign-up/check-user-info/check-user-info.js
+let app = getApp();
+
 Page({
 
   /**
@@ -30,12 +32,23 @@ Page({
     //TODO
     console.log('tap the reject button');
   },
+
+  /**
+   * 推客的信息存储在了 全局变量里，通过全局变量获取推客的信息
+   */
+  getTuikeInfo: function () {
+    let that = this;
+    if (app.globalData.userInfoObj.name != '') {
+      that.data.nameValue = app.globalData.userInfoObj.name;
+      that.data.phoneValue = app.globalData.userInfoObj.number;
+    }
+  },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getTuikeInfo();
   },
 
   /**

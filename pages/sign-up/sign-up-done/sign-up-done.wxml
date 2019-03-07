@@ -8,10 +8,9 @@
     <view class='info-container'>
       <view class="{{index == 4 ? 'last-entry' : 'entry'}}" wx:for='{{userInfoTotal}}' wx:key='unique'>
         <text class='text-left'>{{item.title}}</text>
-        <text class='text-right'>{{item.value}}</text>
+        <text class='text-right'>{{item.value == '' ? nullValue : item.value}}</text>
       </view>
     </view>
-    
   </view>
   <button class='bt-confirm' bindtap='confirmRequest'>确认并使用支付宝账号登录</button>
 </view>
