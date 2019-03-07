@@ -1,4 +1,4 @@
-const QRCode = require('../../../utils/weapp-qrcode.js')
+const QRCode = require('../../../utils/weapp-qrcode.js');
 let qrcode;
 
 Page({
@@ -16,11 +16,6 @@ Page({
     ],
     showModalStatus: false,
     storeSelectedName: '',
-
-    //
-    image: '',
-    // 用于设置wxml里canvas的width和height样式
-    imgsrc: ''
   },
 
   /**
@@ -33,11 +28,7 @@ Page({
     that.setData({
       storeSelectedName: options.currentTarget.dataset.storen,
     })
-
-    that.confirmHandler(that.data.storeSelectedName);
-
-    
-
+    that.makeQRcode(that.data.storeSelectedName);
     that.showQRcodePopup();
   },
 
@@ -64,7 +55,10 @@ Page({
       })
     }.bind(that), 200)
   },
-  //隐藏
+
+  /**
+   * 点击阴影区域后隐藏二维码弹窗
+   */
   hideQRcodePopup: function () {
     //显示tab bar
     let that = this;
@@ -89,6 +83,9 @@ Page({
     }.bind(that), 200)
   },
 
+  /**
+   * 从本地存储中获取选择过的门店数据
+   */
   getStoresInfo: function () {
     let that = this;
     wx.getStorage({
@@ -100,14 +97,13 @@ Page({
       },
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getStoresInfo()
-
+    this.getStoresInfo();
     qrcode = new QRCode('canvas', {
-      // usingIn: this,
       text: this.data.storeSelectedName,
       image: '/images/main/main_store_qrcode_1.png',
       width: 250,
@@ -118,7 +114,7 @@ Page({
     });
   },
 
-  confirmHandler: function (text) {
+  makeQRcode: function (text) {
     qrcode.makeCode(text)
   },
 

@@ -10,11 +10,7 @@ Page({
     userNameValue: '欧阳森道哥',
     dsmTitle: 'DSM姓名',
     dsmValue: '123456',
-    stores: [
-      { mainStoreTitle: '分配的主要门店', storeId: '', mainStore: '天津市红桥区陆家嘴金融中心店' },
-      { secondStoreTitle: '分配的门店2', storeId: '', secondStore: '天津一家很不错的手机和蛋糕店' },
-      { thirdStoreTitle: '分配的门店3', storeId: '', thirdStore: '天津市河西区国金融中心店' }
-    ],
+    nullValue: '未设置',
     userInfoTotal: [
       { title: '捷信推客姓名', value: '欧阳森道哥' },
       { title: 'DSM姓名', value: '123456' },
@@ -29,12 +25,10 @@ Page({
    */
   confirmRequest: function () {
     //TODO 
-    console.log('tap confirmRequest');
     let that = this;
     wx.switchTab({
       url: '/pages/main/basic-information/basic-information'
     })
-    console.log('confirmRequest done');
   },
 
   getSelectStoreInfo: function () {
