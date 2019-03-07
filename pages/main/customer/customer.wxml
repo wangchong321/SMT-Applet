@@ -8,7 +8,7 @@
     <view class='containter-item'>
       <view class='item haveRightLine'>
         <text class='item-title'>主要门店客户访问数</text>
-        <text class='item-number'>{{accessNumberList.store1}}</text>
+        <text class='item-number'>{{accessNumberList.primary_store}}</text>
       </view>
       <view class='item haveRightLine'>
         <text class='item-title'>门店2客户访问数</text>
@@ -24,9 +24,9 @@
 
 <view class='list'>
   <view class='customer-item' wx:for-items='{{customers}}' wx:for-index='idx' wx:for-key='id'>
-    <template is='basicCell' data="{{title:'客户姓氏',message:item.name}}" />
-    <template is='basicCell' data="{{title:'剩余办单时间',message:item.time}}" />
-    <template is='basicCell' data="{{title:'门店名称',message:item.storeName}}" />
-    <template is='basicCell' data="{{title:'扫描二维码时间',message:item.scanTime}}" />
+    <template is='basicCell' data="{{title:'客户姓氏',message:item.customer_name}}" />
+    <template is='basicCell' data="{{title:'剩余办单时间',message:item.time_remaining}}" />
+    <template is='basicCell' data="{{title:'门店名称',message:item.pos_name}}" />
+    <template is='basicCell' data="{{title:'扫描二维码时间',message:item.scan_qrcode_time}}" />
   </view>
 </view>

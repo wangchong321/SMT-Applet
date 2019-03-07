@@ -3,13 +3,13 @@
 <view class="main">
   <view style="height:20rpx;background: #f6f6f6;width:100%;"></view>
 
-  <template is='basicCell' data="{{title:'捷信推客姓名',message:'朝阳艾弗森'}}" />
-  <template is='basicCell' data="{{title:'DSM姓名',message:'123456'}}" />
+  <template is='basicCell' data="{{title:'捷信推客姓名',message:baseInfo.customer_name}}" />
+  <template is='basicCell' data="{{title:'DSM姓名',message:baseInfo.emp_name}}" />
   <view style="height:20rpx;background: #f6f6f6;width:100%;"></view>
 
-  <template is='basicCell' data="{{title:'分配的主要门店',message:'大庆市龙凤区红中泰大'}}" />
-  <template is='basicCell' data="{{title:'分配的门店2',message:'大庆市龙凤区红中泰龙风洪忠泰大庆市龙凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰凤区红中泰龙风洪忠泰'}}" />
-  <template is='basicCell' data="{{title:'分配的门店3',message:'大庆市龙凤区红中泰龙风洪忠泰大庆市龙凤区红中泰龙风洪忠泰'}}" />
+  <template is='basicCell' data="{{title:'分配的主要门店',message:baseInfo.pos_list[0].pos_name}}" />
+  <template is='basicCell' data="{{title:'分配的门店2',message:baseInfo.pos_list[1].pos_name}}" />
+  <template is='basicCell' data="{{title:'分配的门店3',message:baseInfo.pos_list[2].pos_name}}" />
 
   <button class='sign-out-button' catchtap='onSignOut'>退出登录</button>
 </view>

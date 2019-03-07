@@ -1,4 +1,6 @@
 let app = getApp();
+const WXAPI = require('../../../wxapi/wxapi')
+
 
 Page({
 
@@ -6,12 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    accessNumberList:{
-      totol: '5,000',
-      store1:'2,000',
-      store2:'1,500',
-      store3:'1,500',
-    },
+    accessNumberList: {
+      totol: '',
+      primary_store: '',
+      store2: '',
+      store3: '',
+    }, 
     customers:[],
   },
 
@@ -20,79 +22,59 @@ Page({
    */
   onLoad: function (options) {
     this.getCustomers();
+    this.getScancount();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  },
   getCustomers:function () {
     let that = this;
+    WXAPI.customers().then(res => {
+      if(res.status === 'true'){
+        let payment_list = res.data.payment_list;
+        if(payment_list.length > 0){
+          for (let customer of payment_list){
+            customer.time_remaining = that.mathTime(customer.time_remaining);
+          }
+          that.setData({
+            customers: payment_list,
+          })
+        }
+      }
+    })
+  },
 
-    wx.request({
-      url: app.globalData.baseUrl +'/customerStatus',
-      data: {
-
-      },
-      method: 'POST',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res){
-        console.log(res.data.data);
+  getScancount: function () {
+    let that = this;
+    WXAPI.scancount().then(res =>{
+      if(res.status === 'true'){
+        let tipper_pos_list = res.data.tipper_pos_list;
+        let tmp_totol = 0;
+        let primary_count = 0;
+        for (let pos of tipper_pos_list){
+          tmp_totol += pos.count;
+          if (pos.primary_flag === 1){
+            primary_count = pos.count;
+          }
+        }
+        
+        let tmpAccessNumberList = {};
+        console.log(tmpAccessNumberList);
+        tmpAccessNumberList.totol = tmp_totol;
+        tmpAccessNumberList.primary_store = primary_count;
+        tmpAccessNumberList.store2 = tipper_pos_list[1].count;
+        tmpAccessNumberList.store3 = tipper_pos_list[2].count;
+        console.log(tmpAccessNumberList);
         that.setData({
-          customers: res.data.data,
+          accessNumberList: tmpAccessNumberList
         })
       }
     })
+  },
 
-
-    // let netStr = [{ "name": "朝阳艾弗森", "time": "1小時30分鐘", "storeName": "大慶市龍鳳洪忠泰", "scanTime": "2018.07.08 14:50" }, { "name": "通州吴彦祖", "time": "2小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.20 20:50" }, { "name": "梨园吴亦凡", "time": "10小時30分鐘", "storeName": "大慶市龍鳳洪忠泰鳳洪忠泰鳳洪忠泰", "scanTime": "2018.07.11 08:30"}]
-    // this.setData({
-    //   customers:netStr,
-    // })
+  mathTime: function (time_remaining) {
+    var hours = parseInt((time_remaining % (60 * 60 * 24)) / (60 * 60));
+    var minutes = parseInt((time_remaining % ( 60 * 60)) / 60);
+    var seconds = (time_remaining % 60);
+    return hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒 ";
   }
+
 })
