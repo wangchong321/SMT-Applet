@@ -1,3 +1,5 @@
+let app = getApp();
+
 Page({
 
   /**
@@ -9,36 +11,7 @@ Page({
     storeNameTitle: '门店名称',
     payTimeTitle: '付费时间',
     chargeStatusTitle: '服务费收费状态',
-    serviceChargeList: [
-      {
-        customerName: '叶赫那拉',
-        serviceChargeAmount: '20.00',
-        storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰',
-        payTime: '2018.07.07 14:50',
-        chargeStatus: '付费成功'
-      },
-      {
-        customerName: '叶赫那拉',
-        serviceChargeAmount: '0.00',
-        storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰',
-        payTime: '无',
-        chargeStatus: '付费失败'
-      },
-      {
-        customerName: '叶赫那拉',
-        serviceChargeAmount: '20.00',
-        storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰',
-        payTime: '2018.07.07 14:50',
-        chargeStatus: '付费中'
-      },
-      {
-        customerName: '叶赫那拉',
-        serviceChargeAmount: '20.00',
-        storeName: '大庆市龙凤区鸿中泰龙凤区鸿中泰',
-        payTime: '2018.07.07 14:50',
-        chargeStatus: '付费成功'
-      }
-    ],
+    serviceChargeList: [],
     chargeStatuss: {
       'SUCESS': '付费成功',
       'FAIL': '付费失败',
@@ -47,10 +20,30 @@ Page({
   },
 
   /**
+   * 从服务器获得用户获得服务费的数据和状态
+   */
+  getServiceChargeFromServer : function() {
+    let that = this;
+    wx.request({
+      url: app.globalData.baseUrl + '/serviceCharge',
+      data: {},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          serviceChargeList: res.data.data
+        })
+      }
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getServiceChargeFromServer()
   },
 
   /**

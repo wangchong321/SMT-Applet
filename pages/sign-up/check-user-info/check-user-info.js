@@ -39,10 +39,8 @@ Page({
   getTuikeInfo: function () {
     let that = this;
     if (app.globalData.userInfoObj.name != '') {
-      that.setData({
-        nameValue: app.globalData.userInfoObj.name,
-        phoneValue: app.globalData.userInfoObj.number
-      })
+      that.data.nameValue = app.globalData.userInfoObj.name;
+      that.data.phoneValue = app.globalData.userInfoObj.number;
     }
   },
   

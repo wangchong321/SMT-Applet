@@ -1,5 +1,7 @@
 // pages/sign-up/smt-login/smt-login.js
 //本页为Sale Mgmt Tool的工作人员登录，协助推客
+let app = getApp()
+
 Page({
 
   /**
@@ -91,10 +93,30 @@ Page({
       idValue: e.detail.value.homerid,
       codeValue: e.detail.value.messagecode
     })
-    wx.navigateTo({
-      url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
+    wx.request({
+      url: app.globalData.baseUrl + '/loginSMT',
+      data: {
+        'id': e.detail.value.homerid,
+        'code': e.detail.value.messagecode
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log(res.data.data.result);
+        if (res.data.data.result == 'OK') {
+          wx.navigateTo({
+            url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
+          })
+        } else {
+          wx.showModal({
+            title: '登录失败',
+            content: '登录出错了，可能是ID或者验证码不正确，请重新输入登录信息。',
+            showCancel: false,
+          })
+        }
+      }
     })
-    console.log("ID:" + e.detail.value.homerid + ",Code:" + e.detail.value.messagecode);
   },
   /**
   *发送验证码短信给输入ID的用户
