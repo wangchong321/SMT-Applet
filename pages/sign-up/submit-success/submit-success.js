@@ -1,12 +1,12 @@
-// pages/sign-up/submit-sucess/submit-sucess.js
+// pages/sign-up/submit-success/submit-success.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    sucessHeader: '提交成功 DSM登录操作',
-    sucessHeaderDetail: '您的信息已经成功提交，请讲手机转交给DSM登陆操作，请耐心等待。',
+    successHeader: '提交成功 DSM登录操作',
+    successHeaderDetail: '您的信息已经成功提交，请讲手机转交给DSM登陆操作，请耐心等待。',
     buttonName: '登录'
   },
 
