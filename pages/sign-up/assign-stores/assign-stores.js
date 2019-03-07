@@ -6,8 +6,7 @@ Page({
    */
   data: {
     checkInfoTip: '请选择门店并推荐给捷信推客',
-    nameTitle: '姓名',
-    nameValue: '请选择',
+    nameTip: '请选择', //提示用户选择
     dsmName: 'DSM姓名',
     dsmValue: '12345',
     stores: [
@@ -57,9 +56,8 @@ Page({
    */
   onShow: function () {
     let that = this;
-    if (that.data.callBackStoreType == null) {
-      //currently do nothing
-    } else {
+    //根据回调中的数据信息，更新页面数据
+    if (that.data.callBackStoreType != null) {
       switch (that.data.callBackStoreType) {
         case 'mainStore':
           that.data.stores[0].storeId = that.data.callBackStoreId;

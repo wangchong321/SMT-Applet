@@ -17,7 +17,7 @@ Page({
   },
 
   /**
-   * 点击了某一个店铺条目，修改当前storeSelected值为选中的storeId
+   * 点击了某一个门店条目，修改当前storeSelected值为选中的storeId
    */
   selectStore: function (e) {
     //TODO
@@ -27,10 +27,10 @@ Page({
       storeSelected: e.target.dataset.storei,
       storeSelectedName: e.target.dataset.storen,
     })
-    console.log('活动订单id = ' + that.data.storeSelected);
+    console.log('选中的门店是 = ' + that.data.storeSelectedName);
   },
   /**
-   * 选中店铺后确认，返回选择的返回结果到选择店铺页面
+   * 选中店铺后确认，返回选择的返回结果到选择店铺页面，进行页面间值的传递
    */
   confirmSelectResult: function () {
     //TODO
@@ -46,6 +46,9 @@ Page({
     })
   },
 
+  /**
+   * 从服务器获得可选门店的数据
+   */
   getAllStoresData: function() {
     let that = this;
     wx.request({

@@ -61,8 +61,7 @@
   width: 50%;
   text-align-last: left;
   font-size: 24rpx;
-  color: rgb(190, 183, 183);
-  font-weight: bold;
+  color: rgb(160, 156, 156);
 }
 
 .text-right {
