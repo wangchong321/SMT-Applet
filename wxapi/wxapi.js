@@ -20,7 +20,7 @@ const request = (url, method, data) => {
         reject(error)
       },
       complete(complete) {
-
+        
       },
     })
   })

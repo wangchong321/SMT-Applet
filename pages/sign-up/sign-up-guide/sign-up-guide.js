@@ -106,5 +106,9 @@ Page({
         });
       }
     })
-  }
+  },
+
+  // requestOcr: function () {
+
+  // } 
 })

@@ -18,12 +18,19 @@ Page({
 
   getBaseInfo: function () {
     let that = this;
+
+    wx.showLoading({
+      title: '加载中',
+    })
     WXAPI.baseInfo().then(res => {
+      wx.hideLoading();
       if(res.status === 'true'){
         that.setData({
           baseInfo: res.data
         })
       }
+    }).catch(res => {
+      wx.hideLoading();
     })
   },
 
