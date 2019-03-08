@@ -8,24 +8,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    smtUserId: '',
     footer: 'Honor Procuct of Home Credit China',
-
     idLength: 6, //id输入框个数
     codeLength: 4, //code输入框个数
-    isIdFocus: true, //聚焦 
-    isCodeFocus: false,
+    isIdFocus: true, //焦点 
+    isCodeFocus: false, 
     idValue: "", //输入的内容 
     codeValue: "",
-    buttonTittle: '发送',
+    buttonTittle: '发送', //发送验证码按钮的文本
     ispassword: false, //是否密文显示 true为密文， false为明文。
-    isSendClicked: false, //
-    codeAreaStatus: false, //
-    loginButtonStatus: false, //
+    isSendClicked: false, //发送验证码按钮是否点击
+    codeAreaStatus: false, //验证码区域的状态
+    loginButtonStatus: false, //登录按钮的状态
     sendCodeButtonStatus: false, //发送按钮是否可点击状态
   },
   /**
-   *获取id区域输入值
+   *获取id区域输入值，长度>6才可以输入验证码区
    */
   idFocus: function (e) {
     let that = this;
@@ -45,8 +43,9 @@ Page({
       })
     }
   },
+
   /**
-   *获取验证码区域输入值
+   *获取验证码区域输入值，长度>4才可以点击登录按钮
    */
   codeFocus: function (e) {
     let that = this;
@@ -93,6 +92,7 @@ Page({
       idValue: e.detail.value.homerid,
       codeValue: e.detail.value.messagecode
     })
+    //向easy mock请求用户输入的id和验证码是否正确，正确才可以跳转下一页，否则提示
     wx.request({
       url: app.globalData.baseUrl + '/loginSMT',
       data: {
@@ -118,8 +118,9 @@ Page({
       }
     })
   },
+
   /**
-  *发送验证码短信给输入ID的用户
+  *发送验证码短信给输入ID的用户手机，60s后可重发
   */
   sendMessageCode: function (e) {
     //TODO
