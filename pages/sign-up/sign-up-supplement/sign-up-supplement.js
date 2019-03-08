@@ -11,13 +11,25 @@ Page({
     numberButtonStatus: false, // 手机号状态
     isClick: false, // 用来标识按钮是否已经点击过
     signUpButtonStatus: true, // 注册按钮状态
+    name:'',
+    iDCard:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    if (!app.globalData.userInfoObj){
+      app.globalData.userInfoObj = new Object();
+    }
+
+    app.globalData.userInfoObj.name = app.globalData.faceData.name;
+    app.globalData.userInfoObj.iDCard = app.globalData.faceData.num;
+    console.log(app.globalData);
+    this.setData({
+      name: app.globalData.userInfoObj.name,
+      iDCard: app.globalData.userInfoObj.iDCard,
+    })
   },
 
   onSendVerificationCode: function (e) {

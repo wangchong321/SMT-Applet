@@ -1,4 +1,5 @@
 const WXAPI = require('../../../wxapi/wxapi')
+let app = getApp()
 
 Page({
 
@@ -35,6 +36,8 @@ Page({
   },
 
   onSignOut: function() {
+    app.globalData = {
+    }
     wx.reLaunch({
       url: "../../sign-up/login-wechat/login-wechat",
     })
