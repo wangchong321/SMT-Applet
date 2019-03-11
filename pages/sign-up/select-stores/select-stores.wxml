@@ -5,15 +5,15 @@
       <view class='inline-container' wx:for="{{selectableStores}}" wx:key="unique">
         <view class='in-row-text'>
           <icon 
-            hidden='{{storeSelected == item.storeId ? false:true}}' 
+            hidden='{{storeSelected == item.pos_code ? false:true}}' 
             type="success_no_circle" 
             size="12" 
             color='#4A90E2'/>
           <text 
-            class="{{storeSelected == item.storeId ? 'store-text-selected' : 'store-text'}}" 
+            class="{{storeSelected == item.pos_code ? 'store-text-selected' : 'store-text'}}" 
             bindtap='selectStore' 
-            data-storeI ='{{item.storeId}}' 
-            data-storeN = "{{item.storeName}}">{{item.storeName}}</text>
+            data-storeI ='{{item.pos_code}}' 
+            data-storeN = "{{item.pos_name}}">{{item.pos_name}}</text>
         </view>
       </view>
     </scroll-view>

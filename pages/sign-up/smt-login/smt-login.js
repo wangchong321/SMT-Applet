@@ -1,23 +1,17 @@
-// pages/sign-up/smt-login/smt-login.js
-//本页为Sale Mgmt Tool的工作人员登录，协助推客
 const WXAPI = require('../../../wxapi/wxapi')
 let app = getApp()
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     footer: 'Honor Procuct of Home Credit China',
     idLength: 6, //id输入框个数
     codeLength: 4, //code输入框个数
     isIdFocus: true, //焦点 
-    isCodeFocus: false, 
+    isCodeFocus: false,
     idValue: "", //输入的内容 
     codeValue: "",
     buttonTittle: '发送', //发送验证码按钮的文本
-    ispassword: false, //是否密文显示 true为密文， false为明文。
     isSendClicked: false, //发送验证码按钮是否点击
     codeAreaStatus: false, //验证码区域的状态
     loginButtonStatus: false, //登录按钮的状态
@@ -26,17 +20,20 @@ Page({
   /**
    *获取id区域输入值，长度>6才可以输入验证码区
    */
-  idFocus: function (e) {
+  idFocus: function(e) {
     let that = this;
     console.log(e.detail.value);
     let inputValue = e.detail.value;
     that.setData({
       idValue: inputValue,
     })
-    if (inputValue.length >= 6){
-      //验证homerid后，方可发送验证码
+    if (inputValue.length >= 6) {
+      wx.setStorage({
+        key: 'dsm_homer_id',
+        data: that.data.idValue
+      })
       let data = {
-        'homer_id': '111111'
+        'homer_id': that.data.idValue
       }
       WXAPI.tipperRegisterValidateHid(data).then(res => {
         if (res.status === 'true') {
@@ -57,9 +54,8 @@ Page({
   /**
    *获取验证码区域输入值，长度>4才可以点击登录按钮
    */
-  codeFocus: function (e) {
+  codeFocus: function(e) {
     let that = this;
-    console.log(e.detail.value);
     let inputValue = e.detail.value;
     console.log(inputValue);
     that.setData({
@@ -74,7 +70,7 @@ Page({
   /**
    *点击ID输入区域，获取focus
    */
-  tapID: function () {
+  tapID: function() {
     let that = this;
     that.setData({
       isIdFocus: true,
@@ -84,7 +80,7 @@ Page({
   /**
    *点击二维码区域，获取focus
    */
-  tapCode: function () {
+  tapCode: function() {
     let that = this;
     that.setData({
       isCodeFocus: true,
@@ -95,42 +91,33 @@ Page({
   /**
    *提交输入信息，如果成功，跳转到核查信息界面
    */
-  formSubmit: function (e) {
-    //TODO
+  formSubmit: function(e) {
     let that = this;
     that.setData({
       idValue: e.detail.value.homerid,
       codeValue: e.detail.value.messagecode
     })
     //向easy mock请求用户输入的id和验证码是否正确，正确才可以跳转下一页，否则提示
+    //mock反馈信息里目前都是成功的
     let data = {
       'homer_id': e.detail.value.homerid,
       'sms_code': e.detail.value.messagecode
     }
-    WXAPI.tipperRegisterUpdateTipperOcr(data).then(res => {
+    WXAPI.tipperRegisterValidateVcode(data).then(res => {
       console.log(res.data)
       if (res.status === 'true') {
         console.log(res.data)
-        if (res.data.message == 'success') {
-          wx.navigateTo({
-            url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
-          })
-        } else {
-          wx.showModal({
-            title: '登录失败',
-            content: '登录出错了，可能是ID或者验证码不正确，请重新输入登录信息。',
-            showCancel: false,
-          })
-        }
+        wx.navigateTo({
+          url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
+        })
       }
     })
   },
 
   /**
-  *发送验证码短信给输入ID的用户手机，60s后可重发
-  */
-  sendMessageCode: function (e) {
-    //TODO 
+   *发送验证码短信给输入ID的用户手机，60s后可重发
+   */
+  sendMessageCode: function(e) {
     console.log("发送验证码短信给用户:");
     let that = this;
     if (that.isSendClicked) {
@@ -140,90 +127,29 @@ Page({
     let data = {
       'homer_id': that.data.idValue
     }
-
     WXAPI.tipperRegisterSendVcode(data).then(res => {
       if (res.status === 'true') {
         console.log(res.data)
-        that.setData({
-          //do nothing
-        })
+        let times = 60
+        let i = setInterval(function () {
+          times--;
+          console.log(times);
+          if (times <= 0) {
+            that.isSendClicked = false;
+            that.setData({
+              sendCodeButtonStatus: true,
+              buttonTittle: "发送"
+            })
+            clearInterval(i);
+          } else {
+            that.setData({
+              sendCodeButtonStatus: false,
+              buttonTittle: times + "秒",
+              numberButtonStatus: true
+            })
+          }
+        }, 1000)
       }
     })
-    
-    var times = 60
-    let i = setInterval(function () {
-      times--;
-      console.log(times);
-      if (times <= 0) {
-        that.isSendClicked = false;
-        that.setData({
-          sendCodeButtonStatus: true,
-          buttonTittle: "发送"
-        })
-        clearInterval(i);
-      } else {
-        that.setData({
-          sendCodeButtonStatus: false,
-          buttonTittle: times + "秒",
-          numberButtonStatus: true
-        })
-      }
-    }, 1000)
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

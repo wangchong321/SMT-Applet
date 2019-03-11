@@ -69,7 +69,7 @@ module.exports = {
     return request('/api/register/validate-vcode', 'post', data)
   },
   //上传tipper信息注册登陆
-  tipperRegisterUpdateTipperOcr: (data) => {
-    return request('/api/tipper/update-tipper-ocr', 'post', data)
+  tipperRegisterUpateInfo: (data) => {
+    return request('/api/tipper/register', 'post', data)
   }
 }

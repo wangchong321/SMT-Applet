@@ -10,15 +10,15 @@ Page({
   data: {
     currentSelectType: '', //当次选择的门店的类型
     selectableStores: [{
-        "storeId": '1001',
-        "storeName": '天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店国际中心国际中心'
+        "pos_code": '1001',
+        "pos_name": '天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店国际中心国际中心'
       }], //存储当前可选择的门店的数据，预先有个显示数据，不然第一次加载数据后位置会奇怪偏移
     storeSelected: '', //本次选择的门店的ID
     storeSelectedName: '' //本次选择的门店的名字
   },
 
   /**
-   * 点击了某一个门店条目，修改当前storeSelected值为选中的storeId
+   * 点击了某一个门店条目，修改当前storeSelected值为选中的pos_code
    */
   selectStore: function (e) {
     //TODO
@@ -60,8 +60,8 @@ Page({
           let temp_stores = [];
           for (let record of res.data.pos_view_data){
             let t_store = {
-              "storeId": record.pos_code,
-              "storeName": record.pos_name
+              "pos_code": record.pos_code,
+              "pos_name": record.pos_name
             }
             temp_stores[temp_stores.length++] = t_store;
           }

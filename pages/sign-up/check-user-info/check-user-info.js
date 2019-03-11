@@ -37,11 +37,11 @@ Page({
    * 推客的信息存储在了 全局变量里，
    * 注册过程尚未传递到服务器所以通过全局变量获取推客的信息
    */
-  getTuikeInfo: function () {
+  getTipperInfo: function () {
     let that = this;
-    if (app.globalData.faceData.name != '') {
-      that.data.nameValue = app.globalData.faceData.name;
-      that.data.phoneValue = app.globalData.faceData.num;
+    if (app.globalData.userInfoObj.name != null) {
+      that.data.nameValue = app.globalData.userInfoObj.name;
+      that.data.phoneValue = app.globalData.userInfoObj.number;
     }
   },
   
@@ -49,6 +49,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getTuikeInfo();
+    this.getTipperInfo();
   },
 })
