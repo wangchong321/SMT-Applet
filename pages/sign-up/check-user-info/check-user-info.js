@@ -26,7 +26,7 @@ Page({
   },
 
   /**
-   * 点击通过按钮，跳转到错误页面吧
+   * 点击通过按钮，跳转到错误页面吧，
    */
   rejectRequest: function () {
     //TODO
@@ -34,13 +34,14 @@ Page({
   },
 
   /**
-   * 推客的信息存储在了 全局变量里，通过全局变量获取推客的信息
+   * 推客的信息存储在了 全局变量里，
+   * 注册过程尚未传递到服务器所以通过全局变量获取推客的信息
    */
   getTuikeInfo: function () {
     let that = this;
-    if (app.globalData.userInfoObj.name != '') {
-      that.data.nameValue = app.globalData.userInfoObj.name;
-      that.data.phoneValue = app.globalData.userInfoObj.number;
+    if (app.globalData.faceData.name != '') {
+      that.data.nameValue = app.globalData.faceData.name;
+      that.data.phoneValue = app.globalData.faceData.num;
     }
   },
   
@@ -50,53 +51,4 @@ Page({
   onLoad: function (options) {
     this.getTuikeInfo();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -1,5 +1,6 @@
 // pages/sign-up/smt-login/smt-login.js
 //本页为Sale Mgmt Tool的工作人员登录，协助推客
+const WXAPI = require('../../../wxapi/wxapi')
 let app = getApp()
 
 Page({
@@ -33,9 +34,18 @@ Page({
       idValue: inputValue,
     })
     if (inputValue.length >= 6){
-      that.setData({
-        codeAreaStatus: true,
-        sendCodeButtonStatus: true
+      //验证homerid后，方可发送验证码
+      let data = {
+        'homer_id': '111111'
+      }
+      WXAPI.tipperRegisterValidateHid(data).then(res => {
+        if (res.status === 'true') {
+          console.log(res.dta)
+          that.setData({
+            codeAreaStatus: true,
+            sendCodeButtonStatus: true
+          })
+        }
       })
     } else {
       that.setData({
@@ -93,18 +103,15 @@ Page({
       codeValue: e.detail.value.messagecode
     })
     //向easy mock请求用户输入的id和验证码是否正确，正确才可以跳转下一页，否则提示
-    wx.request({
-      url: app.globalData.baseUrl + '/loginSMT',
-      data: {
-        'id': e.detail.value.homerid,
-        'code': e.detail.value.messagecode
-      },
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function (res) {
-        console.log(res.data.data.result);
-        if (res.data.data.result == 'OK') {
+    let data = {
+      'homer_id': e.detail.value.homerid,
+      'sms_code': e.detail.value.messagecode
+    }
+    WXAPI.tipperRegisterUpdateTipperOcr(data).then(res => {
+      console.log(res.data)
+      if (res.status === 'true') {
+        console.log(res.data)
+        if (res.data.message == 'success') {
           wx.navigateTo({
             url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
           })
@@ -123,14 +130,26 @@ Page({
   *发送验证码短信给输入ID的用户手机，60s后可重发
   */
   sendMessageCode: function (e) {
-    //TODO
+    //TODO 
     console.log("发送验证码短信给用户:");
-    if (this.isSendClicked) {
+    let that = this;
+    if (that.isSendClicked) {
       return;
     }
-    this.isSendClicked = true;
+    that.isSendClicked = true;
+    let data = {
+      'homer_id': that.data.idValue
+    }
 
-    let that = this;
+    WXAPI.tipperRegisterSendVcode(data).then(res => {
+      if (res.status === 'true') {
+        console.log(res.data)
+        that.setData({
+          //do nothing
+        })
+      }
+    })
+    
     var times = 60
     let i = setInterval(function () {
       times--;
