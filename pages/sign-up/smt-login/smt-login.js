@@ -37,7 +37,7 @@ Page({
       }
       WXAPI.tipperRegisterValidateHid(data).then(res => {
         if (res.status === 'true') {
-          console.log(res.dta)
+          console.log(res.data)
           that.setData({
             codeAreaStatus: true,
             sendCodeButtonStatus: true
@@ -64,6 +64,10 @@ Page({
     if (inputValue.length >= 4) {
       that.setData({
         loginButtonStatus: true
+      })
+    } else {
+      that.setData({
+        loginButtonStatus: false
       })
     }
   },

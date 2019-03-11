@@ -1,4 +1,3 @@
-// pages/sign-up/assign-stores/assign-stores.js
 const WXAPI = require('../../../wxapi/wxapi')
 let app = getApp()
 
@@ -47,6 +46,12 @@ Page({
         console.log(res.data)
         wx.navigateTo({
           url: '/pages/sign-up/sign-up-done/sign-up-done',
+        })
+      } else {
+        wx.showModal({
+          title: '上传信息失败',
+          content: '上传个人信息失败，请重新点击确认上传！',
+          showCancel: false
         })
       }
     })

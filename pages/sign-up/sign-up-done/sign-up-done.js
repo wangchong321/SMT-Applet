@@ -1,4 +1,6 @@
 // pages/sign-up/sign-up-done/sign-up-done.js
+const WXAPI = require('../../../wxapi/wxapi')
+let app = getApp()
 Page({
 
   data: {
@@ -57,9 +59,30 @@ Page({
     }
   },
 
+  getUserBasicInfoFromServer: function () {
+    let that = this;
+    WXAPI.baseInfo().then(res => {
+      if (res.status === 'true') {
+        let tipperName = 'userInfoTotal[0].value'
+        let dsmName = 'userInfoTotal[1].value'
+        let mainStore = 'userInfoTotal[2].value'
+        let secondStore = 'userInfoTotal[3].value'
+        let thirdStore = 'userInfoTotal[4].value'
+        that.setData({
+          [tipperName]: res.data.customer_name,
+          [dsmName]: res.data.homer_id,
+          [mainStore]: res.data.pos_list[0].pos_name,
+          [secondStore]: res.data.pos_list[1].pos_name,
+          [thirdStore]: res.data.pos_list[2].pos_name
+        })
+      }
+    })
+  },
+
   onLoad: function (options) {
-    this.getTipperName()
-    this.getSelectStoreInfo()
-    this.getDsmHomerId()
+    this.getUserBasicInfoFromServer()
+    //this.getTipperName()
+    //this.getSelectStoreInfo()
+    //this.getDsmHomerId()
   }
 })

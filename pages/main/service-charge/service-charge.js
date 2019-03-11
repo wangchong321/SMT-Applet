@@ -13,7 +13,7 @@ Page({
     payTimeTitle: '付费时间',
     chargeStatusTitle: '服务费收费状态',
     serviceChargeList: [],
-    paymentSumAmount: null
+    paymentSumAmount: ''
   },
 
   /**

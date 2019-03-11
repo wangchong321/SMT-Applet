@@ -1,4 +1,4 @@
-const QRCode = require('../../../utils/weapp-qrcode.js');
+const QRCode = require('../../../utils/weapp-qrcode.js')
 const WXAPI = require('../../../wxapi/wxapi')
 let qrcode;
 
@@ -19,21 +19,16 @@ Page({
    * 用户点击了商店的二维码图标，底部弹窗显示门店的二维码
    */
   showStoreQrcode: function (options) {
-    //TODO
-    console.log(options);
     let that = this;
     that.setData({
       storeSelectedName: options.currentTarget.dataset.storen,
     })
-    that.makeQRcode(that.data.storeSelectedName);
     that.showQRcodePopup();
   },
 
   showQRcodePopup: function () {
-    // 显示遮罩层
     let that = this;
-    wx.hideTabBar({
-    })
+    wx.hideTabBar({})
     let animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",
@@ -51,16 +46,14 @@ Page({
         animationData: animation.export()
       })
     }.bind(that), 200)
+    that.makeQRcode(that.data.storeSelectedName);
   },
 
   /**
    * 点击阴影区域后隐藏二维码弹窗
    */
   hideQRcodePopup: function () {
-    //显示tab bar
     let that = this;
-    wx.showTabBar({
-    })
     let animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",
@@ -78,21 +71,7 @@ Page({
         showModalStatus: false
       })
     }.bind(that), 200)
-  },
-
-  /**
-   * 从本地存储中获取选择过的门店数据
-   */
-  getStoresInfoFromStorage: function () {
-    let that = this;
-    wx.getStorage({
-      key: 'selectedStores',
-      success: function (res) {
-        that.setData({
-          sStores : res.data
-        })
-      },
-    })
+    wx.showTabBar({})
   },
 
   /**
@@ -114,7 +93,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //this.getStoresInfoFromStorage();
     this.getStoresInfoFromServer();
     qrcode = new QRCode('canvas', {
       text: this.data.storeSelectedName,
