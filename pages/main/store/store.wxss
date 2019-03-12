@@ -83,7 +83,7 @@
   width: 100%;
   overflow: hidden;
   position: fixed;
-  bottom: 0;
+  top: 100%;
   left: 0;
   z-index: 2000;
   background: #fff;
@@ -112,8 +112,7 @@
 .qrcode-detail-area {
   width: 550rpx;
   height: 550rpx;
-  padding: 25rpx;
-  margin: 75rpx;
+  margin: 50rpx 75rpx 0 75rpx;
   border: 1rpx solid grey;
   display: flex;
   align-items: center;

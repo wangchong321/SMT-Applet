@@ -28,20 +28,19 @@ Page({
 
   showQRcodePopup: function () {
     let that = this;
-    wx.hideTabBar({})
     let animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",
       delay: 0
     })
     that.animation = animation
-    animation.translateY(300).step()
+    animation.translateY(0).step()
     that.setData({
       animationData: animation.export(),
       showModalStatus: true
     })
     setTimeout(function () {
-      animation.translateY(0).step()
+      animation.translateY(-425).step()
       that.setData({
         animationData: animation.export()
       })

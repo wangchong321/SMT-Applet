@@ -71,5 +71,9 @@ module.exports = {
   //上传tipper信息注册登陆
   tipperRegisterUpateInfo: (data) => {
     return request('/api/tipper/register', 'post', data)
+  },
+  //上传tipper信息注册登陆
+  tipperPaymentHistory: (data) => {
+    return request('/api/tipper/payment/paymenthistory', 'post', data)
   }
 }

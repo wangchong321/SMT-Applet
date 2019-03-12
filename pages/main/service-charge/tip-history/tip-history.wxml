@@ -1,0 +1,8 @@
+<!--pages/main/service-charge/tip-history/tip-history.wxml-->
+<view class='line'></view>
+<view class='base-container'>
+  <view class='item-container'  wx:for="{{historyData}}" wx:key="unique">
+    <text class='text-left-month'><text>{{item.payment_month}}</text>居间服务费总额</text>
+    <text class='text-right-amount'><text>{{item.amount}}</text>元</text>
+  </view>
+</view>

@@ -68,10 +68,17 @@ Page({
       case '3': return '付费中'
     }
   },
-  //测试modal使用
+
+  //测试modal弹窗使用
   showModalTest: function (){
     wx.navigateTo({
       url: '../../sign-up/warning/warnings',
+    })
+  },
+
+  showTipHistory: function() {
+    wx.navigateTo({
+      url: 'tip-history/tip-history',
     })
   }
 })

@@ -10,6 +10,14 @@
   padding: 40rpx;
 }
 
+.history-image {
+  width: 84rpx;
+  height: 75rpx;
+  right: 10rpx;
+  top: 10rpx;
+  position: absolute;
+}
+
 .title-header {
   font-size: 24rpx;
   color: white;

@@ -1,0 +1,31 @@
+/* pages/main/service-charge/tip-history/tip-history.wxss */
+.base-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  height: 100rpx;
+  border-bottom: 1rpx solid rgb(182, 173, 173);
+}
+
+.text-left-month {
+  text-align: left;
+  font-size: 24rpx;
+  color: grey;
+  width: 70%;
+}
+
+.text-right-amount{
+  text-align: right;
+  font-size: 30rpx;
+  color: black;
+  width: 30%;
+}
