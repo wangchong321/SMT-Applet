@@ -1,0 +1,11 @@
+<!--components/modal_warn.wxml-->
+<view class='mask' wx:if='{{show}}' bindtap='clickMask'>
+  <view class='modal-content' style='height:{{height}}'>
+    <image class='modal-image' src='{{imageUrl[imageUrlNumber]}}'></image>
+    <slot></slot>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' wx:if="{{showLeftBt}}"  bindtap='leftClick'>{{leftText}}</view>
+      <view class='confirm-btn' wx:if="{{showRightBt}}"  bindtap='rightClick'>{{rightText}}</view>
+    </view>
+  </view>
+</view>

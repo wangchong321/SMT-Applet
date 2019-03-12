@@ -1,0 +1,41 @@
+<!--pages/sign-up/warning/warings.wxml-->
+<view class='bt-container'>
+  <button class='bt-normal' bindtap='tipOverLimitClicked'>居间服务费已达上限</button>
+  <button class='bt-normal' bindtap='receiveTipClicked'>收到一笔居间服务费</button>
+  <button class='bt-normal' bindtap='failTipClicked'>服务费付费失败</button>
+</view>
+
+<modal_warn wx:if='{{dataTipOverLimit.show}}'
+      show="{{dataTipOverLimit.show}}" height='{{dataTipOverLimit.height}}' imageUrlNumber = '{{dataTipOverLimit.imageUrlNumber}}'
+      showLeftBt = '{{dataTipOverLimit.showLeftBt}}' leftText = '{{dataTipOverLimit.leftText}}' rightText = '{{dataTipOverLimit.rightText}}' >
+   <view class='modal-over-limit'> 
+     <text class='title-text'>您的居间服务费可能已经达到这个月的上限</text>
+     <text class='title-text'>详情请查看<text class='protocol-text'>《捷信推客居间服务费协议》</text></text>
+   </view>
+</modal_warn>
+
+<modal_warn wx:if='{{dataReceiveTip.show}}'
+      show="{{dataReceiveTip.show}}" height='{{dataReceiveTip.height}}' imageUrlNumber = '{{dataReceiveTip.imageUrlNumber}}'
+      showLeftBt = '{{dataReceiveTip.showLeftBt}}' leftText = '{{dataReceiveTip.leftText}}' rightText = '{{dataReceiveTip.rightText}}' 
+      bindcancel="modalCancel" bindconfirm='modalConfirm'>
+   <view class='modal-receive-tip'> 
+     <text class='title-text'>您收到一笔居间服务费，具体内容如下：</text>
+     <text class='sub-title-text'>客户姓氏： 王</text>
+     <text class='sub-title-text'>服务费金额：20.00元</text>
+     <text class='sub-title-text'>门店名称：大庆市龙凤区鸿中泰龙凤区鸿中泰</text>
+     <text class='sub-title-text'>贷款激活时间：2018.07.07 14:50</text>
+   </view>
+</modal_warn>
+
+<modal_warn wx:if='{{dataFailTip.show}}'
+      show="{{dataFailTip.show}}" height='{{dataFailTip.height}}' imageUrlNumber = '{{dataFailTip.imageUrlNumber}}'
+      showLeftBt = '{{dataFailTip.showLeftBt}}' leftText = '{{dataFailTip.leftText}}' rightText = '{{dataFailTip.rightText}}' 
+      bindcancel="modalCancel" bindconfirm='modalConfirm'>
+   <view class='modal-fail-tip'> 
+     <text class='title-text'>由于技术原因，以下居间服务费付费失败</text>
+     <text class='title-text'>请您耐心等候，如有任何问题，请联系您的DSM</text>
+     <text class='sub-title-text'>客户姓氏： 王</text>
+     <text class='sub-title-text'>门店名称：大庆市龙凤区鸿中泰龙凤区鸿中泰</text>
+   </view>
+</modal_warn>
+

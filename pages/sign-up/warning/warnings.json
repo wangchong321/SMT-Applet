@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "modal_warn": "../../../components/modal_warn"
+  }
+}

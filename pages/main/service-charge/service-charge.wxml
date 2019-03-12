@@ -1,5 +1,5 @@
 <view class='title-area'>
-  <text class='title-header'>居间服务费总额(元)</text>
+  <text class='title-header' bindtap='showModalTest'>居间服务费总额(元)</text>
   <text class='title-sub-header'>{{paymentSumAmount}}</text>
 </view>
 

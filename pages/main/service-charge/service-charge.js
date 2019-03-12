@@ -68,4 +68,10 @@ Page({
       case '3': return '付费中'
     }
   },
+  //测试modal使用
+  showModalTest: function (){
+    wx.navigateTo({
+      url: '../../sign-up/warning/warnings',
+    })
+  }
 })
