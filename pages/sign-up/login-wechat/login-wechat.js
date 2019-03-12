@@ -6,35 +6,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
   onSignUpGuide: function () {
     wx.navigateTo({
       url: "../sign-up-guide/sign-up-guide",
     })
   },
-  onSignInTwitter: function () {
+
+  onSignInTwitter: function (e) {
+    app.globalData.userInfo = e.detail.userInfo
+    if (e.detail.userInfo) {
+      wx.switchTab({
+        url: "../../main/basic-information/basic-information",
+      })
+    }
+  },
+
+  onSignIn: function () {
     wx.navigateTo({
       url: "../smt-login/smt-login",
-    })
-  },
-  onSignIn: function () {
-    wx.switchTab({
-      url: "../../main/basic-information/basic-information",
     })
   }
 })
