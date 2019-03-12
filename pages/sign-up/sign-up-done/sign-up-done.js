@@ -1,15 +1,10 @@
 // pages/sign-up/sign-up-done/sign-up-done.js
+const WXAPI = require('../../../wxapi/wxapi')
+let app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     checkInfoTip: '恭喜！您现在是一名捷信推客了',
-    userNameTitle: '捷信推客姓名',
-    userNameValue: '欧阳森道哥',
-    dsmTitle: 'DSM姓名',
-    dsmValue: '123456',
     nullValue: '未设置',
     userInfoTotal: [
       { title: '捷信推客姓名', value: '欧阳森道哥' },
@@ -20,11 +15,7 @@ Page({
     ]
   },
 
-  /**
-   * 确认按钮事件，使用支付宝账号登录
-   */
   confirmRequest: function () {
-    //TODO 
     let that = this;
     wx.switchTab({
       url: '/pages/main/basic-information/basic-information'
@@ -40,67 +31,58 @@ Page({
         let secondStore = 'userInfoTotal[3].value'
         let thirdStore = 'userInfoTotal[4].value'
         that.setData({
-          [mainStore] : res.data[0].storeName,
-          [secondStore]: res.data[1].storeName,
-          [thirdStore]: res.data[2].storeName
+          [mainStore] : res.data[0].pos_name,
+          [secondStore]: res.data[1].pos_name,
+          [thirdStore]: res.data[2].pos_name
         })
       },
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  getDsmHomerId: function () {
+    let that = this
+    wx.getStorage({
+      key: 'dsm_homer_id',
+      success: function (res) {
+        let userDsmValue = 'userInfoTotal[1].value'
+        that.setData({
+          [userDsmValue] : res.data
+        })
+      },
+    })
+  },
+
+  getTipperName: function () {
+    let that = this;
+    if (app.globalData.userInfoObj.name != null) {
+      that.data.userInfoTotal[0].value = app.globalData.userInfoObj.name;
+    }
+  },
+
+  getUserBasicInfoFromServer: function () {
+    let that = this;
+    WXAPI.baseInfo().then(res => {
+      if (res.status === 'true') {
+        let tipperName = 'userInfoTotal[0].value'
+        let dsmName = 'userInfoTotal[1].value'
+        let mainStore = 'userInfoTotal[2].value'
+        let secondStore = 'userInfoTotal[3].value'
+        let thirdStore = 'userInfoTotal[4].value'
+        that.setData({
+          [tipperName]: res.data.customer_name,
+          [dsmName]: res.data.homer_id,
+          [mainStore]: res.data.pos_list[0].pos_name,
+          [secondStore]: res.data.pos_list[1].pos_name,
+          [thirdStore]: res.data.pos_list[2].pos_name
+        })
+      }
+    })
+  },
+
   onLoad: function (options) {
-    this.getSelectStoreInfo()
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.getUserBasicInfoFromServer()
+    //this.getTipperName()
+    //this.getSelectStoreInfo()
+    //this.getDsmHomerId()
   }
 })

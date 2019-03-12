@@ -1,4 +1,5 @@
 // pages/sign-up/select-stores/select-stores.js
+const WXAPI = require('../../../wxapi/wxapi.js');
 let app = getApp();
 
 Page({
@@ -9,19 +10,17 @@ Page({
   data: {
     currentSelectType: '', //当次选择的门店的类型
     selectableStores: [{
-        "storeId": '1001',
-        "storeName": '天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店天津市红桥区陆家嘴金融中心店国际中心国际中心'
-      }], //存储当前可选择的门店的数据，预先有个显示数据，不然第一次加载数据后位置会奇怪偏移
+      "pos_code": '1001',
+      "pos_name": '我是地址我是地址我是地址我是地址我是地址我是地址我是地址我是地址'
+    }], //存储当前可选择的门店的数据，预先有个显示数据，不然第一次加载数据后位置会奇怪偏移
     storeSelected: '', //本次选择的门店的ID
     storeSelectedName: '' //本次选择的门店的名字
   },
 
   /**
-   * 点击了某一个门店条目，修改当前storeSelected值为选中的storeId
+   * 点击了某一个门店条目，修改当前storeSelected值为选中的pos_code
    */
   selectStore: function (e) {
-    //TODO
-    console.log(e);
     let that = this;
     that.setData({
       storeSelected: e.target.dataset.storei,
@@ -30,7 +29,8 @@ Page({
     console.log('选中的门店是 = ' + that.data.storeSelectedName);
   },
   /**
-   * 选中店铺后确认，返回选择的返回结果到选择店铺页面，进行页面间值的传递
+   * 选中店铺后点击确认
+   * 返回选择的返回结果到选择店铺页面，进行页面间值的传递
    */
   confirmSelectResult: function () {
     //TODO
@@ -51,17 +51,28 @@ Page({
    */
   getAllStoresData: function() {
     let that = this;
-    wx.request({
-      url: app.globalData.baseUrl + '/allStores',
-      data: {},
-      method: 'POST',
-      dataType: 'json',
-      responseType: 'text',
-      success: function (res) {
-        console.log(res.data.data);
-        that.setData({
-          selectableStores: res.data.data,
-        })
+    wx.showLoading({
+      title: '加载中',
+    })
+    WXAPI.getSelectableStores().then(res => {
+      if (res.status === 'true') {
+        console.log(res.data);
+        //这里要做一个数据的整理,目前只是清理掉无关变量获取id和名字，可能还需要判断登录的这个tipper是不是在此门店中
+        if(res.data.pos_view_data.length > 0) {
+          let temp_stores = [];
+          for (let record of res.data.pos_view_data){
+            let t_store = {
+              "pos_code": record.pos_code,
+              "pos_name": record.pos_name
+            }
+            temp_stores[temp_stores.length++] = t_store;
+          }
+          console.log(temp_stores);
+          that.setData({
+            selectableStores: temp_stores
+          })
+          wx.hideLoading();
+        }
       }
     })
   },
@@ -76,51 +87,9 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

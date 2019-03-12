@@ -13,7 +13,8 @@
     "pages/sign-up/check-user-info/check-user-info",
     "pages/sign-up/assign-stores/assign-stores",
     "pages/sign-up/select-stores/select-stores",
-    "pages/sign-up/sign-up-done/sign-up-done"
+    "pages/sign-up/sign-up-done/sign-up-done",
+    "pages/sign-up/warning/warnings"
   ],
   "window": {
     "backgroundTextStyle": "light",
