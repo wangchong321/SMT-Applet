@@ -59,6 +59,15 @@ Page({
       leftText: '',
       rightText: '捷信推客登录',
     },
+    dataLogoutRemind: {
+      show: false,
+      height: '430rpx',
+      imageUrlNumber: '0',
+      showLeftBt: false,
+      showRightBt: true,
+      leftText: '',
+      rightText: '好的',
+    },
     dataLogoutTipper: {
       show: false,
       height: '550rpx',
@@ -78,7 +87,7 @@ Page({
     sendCodeButtonStatus: true, //发送按钮是否可点击状态
   },
 
-  tipOverLimitClicked :function () {
+  showTipOverLimitClicked :function () {
     let that = this;
     let temp = that.data.dataTipOverLimit;
     temp.show = true;
@@ -87,7 +96,7 @@ Page({
     })
   },
 
-  receiveTipClicked: function () {
+  showReceiveTipClicked: function () {
     let that = this;
     let temp = that.data.dataReceiveTip;
     temp.show = true;
@@ -96,7 +105,7 @@ Page({
     })
   },
 
-  failTipClicked: function () {
+  showFailTipClicked: function () {
     let that = this;
     let temp = that.data.dataFailTip;
     temp.show = true;
@@ -105,7 +114,7 @@ Page({
     })
   },
 
-  loginAliAccountConfirm: function () {
+  showLoginAliAccountConfirm: function () {
     let that = this;
     let temp = that.data.dataAliAccount;
     temp.show = true;
@@ -114,7 +123,7 @@ Page({
     })
   },
 
-  rejectToBeTipper: function () {
+  showRejectToBeTipper: function () {
     let that = this;
     let temp = that.data.dataTipperReject;
     temp.show = true;
@@ -123,7 +132,7 @@ Page({
     })
   }, 
 
-  successToBeATipper: function() {
+  showSuccessToBeATipper: function() {
     let that = this;
     let temp = that.data.dataTipperSuccess;
     temp.show = true;
@@ -132,7 +141,7 @@ Page({
     })
   },
 
-  inpputCodeToLogout: function() {
+  showInpputCodeToLogout: function() {
     let that = this;
     let temp = that.data.dataLogoutTipper;
     temp.show = true;
@@ -144,6 +153,15 @@ Page({
   loginTipper: function() {
     wx.switchTab({
       url: "/pages/main/basic-information/basic-information",
+    })
+  },
+
+  showLogoutRemind: function() {
+    let that = this;
+    let temp = that.data.dataLogoutRemind;
+    temp.show = true;
+    that.setData({
+      dataLogoutRemind: temp
     })
   },
 

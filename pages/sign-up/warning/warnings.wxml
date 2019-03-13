@@ -1,12 +1,13 @@
 <!--pages/sign-up/warning/warings.wxml-->
 <view class='bt-container'>
-  <button class='bt-normal' bindtap='tipOverLimitClicked'>居间服务费已达上限</button>
-  <button class='bt-normal' bindtap='receiveTipClicked'>收到一笔居间服务费</button>
-  <button class='bt-normal' bindtap='failTipClicked'>服务费付费失败</button>
-  <button class='bt-normal' bindtap='loginAliAccountConfirm'>使用支付宝账号信息提醒</button>
-  <button class='bt-normal' bindtap='rejectToBeTipper'>无法注册成为捷信推客</button>
-  <button class='bt-normal' bindtap='successToBeATipper'>已经成功注册成为捷信推客</button>
-  <button class='bt-normal' bindtap='inpputCodeToLogout'>如需注销请输入验证码</button>
+  <button class='bt-normal' bindtap='showTipOverLimitClicked'>居间服务费已达上限</button>
+  <button class='bt-normal' bindtap='showReceiveTipClicked'>收到一笔居间服务费</button>
+  <button class='bt-normal' bindtap='showFailTipClicked'>服务费付费失败</button>
+  <button class='bt-normal' bindtap='showLoginAliAccountConfirm'>使用支付宝账号信息提醒</button>
+  <button class='bt-normal' bindtap='showRejectToBeTipper'>无法注册成为捷信推客</button>
+  <button class='bt-normal' bindtap='showSuccessToBeATipper'>已经成功注册成为捷信推客</button>
+  <button class='bt-normal' bindtap='showInpputCodeToLogout'>如需注销请输入验证码</button>
+  <button class='bt-normal' bindtap='showLogoutRemind'>已在其他设备登录提醒</button>
 </view>
 
 <modal_warn wx:if='{{dataTipOverLimit.show}}'
@@ -82,5 +83,13 @@
       </view>
       <text class='title-text'>您是否确认要注销，注销将视为您终止</text>
       <text class='title-text'><text class='protocol-text'>《捷信推客居间服务协议》</text>。</text>
+   </view>
+</modal_warn>
+
+<modal_warn wx:if='{{dataLogoutRemind.show}}'
+      show="{{dataLogoutRemind.show}}" height='{{dataLogoutRemind.height}}' imageUrlNumber = '{{dataLogoutRemind.imageUrlNumber}}'
+      showLeftBt = '{{dataLogoutRemind.showLeftBt}}' leftText = '{{dataLogoutRemind.leftText}}' rightText = '{{dataLogoutRemind.rightText}}' >
+   <view class='modal-ali-account-confirm'> 
+     <text class='title-text'>您已在其他上设备登录，此设备已登出，如果需要请重新登录。</text>
    </view>
 </modal_warn>
