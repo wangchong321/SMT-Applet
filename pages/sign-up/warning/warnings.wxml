@@ -3,6 +3,10 @@
   <button class='bt-normal' bindtap='tipOverLimitClicked'>居间服务费已达上限</button>
   <button class='bt-normal' bindtap='receiveTipClicked'>收到一笔居间服务费</button>
   <button class='bt-normal' bindtap='failTipClicked'>服务费付费失败</button>
+  <button class='bt-normal' bindtap='loginAliAccountConfirm'>使用支付宝账号信息提醒</button>
+  <button class='bt-normal' bindtap='rejectToBeTipper'>无法注册成为捷信推客</button>
+  <button class='bt-normal' bindtap='successToBeATipper'>已经成功注册成为捷信推客</button>
+  <button class='bt-normal' bindtap='inpputCodeToLogout'>如需注销请输入验证码</button>
 </view>
 
 <modal_warn wx:if='{{dataTipOverLimit.show}}'
@@ -39,3 +43,44 @@
    </view>
 </modal_warn>
 
+<modal_warn wx:if='{{dataAliAccount.show}}'
+      show="{{dataAliAccount.show}}" height='{{dataAliAccount.height}}' imageUrlNumber = '{{dataAliAccount.imageUrlNumber}}'
+      showLeftBt = '{{dataAliAccount.showLeftBt}}' leftText = '{{dataAliAccount.leftText}}' rightText = '{{dataAliAccount.rightText}}' >
+   <view class='modal-ali-account-confirm'> 
+     <text class='title-text'>请确认使用本人支付宝账号，允许捷信推客系统获取支付宝账号信息</text>
+   </view>
+</modal_warn>
+
+<modal_warn wx:if='{{dataTipperReject.show}}'
+      show="{{dataTipperReject.show}}" height='{{dataTipperReject.height}}' imageUrlNumber = '{{dataTipperReject.imageUrlNumber}}'
+      showLeftBt = '{{dataTipperReject.showLeftBt}}' leftText = '{{dataTipperReject.leftText}}' rightText = '{{dataTipperReject.rightText}}' >
+   <view class='modal-Tipper-reject'> 
+     <text class='title-text'>对不起，您不能注册成为一名捷信推客</text>
+   </view>
+</modal_warn>
+
+<modal_warn wx:if='{{dataTipperSuccess.show}}'
+      show="{{dataTipperSuccess.show}}" height='{{dataTipperSuccess.height}}' imageUrlNumber = '{{dataTipperSuccess.imageUrlNumber}}'
+      showLeftBt = '{{dataTipperSuccess.showLeftBt}}' leftText = '{{dataTipperSuccess.leftText}}' rightText = '{{dataTipperSuccess.rightText}}' bindconfirm ='loginTipper'>
+   <view class='modal-Tipper-success'> 
+     <text class='title-text'>您已经注册成为一名捷信推客了，</text>
+     <text class='title-text'>请点击“捷信推客登录”按钮进行登录</text>
+   </view>
+</modal_warn>
+
+<modal_warn wx:if='{{dataLogoutTipper.show}}'
+      show="{{dataLogoutTipper.show}}" height='{{dataLogoutTipper.height}}' imageUrlNumber = '{{dataLogoutTipper.imageUrlNumber}}'
+      showLeftBt = '{{dataLogoutTipper.showLeftBt}}' leftText = '{{dataLogoutTipper.leftText}}' rightText = '{{dataLogoutTipper.rightText}}' >
+   <view class='modal-Tipper-logout'>
+     <text class="{{idCodeWrong ? 'msg-code-tip-red':'msg-code-tip-normal'}}">{{msgcodeTip}}</text>
+     <view class="{{idCodeWrong ? 'code-content-red':'code-content-grey'}}"> 
+        <block wx:for="{{codeLength}}" wx:key="item"> 
+          <input class='iptbox-blue' value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}" disabled catchtap='tapCode'></input> 
+        </block>
+        <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input>
+        <view class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}" bindtap='sendMessageCode' disabled= '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</view>
+      </view>
+      <text class='title-text'>您是否确认要注销，注销将视为您终止</text>
+      <text class='title-text'><text class='protocol-text'>《捷信推客居间服务协议》</text>。</text>
+   </view>
+</modal_warn>

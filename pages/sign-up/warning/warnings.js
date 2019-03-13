@@ -31,7 +31,51 @@ Page({
       showRightBt: true,
       leftText: '',
       rightText: '好的',
-    }
+    },
+    dataAliAccount: {
+      show: false,
+      height: '380rpx',
+      imageUrlNumber: '0',
+      showLeftBt: true,
+      showRightBt: true,
+      leftText: '拒绝',
+      rightText: '允许',
+    },
+    dataTipperReject: {
+      show: false,
+      height: '380rpx',
+      imageUrlNumber: '0',
+      showLeftBt: false,
+      showRightBt: true,
+      leftText: '',
+      rightText: '返回',
+    },
+    dataTipperSuccess: {
+      show: false,
+      height: '380rpx',
+      imageUrlNumber: '1',
+      showLeftBt: false,
+      showRightBt: true,
+      leftText: '',
+      rightText: '捷信推客登录',
+    },
+    dataLogoutTipper: {
+      show: false,
+      height: '550rpx',
+      imageUrlNumber: '0',
+      showLeftBt: true,
+      showRightBt: true,
+      leftText: '确认',
+      rightText: '返回',
+    },
+    msgcodeTip: '如需注销，请输入验证码！',
+    codeLength: 4, //code输入框个数
+    isCodeFocus: true,
+    idCodeWrong: false,
+    codeValue: "",
+    buttonTittle: '发送验证码', //发送验证码按钮的文本
+    isSendClicked: false, //发送验证码按钮是否点击
+    sendCodeButtonStatus: true, //发送按钮是否可点击状态
   },
 
   tipOverLimitClicked :function () {
@@ -58,6 +102,96 @@ Page({
     temp.show = true;
     that.setData({
       dataFailTip: temp
+    })
+  },
+
+  loginAliAccountConfirm: function () {
+    let that = this;
+    let temp = that.data.dataAliAccount;
+    temp.show = true;
+    that.setData({
+      dataAliAccount: temp
+    })
+  },
+
+  rejectToBeTipper: function () {
+    let that = this;
+    let temp = that.data.dataTipperReject;
+    temp.show = true;
+    that.setData({
+      dataTipperReject: temp
+    })
+  }, 
+
+  successToBeATipper: function() {
+    let that = this;
+    let temp = that.data.dataTipperSuccess;
+    temp.show = true;
+    that.setData({
+      dataTipperSuccess: temp
+    })
+  },
+
+  inpputCodeToLogout: function() {
+    let that = this;
+    let temp = that.data.dataLogoutTipper;
+    temp.show = true;
+    that.setData({
+      dataLogoutTipper: temp
+    })
+  },
+
+  loginTipper: function() {
+    wx.switchTab({
+      url: "/pages/main/basic-information/basic-information",
+    })
+  },
+
+  /*输入验证码注销部分*/
+  codeFocus: function (e) {
+    let that = this;
+    let inputValue = e.detail.value;
+    console.log(inputValue);
+    that.setData({
+      codeValue: inputValue,
+    })
+  },
+
+  tapCode: function () {
+    let that = this;
+    that.setData({
+      isCodeFocus: true
+    })
+  },
+
+  sendMessageCode: function (e) {
+    console.log("发送验证码短信给用户:");
+    let that = this;
+    if (that.isSendClicked) {
+      return;
+    }
+    that.isSendClicked = true;
+    WXAPI.tipperRegisterSendVcode(data).then(res => {
+      if (res.status === 'true') {
+        console.log(res.data)
+        let times = 60
+        let i = setInterval(function () {
+          times--;
+          if (times <= 0) {
+            that.isSendClicked = false;
+            that.setData({
+              sendCodeButtonStatus: true,
+              buttonTittle: "发送验证码"
+            })
+            clearInterval(i);
+          } else {
+            that.setData({
+              sendCodeButtonStatus: false,
+              buttonTittle: times + "秒重新发送"
+            })
+          }
+        }, 1000)
+      }
     })
   },
 

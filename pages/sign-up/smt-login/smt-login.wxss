@@ -6,13 +6,13 @@
   padding: 150rpx 0;
 } 
 
-.imageContainer {
+.logoContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.imageLayout {
+.logoLayout {
   width: 350rpx;
   height: 90rpx;
   top: 90rpx;

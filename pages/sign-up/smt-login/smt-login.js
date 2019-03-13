@@ -22,7 +22,6 @@ Page({
    */
   idFocus: function(e) {
     let that = this;
-    console.log(e.detail.value);
     let inputValue = e.detail.value;
     that.setData({
       idValue: inputValue,
@@ -60,16 +59,8 @@ Page({
     console.log(inputValue);
     that.setData({
       codeValue: inputValue,
+      loginButtonStatus: (inputValue.length >= 4 ? true : false)
     })
-    if (inputValue.length >= 4) {
-      that.setData({
-        loginButtonStatus: true
-      })
-    } else {
-      that.setData({
-        loginButtonStatus: false
-      })
-    }
   },
   /**
    *点击ID输入区域，获取focus
@@ -82,7 +73,7 @@ Page({
     })
   },
   /**
-   *点击二维码区域，获取focus
+   *点击验证码区域，获取focus
    */
   tapCode: function() {
     let that = this;
@@ -108,9 +99,7 @@ Page({
       'sms_code': e.detail.value.messagecode
     }
     WXAPI.tipperRegisterValidateVcode(data).then(res => {
-      console.log(res.data)
       if (res.status === 'true') {
-        console.log(res.data)
         wx.navigateTo({
           url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
         })
@@ -137,7 +126,6 @@ Page({
         let times = 60
         let i = setInterval(function () {
           times--;
-          console.log(times);
           if (times <= 0) {
             that.isSendClicked = false;
             that.setData({

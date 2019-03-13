@@ -56,3 +56,103 @@
   text-align: center;
   padding: 10rpx 30rpx 10rpx 30rpx;
 }
+
+/**/
+.modal-ali-account-confirm {
+  height: 100rpx;
+  text-align: center;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+/**/
+.modal-Tipper-reject {
+  height: 50rpx;
+  text-align: center;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+/**/
+.modal-Tipper-success {
+  height: 100rpx;
+  text-align: center;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+/*input code to logout*/
+.modal-Tipper-logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250rpx;
+  text-align: center;
+  padding: 10rpx 30rpx 10rpx 30rpx;
+}
+
+.msg-code-tip-normal {
+  font-size: 22rpx;
+  color: black;
+}
+
+.msg-code-tip-red {
+  font-size: 22rpx;
+  color: rgb(124, 53, 53);
+}
+
+.code-content-red { 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  border: 2rpx solid rgb(233, 186, 186);
+  padding: 10rpx;
+  margin: 5rpx 30rpx 20rpx 30rpx;
+}
+
+.code-content-grey { 
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; 
+  border: 2rpx solid rgb(206, 209, 212);
+  padding: 10rpx;
+  margin: 5rpx 30rpx 20rpx 30rpx;
+} 
+
+.iptbox-blue{ 
+  width: 60rpx; 
+  height: 75rpx; 
+  border-bottom:1rpx solid #4A90E2;
+  color: #4A90E2;
+  display: flex; 
+  margin-right: 10rpx;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  font-size: 30rpx;
+}
+
+.ipt{ 
+  width: 0; 
+  height: 0; 
+} 
+
+.send-button-blue {
+  width: 150rpx;
+  height: 75rpx;
+  background: #4A90E2 !important;
+  color: white !important;
+  font-size: 22rpx;
+  border-radius: 0;
+  margin-left: 10rpx;
+  line-height: 75rpx;
+  text-align: center;
+}
+
+.send-button-grey {
+  width: 150rpx;
+  height: 75rpx;
+  background: rgb(187, 181, 181) !important;
+  color: white !important;
+  font-size: 22rpx;
+  border-radius: 0;
+  margin-left: 20rpx;
+  line-height: 75rpx;
+}
