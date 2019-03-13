@@ -24,7 +24,6 @@ const request = (url, method, data) => {
   })
 }
 
-
 module.exports = {
   request,
   // 客户状态->客户列表
