@@ -17,5 +17,6 @@ Page({
     wx.navigateTo({
       url: '/pages/sign-up/smt-login/smt-login',
     });
-  }
+  },
+  
 })

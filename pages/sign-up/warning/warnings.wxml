@@ -11,75 +11,114 @@
 </view>
 
 <modal_warn wx:if='{{dataTipOverLimit.show}}'
-      show="{{dataTipOverLimit.show}}" height='{{dataTipOverLimit.height}}' imageUrlNumber = '{{dataTipOverLimit.imageUrlNumber}}'
-      showLeftBt = '{{dataTipOverLimit.showLeftBt}}' leftText = '{{dataTipOverLimit.leftText}}' rightText = '{{dataTipOverLimit.rightText}}' >
-   <view class='modal-over-limit'> 
-     <text class='title-text'>您的居间服务费可能已经达到这个月的上限</text>
-     <text class='title-text'>详情请查看<text class='protocol-text'>《捷信推客居间服务费协议》</text></text>
-   </view>
+    show = "{{dataTipOverLimit.show}}"
+    height = '{{dataTipOverLimit.height}}'
+    imageUrlNumber = '{{dataTipOverLimit.imageUrlNumber}}'
+    showLeftBt = '{{dataTipOverLimit.showLeftBt}}'
+    leftText = '{{dataTipOverLimit.leftText}}'
+    rightText = '{{dataTipOverLimit.rightText}}'>
+  <view class='modal-over-limit'> 
+    <text class='title-text'>您的居间服务费可能已经达到这个月的上限</text>
+    <text class='title-text'>详情请查看<text class='protocol-text'>《捷信推客居间服务费协议》</text></text>
+  </view>
 </modal_warn>
 
 <modal_warn wx:if='{{dataReceiveTip.show}}'
-      show="{{dataReceiveTip.show}}" height='{{dataReceiveTip.height}}' imageUrlNumber = '{{dataReceiveTip.imageUrlNumber}}'
-      showLeftBt = '{{dataReceiveTip.showLeftBt}}' leftText = '{{dataReceiveTip.leftText}}' rightText = '{{dataReceiveTip.rightText}}' 
-      bindcancel="modalCancel" bindconfirm='modalConfirm'>
-   <view class='modal-receive-tip'> 
-     <text class='title-text'>您收到一笔居间服务费，具体内容如下：</text>
-     <text class='sub-title-text'>客户姓氏： 王</text>
-     <text class='sub-title-text'>服务费金额：20.00元</text>
-     <text class='sub-title-text'>门店名称：大庆市龙凤区鸿中泰龙凤区鸿中泰</text>
-     <text class='sub-title-text'>贷款激活时间：2018.07.07 14:50</text>
-   </view>
+    show = "{{dataReceiveTip.show}}"
+    height = '{{dataReceiveTip.height}}'
+    imageUrlNumber = '{{dataReceiveTip.imageUrlNumber}}'
+    showLeftBt = '{{dataReceiveTip.showLeftBt}}'
+    leftText = '{{dataReceiveTip.leftText}}'
+    rightText = '{{dataReceiveTip.rightText}}'>
+  <view class='modal-receive-tip'> 
+    <text class='title-text'>您收到一笔居间服务费，具体内容如下：</text>
+    <text class='sub-title-text'>客户姓氏： 王</text>
+    <text class='sub-title-text'>服务费金额：20.00元</text>
+    <text class='sub-title-text'>门店名称：大庆市龙凤区鸿中泰龙凤区鸿中泰</text>
+    <text class='sub-title-text'>贷款激活时间：2018.07.07 14:50</text>
+  </view>
 </modal_warn>
 
 <modal_warn wx:if='{{dataFailTip.show}}'
-      show="{{dataFailTip.show}}" height='{{dataFailTip.height}}' imageUrlNumber = '{{dataFailTip.imageUrlNumber}}'
-      showLeftBt = '{{dataFailTip.showLeftBt}}' leftText = '{{dataFailTip.leftText}}' rightText = '{{dataFailTip.rightText}}' 
-      bindcancel="modalCancel" bindconfirm='modalConfirm'>
-   <view class='modal-fail-tip'> 
-     <text class='title-text'>由于技术原因，以下居间服务费付费失败</text>
-     <text class='title-text'>请您耐心等候，如有任何问题，请联系您的DSM</text>
-     <text class='sub-title-text'>客户姓氏： 王</text>
-     <text class='sub-title-text'>门店名称：大庆市龙凤区鸿中泰龙凤区鸿中泰</text>
-   </view>
+    show = "{{dataFailTip.show}}"
+    height ='{{dataFailTip.height}}'
+    imageUrlNumber = '{{dataFailTip.imageUrlNumber}}'
+    showLeftBt = '{{dataFailTip.showLeftBt}}'
+    leftText = '{{dataFailTip.leftText}}'
+    rightText = '{{dataFailTip.rightText}}'>
+  <view class='modal-fail-tip'> 
+    <text class='title-text'>由于技术原因，以下居间服务费付费失败</text>
+    <text class='title-text'>请您耐心等候，如有任何问题，请联系您的DSM</text>
+    <text class='sub-title-text'>客户姓氏： 王</text>
+    <text class='sub-title-text'>门店名称：大庆市龙凤区鸿中泰龙凤区鸿中泰</text>
+  </view>
 </modal_warn>
 
 <modal_warn wx:if='{{dataAliAccount.show}}'
-      show="{{dataAliAccount.show}}" height='{{dataAliAccount.height}}' imageUrlNumber = '{{dataAliAccount.imageUrlNumber}}'
-      showLeftBt = '{{dataAliAccount.showLeftBt}}' leftText = '{{dataAliAccount.leftText}}' rightText = '{{dataAliAccount.rightText}}' >
-   <view class='modal-ali-account-confirm'> 
-     <text class='title-text'>请确认使用本人支付宝账号，允许捷信推客系统获取支付宝账号信息</text>
-   </view>
+    show = "{{dataAliAccount.show}}"
+    height ='{{dataAliAccount.height}}'
+    imageUrlNumber = '{{dataAliAccount.imageUrlNumber}}'
+    showLeftBt = '{{dataAliAccount.showLeftBt}}'
+    leftText = '{{dataAliAccount.leftText}}'
+    rightText = '{{dataAliAccount.rightText}}'>
+  <view class='modal-ali-account-confirm'> 
+    <text class='title-text'>请确认使用本人支付宝账号，允许捷信推客系统获取支付宝账号信息</text>
+  </view>
 </modal_warn>
 
 <modal_warn wx:if='{{dataTipperReject.show}}'
-      show="{{dataTipperReject.show}}" height='{{dataTipperReject.height}}' imageUrlNumber = '{{dataTipperReject.imageUrlNumber}}'
-      showLeftBt = '{{dataTipperReject.showLeftBt}}' leftText = '{{dataTipperReject.leftText}}' rightText = '{{dataTipperReject.rightText}}' >
-   <view class='modal-Tipper-reject'> 
-     <text class='title-text'>对不起，您不能注册成为一名捷信推客</text>
-   </view>
+    show = "{{dataTipperReject.show}}"
+    height ='{{dataTipperReject.height}}'
+    imageUrlNumber = '{{dataTipperReject.imageUrlNumber}}'
+    showLeftBt = '{{dataTipperReject.showLeftBt}}'
+    leftText = '{{dataTipperReject.leftText}}'
+    rightText = '{{dataTipperReject.rightText}}' >
+  <view class='modal-Tipper-reject'> 
+    <text class='title-text'>对不起，您不能注册成为一名捷信推客</text>
+  </view>
 </modal_warn>
 
 <modal_warn wx:if='{{dataTipperSuccess.show}}'
-      show="{{dataTipperSuccess.show}}" height='{{dataTipperSuccess.height}}' imageUrlNumber = '{{dataTipperSuccess.imageUrlNumber}}'
-      showLeftBt = '{{dataTipperSuccess.showLeftBt}}' leftText = '{{dataTipperSuccess.leftText}}' rightText = '{{dataTipperSuccess.rightText}}' bindconfirm ='loginTipper'>
-   <view class='modal-Tipper-success'> 
-     <text class='title-text'>您已经注册成为一名捷信推客了，</text>
-     <text class='title-text'>请点击“捷信推客登录”按钮进行登录</text>
-   </view>
+    show = "{{dataTipperSuccess.show}}"
+    height = '{{dataTipperSuccess.height}}'
+    imageUrlNumber = '{{dataTipperSuccess.imageUrlNumber}}'
+    showLeftBt = '{{dataTipperSuccess.showLeftBt}}'
+    leftText = '{{dataTipperSuccess.leftText}}'
+    rightText = '{{dataTipperSuccess.rightText}}'
+    bindconfirm ='loginTipper'>
+<view class='modal-Tipper-success'> 
+  <text class='title-text'>您已经注册成为一名捷信推客了，</text>
+  <text class='title-text'>请点击“捷信推客登录”按钮进行登录</text>
+</view>
 </modal_warn>
 
 <modal_warn wx:if='{{dataLogoutTipper.show}}'
-      show="{{dataLogoutTipper.show}}" height='{{dataLogoutTipper.height}}' imageUrlNumber = '{{dataLogoutTipper.imageUrlNumber}}'
-      showLeftBt = '{{dataLogoutTipper.showLeftBt}}' leftText = '{{dataLogoutTipper.leftText}}' rightText = '{{dataLogoutTipper.rightText}}' >
-   <view class='modal-Tipper-logout'>
-     <text class="{{idCodeWrong ? 'msg-code-tip-red':'msg-code-tip-normal'}}">{{msgcodeTip}}</text>
-     <view class="{{idCodeWrong ? 'code-content-red':'code-content-grey'}}"> 
-        <block wx:for="{{codeLength}}" wx:key="item"> 
-          <input class='iptbox-blue' value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}" disabled catchtap='tapCode'></input> 
+    show = "{{dataLogoutTipper.show}}"
+    height = '{{dataLogoutTipper.height}}'
+    imageUrlNumber = '{{dataLogoutTipper.imageUrlNumber}}'
+    showLeftBt = '{{dataLogoutTipper.showLeftBt}}'
+    leftText = '{{dataLogoutTipper.leftText}}'
+    rightText = '{{dataLogoutTipper.rightText}}'
+    bindcancle ='confirmColorToRed'>
+  <view class='modal-Tipper-logout'>
+    <text class="{{isCodeWrong ? 'msg-code-tip-red':'msg-code-tip-normal'}}">{{msgcodeTip}}</text>
+    <view class="{{isCodeWrong ? 'code-content-red':'code-content-grey'}}"> 
+      <block wx:for="{{codeLength}}" wx:key="item"> 
+        <input class='iptbox-blue'
+            value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}"
+            disabled
+            catchtap='tapCode'></input> 
         </block>
-        <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" bindinput="codeFocus"></input>
-        <view class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}" bindtap='sendMessageCode' disabled= '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</view>
+        <input
+            name="messagecode"
+            password="{{true}}"
+            class='ipt'
+            maxlength="{{codeLength}}"
+            focus="{{isCodeFocus}}"
+            bindinput="codeFocus"></input>
+        <view class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}"
+            bindtap='sendMessageCode'
+            disabled= '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</view>
       </view>
       <text class='title-text'>您是否确认要注销，注销将视为您终止</text>
       <text class='title-text'><text class='protocol-text'>《捷信推客居间服务协议》</text>。</text>
@@ -87,9 +126,13 @@
 </modal_warn>
 
 <modal_warn wx:if='{{dataLogoutRemind.show}}'
-      show="{{dataLogoutRemind.show}}" height='{{dataLogoutRemind.height}}' imageUrlNumber = '{{dataLogoutRemind.imageUrlNumber}}'
-      showLeftBt = '{{dataLogoutRemind.showLeftBt}}' leftText = '{{dataLogoutRemind.leftText}}' rightText = '{{dataLogoutRemind.rightText}}' >
-   <view class='modal-ali-account-confirm'> 
-     <text class='title-text'>您已在其他上设备登录，此设备已登出，如果需要请重新登录。</text>
-   </view>
+    show = "{{dataLogoutRemind.show}}"
+    height = '{{dataLogoutRemind.height}}'
+    imageUrlNumber = '{{dataLogoutRemind.imageUrlNumber}}'
+    showLeftBt = '{{dataLogoutRemind.showLeftBt}}'
+    leftText = '{{dataLogoutRemind.leftText}}'
+    rightText = '{{dataLogoutRemind.rightText}}' >
+  <view class='modal-ali-account-confirm'> 
+    <text class='title-text'>您已在其他上设备登录，此设备已登出，如果需要请重新登录。</text>
+  </view>
 </modal_warn>

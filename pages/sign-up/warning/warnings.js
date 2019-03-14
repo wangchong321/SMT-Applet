@@ -80,7 +80,7 @@ Page({
     msgcodeTip: '如需注销，请输入验证码！',
     codeLength: 4, //code输入框个数
     isCodeFocus: true,
-    idCodeWrong: false,
+    isCodeWrong: false,
     codeValue: "",
     buttonTittle: '发送验证码', //发送验证码按钮的文本
     isSendClicked: false, //发送验证码按钮是否点击
@@ -211,5 +211,14 @@ Page({
       }
     })
   },
+
+  confirmColorToRed: function () {
+    //确认后验证验证码是否正确，正确登出，不正确弹框变红色提醒用户重新输入
+    let that = this;
+    that.setData({
+      isCodeWrong : true,
+      msgcodeTip : '短信验证码不正确，请重新输入！'
+    });
+  }
 
 })

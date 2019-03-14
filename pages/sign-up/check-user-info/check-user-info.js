@@ -52,4 +52,5 @@ Page({
   onLoad: function (options) {
     this.getTipperInfo();
   },
+  
 })

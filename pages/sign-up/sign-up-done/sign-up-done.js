@@ -85,5 +85,6 @@ Page({
     //this.getTipperName()
     //this.getSelectStoreInfo()
     //this.getDsmHomerId()
-  }
+  },
+  
 })
