@@ -36,16 +36,16 @@ Page({
       }
       WXAPI.tipperRegisterValidateHid(data).then(res => {
         if (res.status === 'true') {
-          console.log(res.data)
+          console.log(res.data);
           that.setData({
             codeAreaStatus: true,
-            sendCodeButtonStatus: true
+            sendCodeButtonStatus: true,
           })
         }
       })
     } else {
       that.setData({
-        loginButtonStatus: false
+        loginButtonStatus: false,
       })
     }
   },
@@ -96,7 +96,7 @@ Page({
     //mock反馈信息里目前都是成功的
     let data = {
       'homer_id': e.detail.value.homerid,
-      'sms_code': e.detail.value.messagecode
+      'sms_code': e.detail.value.messagecode,
     }
     WXAPI.tipperRegisterValidateVcode(data).then(res => {
       if (res.status === 'true') {
@@ -122,8 +122,7 @@ Page({
     }
     WXAPI.tipperRegisterSendVcode(data).then(res => {
       if (res.status === 'true') {
-        console.log(res.data)
-        let times = 60
+        let times = 60;
         let i = setInterval(function () {
           times--;
           if (times <= 0) {

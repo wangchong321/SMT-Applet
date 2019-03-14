@@ -93,7 +93,7 @@ Page({
     temp.show = true;
     that.setData({
       dataTipOverLimit: temp
-    })
+    });
   },
 
   showReceiveTipClicked: function () {
@@ -102,7 +102,7 @@ Page({
     temp.show = true;
     that.setData({
       dataReceiveTip: temp
-    })
+    });
   },
 
   showFailTipClicked: function () {
@@ -111,7 +111,7 @@ Page({
     temp.show = true;
     that.setData({
       dataFailTip: temp
-    })
+    });
   },
 
   showLoginAliAccountConfirm: function () {
@@ -120,7 +120,7 @@ Page({
     temp.show = true;
     that.setData({
       dataAliAccount: temp
-    })
+    });
   },
 
   showRejectToBeTipper: function () {
@@ -129,7 +129,7 @@ Page({
     temp.show = true;
     that.setData({
       dataTipperReject: temp
-    })
+    });
   }, 
 
   showSuccessToBeATipper: function() {
@@ -138,7 +138,7 @@ Page({
     temp.show = true;
     that.setData({
       dataTipperSuccess: temp
-    })
+    });
   },
 
   showInpputCodeToLogout: function() {
@@ -147,13 +147,13 @@ Page({
     temp.show = true;
     that.setData({
       dataLogoutTipper: temp
-    })
+    });
   },
 
   loginTipper: function() {
     wx.switchTab({
       url: "/pages/main/basic-information/basic-information",
-    })
+    });
   },
 
   showLogoutRemind: function() {
@@ -162,28 +162,27 @@ Page({
     temp.show = true;
     that.setData({
       dataLogoutRemind: temp
-    })
+    });
   },
 
   /*输入验证码注销部分*/
   codeFocus: function (e) {
     let that = this;
     let inputValue = e.detail.value;
-    console.log(inputValue);
     that.setData({
       codeValue: inputValue,
-    })
+    });
   },
 
   tapCode: function () {
     let that = this;
     that.setData({
       isCodeFocus: true
-    })
+    });
   },
 
   sendMessageCode: function (e) {
-    console.log("发送验证码短信给用户:");
+    console.log("tap send code button.");
     let that = this;
     if (that.isSendClicked) {
       return;
@@ -191,7 +190,7 @@ Page({
     that.isSendClicked = true;
     WXAPI.tipperRegisterSendVcode(data).then(res => {
       if (res.status === 'true') {
-        console.log(res.data)
+        console.log(res.data);
         let times = 60
         let i = setInterval(function () {
           times--;
@@ -205,7 +204,7 @@ Page({
           } else {
             that.setData({
               sendCodeButtonStatus: false,
-              buttonTittle: times + "秒重新发送"
+              buttonTittle: `${times}秒重新发送`
             })
           }
         }, 1000)
@@ -213,59 +212,4 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

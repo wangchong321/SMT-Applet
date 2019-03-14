@@ -13,13 +13,13 @@ Page({
     payTimeTitle: '付费时间',
     chargeStatusTitle: '服务费收费状态',
     serviceChargeList: [],
-    paymentSumAmount: ''
+    paymentSumAmount: '',
   },
 
   /**
    * 从服务器获得用户获得服务费的数据和状态
    */
-  getServiceChargeFromServer : function() {
+  getServiceChargeFromServer : function () {
     let that = this;
     WXAPI.paymentList().then(res => {
       if (res.status === 'true') {
@@ -31,7 +31,7 @@ Page({
           }
           that.setData({
             serviceChargeList: temp_payment_list
-          })
+          });
         }
       }
     })
@@ -40,14 +40,14 @@ Page({
   /**
    * 从服务器获得用户获得的居间服务费总额
    */
-  getPaymentSumFromServer : function() {
+  getPaymentSumFromServer : function () {
     let that = this;
     WXAPI.paymentSum().then(res => {
       if (res.status === 'true') {
         let temp_amout = res.data.amount.toFixed(2);
         that.setData({
           paymentSumAmount: temp_amout
-        })
+        });
       }
     })
   },
@@ -56,21 +56,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getPaymentSumFromServer()
-    this.getServiceChargeFromServer()
+    this.getPaymentSumFromServer();
+    this.getServiceChargeFromServer();
   },
 
   //TODO 需优化
-  matchStatusToDisplay:function (status) {
-    switch(status) {
-      case '1':return '付费成功';
+  matchStatusToDisplay: function (status) {
+    switch (status) {
+      case '1': return '付费成功';
       case '2': return '付费失败';
-      case '3': return '付费中'
+      case '3': return '付费中';
     }
   },
 
   //测试modal弹窗使用
-  showModalTest: function (){
+  showModalTest: function () {
     wx.navigateTo({
       url: '../../sign-up/warning/warnings',
     })
@@ -81,4 +81,5 @@ Page({
       url: 'tip-history/tip-history',
     })
   }
+  
 })

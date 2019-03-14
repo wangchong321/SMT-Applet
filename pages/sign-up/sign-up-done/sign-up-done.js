@@ -27,9 +27,9 @@ Page({
     wx.getStorage({
       key: 'selectedStores',
       success: function(res) {
-        let mainStore = 'userInfoTotal[2].value'
-        let secondStore = 'userInfoTotal[3].value'
-        let thirdStore = 'userInfoTotal[4].value'
+        let mainStore = 'userInfoTotal[2].value';
+        let secondStore = 'userInfoTotal[3].value';
+        let thirdStore = 'userInfoTotal[4].value';
         that.setData({
           [mainStore] : res.data[0].pos_name,
           [secondStore]: res.data[1].pos_name,
@@ -40,11 +40,11 @@ Page({
   },
 
   getDsmHomerId: function () {
-    let that = this
+    let that = this;
     wx.getStorage({
       key: 'dsm_homer_id',
       success: function (res) {
-        let userDsmValue = 'userInfoTotal[1].value'
+        let userDsmValue = 'userInfoTotal[1].value';
         that.setData({
           [userDsmValue] : res.data
         })
@@ -81,6 +81,7 @@ Page({
 
   onLoad: function (options) {
     this.getUserBasicInfoFromServer()
+    //和app确认一下流程，该也数据从哪里来再删除
     //this.getTipperName()
     //this.getSelectStoreInfo()
     //this.getDsmHomerId()

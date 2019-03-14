@@ -18,7 +18,6 @@ Page({
    * 点击通过按钮，会跳转到让推客设置门店页面
    */
   passRequest: function () {
-    //TODO
     wx.navigateTo({
       url: '/pages/sign-up/assign-stores/assign-stores',
     })
@@ -29,7 +28,9 @@ Page({
    * 点击通过按钮，跳转到错误页面吧，
    */
   rejectRequest: function () {
-    //TODO
+    wx.navigateTo({
+      url: '/pages/sign-up/login-wechat/login-wechat',
+    })
     console.log('tap the reject button');
   },
 

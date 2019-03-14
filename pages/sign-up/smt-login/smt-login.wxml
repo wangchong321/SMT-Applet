@@ -1,17 +1,30 @@
 <!--pages/sign-up/smt-login/smt-login.wxml-->
 <view class='base-container'>
   <view class='logoContainer'>
-    <image class='logoLayout' src='/images/sign-up-guide/SMTLogo.png'></image>
+    <image 
+      class='logoLayout' 
+      src='/images/sign-up-guide/SMTLogo.png'></image>
   </view>
   <view>
     <form class='form-view ' bindsubmit="formSubmit">
       <!--input homer id view-->
       <view class="{{isIdFocus ? 'id-content-focus' : 'id-content-grey'}}"> 
-        <image class='item-image-photo' src='/images/sign-up-guide/default-portrait.png'></image>
+        <image 
+          class='item-image-photo'
+          src='/images/sign-up-guide/default-portrait.png'></image>
         <block wx:for="{{idLength}}" wx:key="item"> 
-          <input class='iptbox' value="{{idValue.length>=index+1?idValue[index]:''}}" disabled catchtap='tapID'></input> 
+          <input 
+            class='iptbox'
+            value="{{idValue.length>=index+1?idValue[index]:''}}"
+            disabled catchtap='tapID'></input> 
         </block> 
-        <input name="homerid" password="{{true}}" class='ipt' maxlength="{{idLength}}" focus="{{isIdFocus}}" bindinput="idFocus"></input> 
+        <input 
+          name="homerid"
+          password="{{true}}"
+          class='ipt'
+          maxlength="{{idLength}}"
+          focus="{{isIdFocus}}" 
+          bindinput="idFocus"></input> 
         <view class='space-view'></view>
       </view> 
       <view>

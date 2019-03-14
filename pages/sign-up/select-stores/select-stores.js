@@ -11,7 +11,7 @@ Page({
     currentSelectType: '', //当次选择的门店的类型
     selectableStores: [{
       "pos_code": '1001',
-      "pos_name": '我是地址我是地址我是地址我是地址我是地址我是地址我是地址我是地址'
+      "pos_name": '我是地址我是地址我是地址我是地址我是地址我是地址我是地址我是地址',
     }], //存储当前可选择的门店的数据，预先有个显示数据，不然第一次加载数据后位置会奇怪偏移
     storeSelected: '', //本次选择的门店的ID
     storeSelectedName: '' //本次选择的门店的名字
@@ -33,11 +33,9 @@ Page({
    * 返回选择的返回结果到选择店铺页面，进行页面间值的传递
    */
   confirmSelectResult: function () {
-    //TODO
     let that = this;
     let pages = getCurrentPages();
     let prePage = pages[pages.length - 2];
-    console.log('页数：' + prePage + ',xxttype:' + that.data.currentSelectType);
     prePage.data.callBackStoreType = that.data.currentSelectType;
     prePage.data.callBackStoreId = that.data.storeSelected;
     prePage.data.callBackStoreName = that.data.storeSelectedName;
@@ -86,10 +84,4 @@ Page({
     that.getAllStoresData();
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
 })

@@ -22,7 +22,7 @@ Page({
     let that = this;
     that.setData({
       storeSelectedName: options.currentTarget.dataset.storen,
-    })
+    });
     that.showQRcodePopup();
   },
 
@@ -33,18 +33,18 @@ Page({
       timingFunction: "linear",
       delay: 0
     })
-    that.animation = animation
-    animation.translateY(0).step()
+    that.animation = animation;
+    animation.translateY(0).step();
     that.setData({
       animationData: animation.export(),
       showModalStatus: true
-    })
+    });
     setTimeout(function () {
       animation.translateY(-425).step()
       that.setData({
         animationData: animation.export()
       })
-    }.bind(that), 200)
+    }.bind(that), 200);
     that.makeQRcode(that.data.storeSelectedName);
   },
 
@@ -58,19 +58,18 @@ Page({
       timingFunction: "linear",
       delay: 0
     })
-    that.animation = animation
-    animation.translateY(300).step()
+    that.animation = animation;
+    animation.translateY(300).step();
     that.setData({
       animationData: animation.export(),
-    })
+    });
     setTimeout(function () {
       animation.translateY(0).step()
       that.setData({
         animationData: animation.export(),
         showModalStatus: false
       })
-    }.bind(that), 200)
-    wx.showTabBar({})
+    }.bind(that), 200);
   },
 
   /**
@@ -105,7 +104,7 @@ Page({
   },
 
   makeQRcode: function (text) {
-    qrcode.makeCode(text)
+    qrcode.makeCode(text);
   },
 
 })

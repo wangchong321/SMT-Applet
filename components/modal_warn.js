@@ -6,31 +6,31 @@ Component({
   properties: {
     show: {
       type: Boolean,
-      value: false
+      value: false,
     },
     height: {
       type: String,
-      value: '50%'
+      value: '50%',
     },
     imageUrlNumber: {
       type: String,
-      value: '0'
+      value: '0',
     },
     showLeftBt: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showRightBt: {
       type: Boolean,
-      value: true
+      value: true,
     },
     leftText: {
       type: String,
-      value: '取消'
+      value: '取消',
     },
     rightText: {
       type: String,
-      value: '确定'
+      value: '确定',
     },
   }, 
 
@@ -46,17 +46,17 @@ Component({
    */
   methods: {
     clickMask() {
-      this.setData({show: false})
+      this.setData({show: false});
     },
 
     leftClick() {
-      this.setData({ show: false })
-      this.triggerEvent('cancel')
+      this.setData({ show: false });
+      this.triggerEvent('cancel');
     },
 
     rightClick() {
-      this.setData({ show: false })
-      this.triggerEvent('confirm')
+      this.setData({ show: false });
+      this.triggerEvent('confirm');
     }
   }
 })
