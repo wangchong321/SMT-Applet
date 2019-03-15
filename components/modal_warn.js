@@ -50,11 +50,11 @@ Component({
     },
 
     leftClick: function () {
-      this.triggerEvent('cancel');
+      this.triggerEvent('leftEvent');
     },
 
     rightClick: function () {
-      this.triggerEvent('confirm');
+      this.triggerEvent('rightEvent');
     }
   }
 })
