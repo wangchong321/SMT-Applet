@@ -4,7 +4,6 @@ let app = getApp()
 Page({
 
   data: {
-    footer: 'Honor Procuct of Home Credit China',
     idLength: 6, //id输入框个数
     codeLength: 4, //code输入框个数
     isIdFocus: true, //焦点 

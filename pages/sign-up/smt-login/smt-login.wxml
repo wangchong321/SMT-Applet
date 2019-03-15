@@ -62,6 +62,6 @@
   </view>
 
   <view class='footerContainer'>
-    <text class='textFooter'>{{footer}}</text>
+    <text class='textFooter'>Honor Procuct of Home Credit China</text>
   </view>
 </view>

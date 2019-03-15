@@ -26,8 +26,8 @@ Page({
       storeSelected: e.target.dataset.storei,
       storeSelectedName: e.target.dataset.storen,
     })
-    console.log('选中的门店是 = ' + that.data.storeSelectedName);
   },
+  
   /**
    * 选中店铺后点击确认
    * 返回选择的返回结果到选择店铺页面，进行页面间值的传递

@@ -1,5 +1,5 @@
 <view class='line'></view>
-<view class='store-container' wx:for="{{sStores}}" wx:key="unique">
+<view class='store-container' wx:for='{{sStores}}' wx:key='{{item.pos_code}}'>
   <view class='item-container' wx:if="{{item.pos_name != ''}}">
     <view class='item-left-container'>
       <text class='store-title'>{{storesTitle[index]}}</text>
@@ -11,7 +11,7 @@
     </view>
   </view>
 </view>
-<view class='footer-tip'>{{tipMessage}}</view>
+<view class='footer-tip'>温馨提示：请确保您选择了正确的门店，若客户购买门店与推荐门店不符，您将无法收到居间服务费。</view>
 <view class="qrcode-screen-dark" bindtap="hideQRcodePopup" hidden="{{!showModalStatus}}"></view>
 <view animation="{{animationData}}" class="qrcode-attr-box" hidden="{{!showModalStatus}}">
   <view class='qrcode-detail-text-area'>

@@ -2,17 +2,17 @@
 
 <view class='base-container'>
   <view class='operation-tip'>
-    <text class='tip-text'>{{checkInfoTip}}</text>
+    <text class='tip-text'>请检查以下捷信推客信息，点击通过或拒绝按钮</text>
   </view>
   <view class='item-container'>
     <image class='entry-title-icon' src='/images/sign-up-guide/title-icon1.png'></image>
     <view class='info-container'>
       <view class='first-entry'>
-        <text class='text-left'>{{nameTitle}}</text>
+        <text class='text-left'>姓名</text>
         <text class='text-right'>{{nameValue}}</text>
       </view>
       <view class='last-entry'>
-        <text class='text-left'>{{phoneTitle}}</text>
+        <text class='text-left'>电话号码</text>
         <text class='text-right'>{{phoneValue}}</text>
       </view>
     </view>

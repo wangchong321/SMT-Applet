@@ -4,32 +4,32 @@
   <text class='title-sub-header'>{{paymentSumAmount}}</text>
 </view>
 
-<view class='charge-list' wx:for="{{serviceChargeList}}" wx:key="unique">
+<view class='charge-list' wx:for='{{serviceChargeList}}' wx:key='{{item.id}}'>
   <view class='card-container'>
-      <view class='entry'>
-        <text class='text-left'>{{customerNameTitle}}</text>
-        <text class='text-right'>{{item.customer_name}}</text>
+    <view class='entry'>
+      <text class='text-left'>客户姓氏</text>
+      <text class='text-right'>{{item.customer_name}}</text>
+    </view>
+    <view class='entry'>
+      <text class='text-left'>服务费金额</text>
+      <text class='text-right'>{{item.amount}}元</text>
+    </view>
+    <view class='entry'>
+      <text class='text-left'>门店名称</text>
+      <text class='text-right'>{{item.pos_name}}</text>
+    </view>
+    <view class='entry'>
+      <text class='text-left'>付费时间</text>
+      <text class='text-right'>{{item.payment_time}}</text>
+    </view>
+    <view class='last-entry'>
+      <text class='text-left'>服务费收费状态</text>
+      <view class='text-right'>
+        <text class='text-right-margin'>{{item.payment_status}}</text>
+        <icon wx:if="{{item.payment_status == '付费成功'}}" type="success" size="12" color="#4A90E2"/>
+        <icon wx:elif="{{item.payment_status == '付费失败'}}" type="warn" size="12" color="orange"/>
+        <icon wx:else type="waiting" size="12" color="green"/>
       </view>
-      <view class='entry'>
-        <text class='text-left'>{{serviceChargeAmountTitle}}</text>
-        <text class='text-right'>{{item.amount}}元</text>
-      </view>
-      <view class='entry'>
-        <text class='text-left'>{{storeNameTitle}}</text>
-        <text class='text-right'>{{item.pos_name}}</text>
-      </view>
-      <view class='entry'>
-        <text class='text-left'>{{payTimeTitle}}</text>
-        <text class='text-right'>{{item.payment_time}}</text>
-      </view>
-      <view class='last-entry'>
-        <text class='text-left'>{{chargeStatusTitle}}</text>
-        <view class='text-right'>
-          <text class='text-right-margin'>{{item.payment_status}}</text>
-          <icon wx:if="{{item.payment_status == '付费成功'}}" type="success" size="12" color="#4A90E2"/>
-          <icon wx:elif="{{item.payment_status == '付费失败'}}" type="warn" size="12" color="orange"/>
-          <icon wx:else type="waiting" size="12" color="green"/>
-        </view>
-      </view>
+    </view>
   </view>
 </view>

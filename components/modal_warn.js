@@ -45,17 +45,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    clickMask() {
+    clickMask: function () {
       this.setData({show: false});
     },
 
-    leftClick() {
-      this.setData({ show: false });
+    leftClick: function () {
       this.triggerEvent('cancel');
     },
 
-    rightClick() {
-      this.setData({ show: false });
+    rightClick: function () {
       this.triggerEvent('confirm');
     }
   }

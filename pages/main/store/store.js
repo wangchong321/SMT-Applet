@@ -8,9 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tipMessage: '温馨提示：请确保您选择了正确的门店，若客户购买门店与推荐门店不符，您将无法收到居间服务费。',
     storesTitle: ['主要门店', '门店2','门店3'],
-    sStores: null,
+    sStores: [{pos_code: "027445", pos_name: "顺德区容桂明肖通讯器材店", primary_flag: 1, pos_status: "a"}],
     showModalStatus: false,
     storeSelectedName: '',
   },

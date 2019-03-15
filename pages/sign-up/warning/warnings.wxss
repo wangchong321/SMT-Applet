@@ -95,7 +95,7 @@
 
 .msg-code-tip-red {
   font-size: 22rpx;
-  color: rgb(124, 53, 53);
+  color: rgb(224, 19, 19);
 }
 
 .code-content-red { 
@@ -121,6 +121,19 @@
   height: 75rpx; 
   border-bottom:1rpx solid #4A90E2;
   color: #4A90E2;
+  display: flex; 
+  margin-right: 10rpx;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  font-size: 30rpx;
+}
+
+.iptbox-red{ 
+  width: 60rpx; 
+  height: 75rpx; 
+  border-bottom:1rpx solid rgb(221, 15, 15);
+  color: rgb(231, 23, 23);
   display: flex; 
   margin-right: 10rpx;
   justify-content: center; 

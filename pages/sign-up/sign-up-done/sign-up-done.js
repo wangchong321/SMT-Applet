@@ -4,8 +4,6 @@ let app = getApp()
 Page({
 
   data: {
-    checkInfoTip: '恭喜！您现在是一名捷信推客了',
-    nullValue: '未设置',
     userInfoTotal: [
       { title: '捷信推客姓名', value: '欧阳森道哥' },
       { title: 'DSM姓名', value: '123456' },

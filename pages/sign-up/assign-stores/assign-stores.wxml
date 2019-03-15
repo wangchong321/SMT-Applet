@@ -1,7 +1,7 @@
 <!--pages/sign-up/assign-stores/assign-stores.wxml-->
 <view class='base-container'>
   <view class='operation-tip'>
-    <text class='tip-text'>{{checkInfoTip}}</text>
+    <text class='tip-text'>请选择门店并推荐给捷信推客</text>
   </view>
   <view class='item-container'>
     <image
@@ -9,7 +9,7 @@
         src='/images/sign-up-guide/title-icon1.png'></image>
     <view class='info-container'>
       <view class='last-entry'>
-        <text class='text-left'>{{dsmName}}</text>
+        <text class='text-left'>DSM姓名</text>
         <text class='text-right'>{{dsmValue}}</text>
       </view>
     </view>
@@ -26,7 +26,7 @@
         </view>
         <text
             class="{{stores[0].pos_name == '' ? 'text-right-before':'text-right'}}"
-            >{{stores[0].pos_name == '' ? nameTip: stores[0].pos_name}}</text>
+            >{{stores[0].pos_name == '' ? '请选择': stores[0].pos_name}}</text>
         <view class='right-arrow'>  </view>
       </navigator>
       <navigator

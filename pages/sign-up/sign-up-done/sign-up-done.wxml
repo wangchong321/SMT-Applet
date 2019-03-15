@@ -1,14 +1,14 @@
 <!--pages/sign-up/sign-up-done/sign-up-done.wxml-->
 <view class='base-container'>
   <view class='operation-tip'>
-    <text class='tip-text'>{{checkInfoTip}}</text>
+    <text class='tip-text'>恭喜！您现在是一名捷信推客了</text>
   </view>
   <view class='item-container'>
     <image class='entry-title-icon' src='/images/sign-up-guide/title-icon1.png'></image>
     <view class='info-container'>
-      <view class="{{index == 4 ? 'last-entry' : 'entry'}}" wx:for='{{userInfoTotal}}' wx:key='unique'>
+      <view class="{{index == 4 ? 'last-entry' : 'entry'}}" wx:for='{{userInfoTotal}}' wx:key='{{item.title}}'>
         <text class='text-left'>{{item.title}}</text>
-        <text class='text-right'>{{item.value == '' ? nullValue : item.value}}</text>
+        <text class='text-right'>{{item.value == '' ? '未设置' : item.value}}</text>
       </view>
     </view>
   </view>

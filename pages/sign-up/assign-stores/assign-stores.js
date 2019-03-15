@@ -7,9 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    checkInfoTip: '请选择门店并推荐给捷信推客',
-    nameTip: '请选择', //提示用户选择门店
-    dsmName: 'DSM姓名',
     dsmValue: '12345',
     stores: [{ pos_code: '', pos_name: '', primary_flag: 0, pos_status: ''},
       { pos_code: '', pos_name: '', primary_flag: 0, pos_status:'' },
@@ -18,7 +15,7 @@ Page({
     callBackStoreId: '',
     callBackStoreName: '',
     mainStoreSelected: false,
-    secondStoreSelected: false
+    secondStoreSelected: false,
   },
 
   /**
@@ -39,7 +36,7 @@ Page({
       'id_card_number': app.globalData.userInfoObj.iDCard,
       'phone_number' : '13812345678',
       'dsm_homer_id' : '123456',
-      'pos_list' : that.data.stores
+      'pos_list' : that.data.stores,
     }
     WXAPI.tipperRegisterUpateInfo(data).then(res => {
       if (res.status === 'true') {

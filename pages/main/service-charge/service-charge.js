@@ -7,13 +7,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    customerNameTitle: '客户姓氏',
-    serviceChargeAmountTitle: '服务费金额',
-    storeNameTitle: '门店名称',
-    payTimeTitle: '付费时间',
-    chargeStatusTitle: '服务费收费状态',
-    serviceChargeList: [],
-    paymentSumAmount: '',
+    serviceChargeList: [{
+      "amount": '20.00',
+      "payment_status": '1',
+      "id": 1,
+      "customer_name": "张三",
+      "payment_time": '2018-12-13 15:07',
+      "pos_name": "我是地址我是地址我是地址"
+    }],
+    paymentSumAmount: '0.00',
+    paymentStatus: ['付费成功', '付费失败', '付费中'],
   },
 
   /**
@@ -22,17 +25,21 @@ Page({
   getServiceChargeFromServer : function () {
     let that = this;
     WXAPI.paymentList().then(res => {
+      console.log(res);
       if (res.status === 'true') {
         console.log(res.data);
         let temp_payment_list = res.data.payment_list;
         if (temp_payment_list.length > 0) {
+          let matchStatusToDisplay = temp => that.data.paymentStatus[temp - 0];
           for (let record of temp_payment_list) {
-            record.payment_status = that.matchStatusToDisplay(record.payment_status);
+            record.payment_status = matchStatusToDisplay(record.payment_status);
           }
           that.setData({
             serviceChargeList: temp_payment_list
           });
         }
+      } else {
+        //显示异常弹窗
       }
     })
   },
@@ -58,15 +65,6 @@ Page({
   onLoad: function (options) {
     this.getPaymentSumFromServer();
     this.getServiceChargeFromServer();
-  },
-
-  //TODO 需优化
-  matchStatusToDisplay: function (status) {
-    switch (status) {
-      case '1': return '付费成功';
-      case '2': return '付费失败';
-      case '3': return '付费中';
-    }
   },
 
   //测试modal弹窗使用

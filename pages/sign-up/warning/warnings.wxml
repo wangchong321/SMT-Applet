@@ -99,12 +99,13 @@
     showLeftBt = '{{dataLogoutTipper.showLeftBt}}'
     leftText = '{{dataLogoutTipper.leftText}}'
     rightText = '{{dataLogoutTipper.rightText}}'
-    bindcancle ='confirmColorToRed'>
+    bindcancel ='confirmColorToRed'>
   <view class='modal-Tipper-logout'>
     <text class="{{isCodeWrong ? 'msg-code-tip-red':'msg-code-tip-normal'}}">{{msgcodeTip}}</text>
     <view class="{{isCodeWrong ? 'code-content-red':'code-content-grey'}}"> 
       <block wx:for="{{codeLength}}" wx:key="item"> 
-        <input class='iptbox-blue'
+        <input
+            class="{{isCodeWrong ? 'iptbox-red':'iptbox-blue'}}"
             value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}"
             disabled
             catchtap='tapCode'></input> 
@@ -116,8 +117,9 @@
             maxlength="{{codeLength}}"
             focus="{{isCodeFocus}}"
             bindinput="codeFocus"></input>
-        <view class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}"
-            bindtap='sendMessageCode'
+        <view
+            class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}"
+            catchtap='sendMessageCode'
             disabled= '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</view>
       </view>
       <text class='title-text'>您是否确认要注销，注销将视为您终止</text>

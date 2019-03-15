@@ -2,7 +2,7 @@
 <view class='base-container'>
   <view class='scroll-out-container'>
     <scroll-view class='scroll-container' scroll-y="true">
-      <view class='inline-container' wx:for="{{selectableStores}}" wx:key="unique">
+      <view class='inline-container' wx:for='{{selectableStores}}' wx:key='{{item.pos_code}}'>
         <view class='in-row-text'>
           <icon 
               hidden='{{storeSelected == item.pos_code ? false:true}}' 
