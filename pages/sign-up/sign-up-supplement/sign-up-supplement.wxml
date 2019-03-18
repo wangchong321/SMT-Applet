@@ -25,6 +25,7 @@
           placeholder-class='placeholder'
           style='color:{{color}}'
           type='number'
+          maxlength='11'
           disabled='{{numberButtonStatus}}'></input>
       <view class='inpout-line'></view>
     </view>
@@ -60,6 +61,7 @@
           type='text'
           placeholder-class='placeholder'
           bindinput='inputIDCard'
+          maxlength='18'
           value='{{iDCard}}'></input>
       <view class='inpout-line'></view>
     </view>
