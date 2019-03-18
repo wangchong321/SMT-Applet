@@ -1,6 +1,6 @@
 const OCRAPI = require('../../../wxapi/ocrapi')
 
-var app = getApp();
+let app = getApp();
 
 Page({
   /**
@@ -16,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    
   },
 
   onFace: function() {
@@ -53,7 +53,7 @@ Page({
       },
     })
   },
-  
+
   requestOcr: function(fileInfo, orientation, imageInfo) {
     let that = this;
     let orientatioObject = {

@@ -54,5 +54,9 @@
         "text": "居间服务费"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 20000
   }
+
 }
