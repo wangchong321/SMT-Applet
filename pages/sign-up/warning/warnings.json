@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "弹窗列表",
   "usingComponents": {
     "modal_warn": "../../../components/modal_warn"
   }

@@ -7,18 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    checkInfoTip: '请选择门店并推荐给捷信推客',
-    nameTip: '请选择', //提示用户选择门店
-    dsmName: 'DSM姓名',
     dsmValue: '12345',
-    stores: [{ pos_code: '', pos_name: '', primary_flag: '', pos_status: ''},
-      { pos_code: '', pos_name: '', primary_flag: '', pos_status:'' },
-      { pos_code: '', pos_name: '', primary_flag: '', pos_status:'' }],
+    stores: [{ pos_code: '', pos_name: '', primary_flag: 0, pos_status: ''},
+      { pos_code: '', pos_name: '', primary_flag: 0, pos_status:'' },
+      { pos_code: '', pos_name: '', primary_flag: 0, pos_status:'' }],
     callBackStoreType: '',
     callBackStoreId: '',
     callBackStoreName: '',
     mainStoreSelected: false,
-    secondStoreSelected: false
+    secondStoreSelected: false,
   },
 
   /**
@@ -39,19 +36,13 @@ Page({
       'id_card_number': app.globalData.userInfoObj.iDCard,
       'phone_number' : '13812345678',
       'dsm_homer_id' : '123456',
-      'pos_list' : that.data.stores
+      'pos_list' : that.data.stores,
     }
     WXAPI.tipperRegisterUpateInfo(data).then(res => {
       if (res.status === 'true') {
-        console.log(res.data)
+        console.log(res.data);
         wx.navigateTo({
           url: '/pages/sign-up/sign-up-done/sign-up-done',
-        })
-      } else {
-        wx.showModal({
-          title: '上传信息失败',
-          content: '上传个人信息失败，请重新点击确认上传！',
-          showCancel: false
         })
       }
     })
@@ -75,7 +66,7 @@ Page({
             content: '请不要选择相同的门店',
             showCancel: false
           })
-          return
+          return;
         }
       }
       switch (that.data.callBackStoreType) {
@@ -117,7 +108,7 @@ Page({
 
   //获取DSM的homer id，也就是名字
   getDsmHomerId: function () {
-    let that = this
+    let that = this;
     wx.getStorage({
       key: 'dsm_homer_id',
       success: function(res) {
@@ -125,6 +116,7 @@ Page({
           dsmValue : res.data
         })
       },
-    })
-  }
+    });
+  },
+
 })

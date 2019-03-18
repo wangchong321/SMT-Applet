@@ -1,13 +1,15 @@
 <!--pages/sign-up/assign-stores/assign-stores.wxml-->
 <view class='base-container'>
   <view class='operation-tip'>
-    <text class='tip-text'>{{checkInfoTip}}</text>
+    <text class='tip-text'>请选择门店并推荐给捷信推客</text>
   </view>
   <view class='item-container'>
-    <image class='entry-title-icon' src='/images/sign-up-guide/title-icon1.png'></image>
+    <image
+        class='entry-title-icon'
+        src='/images/sign-up-guide/title-icon1.png'></image>
     <view class='info-container'>
       <view class='last-entry'>
-        <text class='text-left'>{{dsmName}}</text>
+        <text class='text-left'>DSM姓名</text>
         <text class='text-right'>{{dsmValue}}</text>
       </view>
     </view>
@@ -15,25 +17,40 @@
     <view class='item-container'>
     <image class='entry-title-icon' src='/images/sign-up-guide/title-icon2.png'></image>
     <view class='info-container'>
-      <navigator class='entry' url='/pages/sign-up/select-stores/select-stores?storeType=mainStore'>
+      <navigator
+          class='entry'
+          url='/pages/sign-up/select-stores/select-stores?storeType=mainStore'>
         <view class='text-left'>
           <text >主要门店</text>
           <text class='main-tip'>必选</text>
         </view>
-        <text class="{{stores[0].pos_name == '' ? 'text-right-before':'text-right'}}">{{stores[0].pos_name == '' ? nameTip: stores[0].pos_name}}</text>
+        <text
+            class="{{stores[0].pos_name == '' ? 'text-right-before':'text-right'}}"
+            >{{stores[0].pos_name == '' ? '请选择': stores[0].pos_name}}</text>
         <view class='right-arrow'>  </view>
       </navigator>
-      <navigator class='entry' url='/pages/sign-up/select-stores/select-stores?storeType=secondStore'>
+      <navigator
+          class='entry'
+          url='/pages/sign-up/select-stores/select-stores?storeType=secondStore'>
         <text class='text-left'>门店2</text>
-        <text class="{{stores[1].pos_name == '' ? 'text-right-before':'text-right'}}">{{stores[1].pos_name == '' ? nameTip: stores[1].pos_name}}</text>
+        <text 
+            class="{{stores[1].pos_name == '' ? 'text-right-before':'text-right'}}"
+            >{{stores[1].pos_name == '' ? nameTip: stores[1].pos_name}}</text>
         <view class='right-arrow'></view>
       </navigator>
-      <navigator class='last-entry'  url='/pages/sign-up/select-stores/select-stores?storeType=thirdStore'>
+      <navigator
+          class='last-entry'
+          url='/pages/sign-up/select-stores/select-stores?storeType=thirdStore'>
         <text class='text-left'>门店3</text>
-        <text class="{{stores[2].pos_name == '' ? 'text-right-before':'text-right'}}">{{stores[2].pos_name == '' ? nameTip: stores[2].pos_name}}</text>
+        <text
+            class="{{stores[2].pos_name == '' ? 'text-right-before':'text-right'}}"
+            >{{stores[2].pos_name == '' ? nameTip: stores[2].pos_name}}</text>
         <view class='right-arrow'></view>
       </navigator>
     </view>
   </view>
-  <button class="{{mainStoreSelected == false ? 'bt-confirm-grey' :'bt-confirm-blue'}}" bindtap='confirmRequest' disabled='{{!mainStoreSelected}}'>确认</button>
+  <button
+      class="{{mainStoreSelected == false ? 'bt-confirm-grey' :'bt-confirm-blue'}}"
+      bindtap='confirmRequest'
+      disabled='{{!mainStoreSelected}}'>确认</button>
 </view>

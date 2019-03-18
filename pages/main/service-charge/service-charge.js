@@ -7,32 +7,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    customerNameTitle: '客户姓氏',
-    serviceChargeAmountTitle: '服务费金额',
-    storeNameTitle: '门店名称',
-    payTimeTitle: '付费时间',
-    chargeStatusTitle: '服务费收费状态',
-    serviceChargeList: [],
-    paymentSumAmount: ''
+    serviceChargeList: [{
+      "amount": '20.00',
+      "payment_status": '1',
+      "id": 1,
+      "customer_name": "张三",
+      "payment_time": '2018-12-13 15:07',
+      "pos_name": "我是地址我是地址我是地址"
+    }],
+    paymentSumAmount: '0.00',
+    paymentStatus: ['付费成功', '付费失败', '付费中'],
   },
 
   /**
    * 从服务器获得用户获得服务费的数据和状态
    */
-  getServiceChargeFromServer : function() {
+  getServiceChargeFromServer : function () {
     let that = this;
     WXAPI.paymentList().then(res => {
+      console.log(res);
       if (res.status === 'true') {
         console.log(res.data);
         let temp_payment_list = res.data.payment_list;
         if (temp_payment_list.length > 0) {
+          let matchStatusToDisplay = temp => that.data.paymentStatus[temp - 0];
           for (let record of temp_payment_list) {
-            record.payment_status = that.matchStatusToDisplay(record.payment_status);
+            record.payment_status = matchStatusToDisplay(record.payment_status);
           }
           that.setData({
             serviceChargeList: temp_payment_list
-          })
+          });
         }
+      } else {
+        //显示异常弹窗
       }
     })
   },
@@ -40,14 +47,14 @@ Page({
   /**
    * 从服务器获得用户获得的居间服务费总额
    */
-  getPaymentSumFromServer : function() {
+  getPaymentSumFromServer : function () {
     let that = this;
     WXAPI.paymentSum().then(res => {
       if (res.status === 'true') {
         let temp_amout = res.data.amount.toFixed(2);
         that.setData({
           paymentSumAmount: temp_amout
-        })
+        });
       }
     })
   },
@@ -56,21 +63,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getPaymentSumFromServer()
-    this.getServiceChargeFromServer()
-  },
-
-  //TODO 需优化
-  matchStatusToDisplay:function (status) {
-    switch(status) {
-      case '1':return '付费成功';
-      case '2': return '付费失败';
-      case '3': return '付费中'
-    }
+    this.getPaymentSumFromServer();
+    this.getServiceChargeFromServer();
   },
 
   //测试modal弹窗使用
-  showModalTest: function (){
+  showModalTest: function () {
     wx.navigateTo({
       url: '../../sign-up/warning/warnings',
     })
@@ -81,4 +79,5 @@ Page({
       url: 'tip-history/tip-history',
     })
   }
+  
 })

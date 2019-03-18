@@ -4,7 +4,6 @@ let app = getApp()
 Page({
 
   data: {
-    footer: 'Honor Procuct of Home Credit China',
     idLength: 6, //id输入框个数
     codeLength: 4, //code输入框个数
     isIdFocus: true, //焦点 
@@ -22,7 +21,6 @@ Page({
    */
   idFocus: function(e) {
     let that = this;
-    console.log(e.detail.value);
     let inputValue = e.detail.value;
     that.setData({
       idValue: inputValue,
@@ -37,16 +35,16 @@ Page({
       }
       WXAPI.tipperRegisterValidateHid(data).then(res => {
         if (res.status === 'true') {
-          console.log(res.data)
+          console.log(res.data);
           that.setData({
             codeAreaStatus: true,
-            sendCodeButtonStatus: true
+            sendCodeButtonStatus: true,
           })
         }
       })
     } else {
       that.setData({
-        loginButtonStatus: false
+        loginButtonStatus: false,
       })
     }
   },
@@ -60,16 +58,8 @@ Page({
     console.log(inputValue);
     that.setData({
       codeValue: inputValue,
+      loginButtonStatus: (inputValue.length >= 4 ? true : false)
     })
-    if (inputValue.length >= 4) {
-      that.setData({
-        loginButtonStatus: true
-      })
-    } else {
-      that.setData({
-        loginButtonStatus: false
-      })
-    }
   },
   /**
    *点击ID输入区域，获取focus
@@ -82,7 +72,7 @@ Page({
     })
   },
   /**
-   *点击二维码区域，获取focus
+   *点击验证码区域，获取focus
    */
   tapCode: function() {
     let that = this;
@@ -105,12 +95,10 @@ Page({
     //mock反馈信息里目前都是成功的
     let data = {
       'homer_id': e.detail.value.homerid,
-      'sms_code': e.detail.value.messagecode
+      'sms_code': e.detail.value.messagecode,
     }
     WXAPI.tipperRegisterValidateVcode(data).then(res => {
-      console.log(res.data)
       if (res.status === 'true') {
-        console.log(res.data)
         wx.navigateTo({
           url: '/pages/sign-up/check-user-info/check-user-info?' + 'id=' + that.data.idValue + '&messagecode=' + that.data.codeValue
         })
@@ -133,11 +121,9 @@ Page({
     }
     WXAPI.tipperRegisterSendVcode(data).then(res => {
       if (res.status === 'true') {
-        console.log(res.data)
-        let times = 60
+        let times = 60;
         let i = setInterval(function () {
           times--;
-          console.log(times);
           if (times <= 0) {
             that.isSendClicked = false;
             that.setData({
@@ -155,5 +141,6 @@ Page({
         }, 1000)
       }
     })
-  }
+  },
+  
 })

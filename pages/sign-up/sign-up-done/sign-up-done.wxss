@@ -1,4 +1,9 @@
 /* pages/sign-up/sign-up-done/sign-up-done.wxss */
+page {
+  min-height: 100%;
+  background-color: #f6f6f6;
+}
+
 .base-container {
   width: 100%;
   height: 100%;

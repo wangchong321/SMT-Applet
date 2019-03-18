@@ -7,10 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    checkInfoTip: '请检查以下捷信推客信息，点击通过或拒绝按钮',
-    nameTitle: '姓名',
     nameValue: '欧阳森道哥',//姓名的默认值，从全局变量获得修改
-    phoneTitle: '电话号码',
     phoneValue: '13312345678'//号码的默认值，从全局变量获得修改
   },
 
@@ -18,7 +15,6 @@ Page({
    * 点击通过按钮，会跳转到让推客设置门店页面
    */
   passRequest: function () {
-    //TODO
     wx.navigateTo({
       url: '/pages/sign-up/assign-stores/assign-stores',
     })
@@ -29,7 +25,9 @@ Page({
    * 点击通过按钮，跳转到错误页面吧，
    */
   rejectRequest: function () {
-    //TODO
+    wx.navigateTo({
+      url: '/pages/sign-up/login-wechat/login-wechat',
+    })
     console.log('tap the reject button');
   },
 
@@ -51,4 +49,5 @@ Page({
   onLoad: function (options) {
     this.getTipperInfo();
   },
+  
 })

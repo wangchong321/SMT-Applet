@@ -1,43 +1,67 @@
 <!--pages/sign-up/smt-login/smt-login.wxml-->
 <view class='base-container'>
-  <view class='imageContainer'>
-    <image class='imageLayout' src='/images/sign-up-guide/SMTLogo.png'></image>
+  <view class='logoContainer'>
+    <image class='logoLayout' src='/images/sign-up-guide/SMTLogo.png'></image>
   </view>
   <view>
     <form class='form-view ' bindsubmit="formSubmit">
+      <!--input homer id view-->
       <view class="{{isIdFocus ? 'id-content-focus' : 'id-content-grey'}}"> 
-        <view>
-          <image class='item-image-photo' src='/images/sign-up-guide/default-portrait.png'></image>
-        </view>
+        <image 
+            class='item-image-photo'
+            src='/images/sign-up-guide/default-portrait.png'></image>
         <block wx:for="{{idLength}}" wx:key="item"> 
-          <input class='iptbox' value="{{idValue.length>=index+1?idValue[index]:''}}" disabled catchtap='tapID'></input> 
+          <input 
+              class='iptbox'
+              value="{{idValue.length>=index+1?idValue[index]:''}}"
+              disabled catchtap='tapID'></input> 
         </block> 
-        <input name="homerid" password="{{true}}" class='ipt' maxlength="{{idLength}}" focus="{{isIdFocus}}" bindinput="idFocus"></input> 
+        <input 
+            name="homerid"
+            password="{{true}}"
+            class='ipt'
+            maxlength="{{idLength}}"
+            focus="{{isIdFocus}}" 
+            bindinput="idFocus"></input> 
         <view class='space-view'></view>
       </view> 
       <view>
         <text class='text-tip'>Homer ID</text>
       </view>
-      
+      <!--input msg code view-->
       <view class="{{isCodeFocus ? 'code-content-focus' : 'code-content-grey'}}"> 
-        <view>
-          <image class='item-image-phone' src='/images/sign-up-guide/phone.png'></image>
-        </view>
+        <image class='item-image-phone' src='/images/sign-up-guide/phone.png'></image>
         <block wx:for="{{codeLength}}" wx:key="item"> 
-        <input class='iptbox' value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}" disabled catchtap='tapCode'></input> 
+          <input
+              class='iptbox'
+              value="{{codeValue.length >= index+1 ? codeValue[index] : ''}}"
+              disabled catchtap='tapCode'></input> 
         </block>
-        <input name="messagecode" password="{{true}}" class='ipt' maxlength="{{codeLength}}" focus="{{isCodeFocus}}" disabled='{{!codeAreaStatus}}' bindinput="codeFocus"></input>
-        <button class="{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}" bindtap='sendMessageCode' disabled= '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</button>
+        <input
+            name="messagecode"
+            password="{{true}}"
+            class='ipt'
+            maxlength="{{codeLength}}"
+            focus="{{isCodeFocus}}"
+            disabled='{{!codeAreaStatus}}'
+            bindinput="codeFocus"></input>
+        <button
+            class = "{{sendCodeButtonStatus ? 'send-button-blue':'send-button-grey'}}"
+            bindtap = 'sendMessageCode'
+            disabled = '{{!sendCodeButtonStatus}}'>{{buttonTittle}}</button>
       </view> 
       <view>
         <text class='text-tip'>短信验证码</text>
       </view>
-      
-      <button class="{{loginButtonStatus ? 'button-large-blue':'button-large-grey'}}" formType="submit" disabled='{{!loginButtonStatus}}'>登录</button>
+      <!--Login button-->
+      <button
+          class="{{loginButtonStatus ? 'button-large-blue':'button-large-grey'}}"
+          formType="submit"
+          disabled='{{!loginButtonStatus}}'>登录</button>
     </form>
   </view>
 
   <view class='footerContainer'>
-    <text class='textFooter'>{{footer}}</text>
+    <text class='textFooter'>Honor Procuct of Home Credit China</text>
   </view>
 </view>

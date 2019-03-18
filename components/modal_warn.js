@@ -6,31 +6,31 @@ Component({
   properties: {
     show: {
       type: Boolean,
-      value: false
+      value: false,
     },
     height: {
       type: String,
-      value: '50%'
+      value: '50%',
     },
     imageUrlNumber: {
       type: String,
-      value: '0'
+      value: '0',
     },
     showLeftBt: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showRightBt: {
       type: Boolean,
-      value: true
+      value: true,
     },
     leftText: {
       type: String,
-      value: '取消'
+      value: '取消',
     },
     rightText: {
       type: String,
-      value: '确定'
+      value: '确定',
     },
   }, 
 
@@ -45,18 +45,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    clickMask() {
-      this.setData({show: false})
+    clickMask: function () {
+      this.setData({show: false});
     },
 
-    leftClick() {
-      this.setData({ show: false })
-      this.triggerEvent('cancel')
+    leftClick: function () {
+      this.triggerEvent('leftEvent');
     },
 
-    rightClick() {
-      this.setData({ show: false })
-      this.triggerEvent('confirm')
+    rightClick: function () {
+      this.triggerEvent('rightEvent');
     }
   }
 })

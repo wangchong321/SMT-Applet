@@ -2,23 +2,23 @@
 <view class='base-container'>
   <view class='scroll-out-container'>
     <scroll-view class='scroll-container' scroll-y="true">
-      <view class='inline-container' wx:for="{{selectableStores}}" wx:key="unique">
+      <view class='inline-container' wx:for='{{selectableStores}}' wx:key='{{item.pos_code}}'>
         <view class='in-row-text'>
           <icon 
-            hidden='{{storeSelected == item.pos_code ? false:true}}' 
-            type="success_no_circle" 
-            size="12" 
-            color='#4A90E2'/>
+              hidden='{{storeSelected == item.pos_code ? false:true}}' 
+              type="success_no_circle" 
+              size="12" 
+              color='#4A90E2'/>
           <text 
-            class="{{storeSelected == item.pos_code ? 'store-text-selected' : 'store-text'}}" 
-            bindtap='selectStore' 
-            data-storeI ='{{item.pos_code}}' 
-            data-storeN = "{{item.pos_name}}">{{item.pos_name}}</text>
+              class="{{storeSelected == item.pos_code ? 'store-text-selected' : 'store-text'}}" 
+              bindtap='selectStore' 
+              data-storeI ='{{item.pos_code}}' 
+              data-storeN = "{{item.pos_name}}">{{item.pos_name}}</text>
         </view>
       </view>
     </scroll-view>
   </view>
   <button 
-    class="{{storeSelected == '' ? 'bt-confirm_grey':'bt-confirm_blue'}}" 
-    bindtap='confirmSelectResult'>确认</button>
+      class="{{storeSelected == '' ? 'bt-confirm_grey':'bt-confirm_blue'}}" 
+      bindtap='confirmSelectResult'>确认</button>
 </view>

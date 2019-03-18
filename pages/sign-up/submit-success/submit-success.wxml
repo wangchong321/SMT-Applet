@@ -4,10 +4,10 @@
     <image class='sucess-image' src='/images/sign-up-guide/submitted.png'></image>
   </view>
   <view class='text-container'>
-    <text class='header-text-font'>{{successHeader}}</text>
-    <text class='detail-text-font'>{{successHeaderDetail}}</text>
+    <text class='header-text-font'>提交成功 DSM登录操作</text>
+    <text class='detail-text-font'>您的信息已经成功提交，请将手机转交给DSM登陆操作，请耐心等待。</text>
   </view>
   <view class='button-container' bindtap='jumpSMTLogin'>
-    <button class='button-large'>{{buttonName}}</button>
+    <button class='button-large'>登录</button>
   </view>
 </view>

@@ -108,5 +108,6 @@ Page({
         signUpButtonStatus: true,
       })
     }
-  }
+  },
+  
 })

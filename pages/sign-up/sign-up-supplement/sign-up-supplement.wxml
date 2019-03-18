@@ -5,7 +5,12 @@
   <view class='container-view'>
     <text class='text-top'>姓名</text>
     <view class='inside-view'>
-      <input placeholder='请输入您的姓名' type='text' placeholder-class='placeholder' bindinput='inputName' value='{{name}}'></input>
+      <input
+          placeholder='请输入您的姓名'
+          type='text'
+          placeholder-class='placeholder'
+          bindinput='inputName'
+          value='{{name}}'></input>
       <view class='inpout-line'></view>
     </view>
   </view>
@@ -13,7 +18,14 @@
    <view class='container-view'>
     <text class='text-top'>手机号码</text>
     <view class='inside-view'>
-      <input bindinput='inputNumber' placeholder='请输入您的手机号码' type='text' placeholder-class='placeholder' style='color:{{color}}' type='number' disabled='{{numberButtonStatus}}'></input>
+      <input
+          bindinput='inputNumber'
+          placeholder='请输入您的手机号码'
+          type='text'
+          placeholder-class='placeholder'
+          style='color:{{color}}'
+          type='number'
+          disabled='{{numberButtonStatus}}'></input>
       <view class='inpout-line'></view>
     </view>
   </view>
@@ -21,7 +33,12 @@
   <view class='container-view'>
     <text class='text-top'>短信验证码</text>
     <view class='inside-view'>
-      <input placeholder='请输入您的短信验证码' type='number' placeholder-class='placeholder' bindinput='inputVerificationCode' maxlength='6'></input>
+      <input
+          placeholder='请输入您的短信验证码'
+          type='number'
+          placeholder-class='placeholder'
+          bindinput='inputVerificationCode'
+          maxlength='6'></input>
       <view class='inpout-line'></view>
     </view>
     
@@ -38,7 +55,12 @@
   <view class='container-view'>
     <text class='text-top'>身份证号码</text>
     <view class='inside-view'>
-      <input placeholder='请输入您的身份证号码' type='text' placeholder-class='placeholder' bindinput='inputIDCard' value='{{iDCard}}'></input>
+      <input
+          placeholder='请输入您的身份证号码'
+          type='text'
+          placeholder-class='placeholder'
+          bindinput='inputIDCard'
+          value='{{iDCard}}'></input>
       <view class='inpout-line'></view>
     </view>
   </view>
@@ -46,7 +68,11 @@
   <view class='container-view'>
     <text class='text-top'>支付宝昵称</text>
     <view class='inside-view'>
-      <input placeholder='请输入您的支付宝昵称' type='text' placeholder-class='placeholder' bindinput='inputAilPay'></input>
+      <input
+          placeholder='请输入您的支付宝昵称'
+          type='text'
+          placeholder-class='placeholder'
+          bindinput='inputAilPay'></input>
       <view class='inpout-line'></view>
     </view>
   </view>
