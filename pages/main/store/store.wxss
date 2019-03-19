@@ -85,14 +85,13 @@ page {
 
 .qrcode-attr-box {
   height: 850rpx;
-  width: 100%;
+  width: 750rpx;
   overflow: hidden;
   position: fixed;
   top: 100%;
   left: 0;
   z-index: 2000;
   background: #fff;
-  padding-top: 20rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,25 +100,31 @@ page {
 }
 
 .qrcode-detail-text-area {
-  width: 100%;
+  width: 750rpx;
   background-color: #4A90E2;
   box-sizing:border-box;
   color: white;
   align-items: center;
   text-align: center;
   padding: 20rpx;
+  margin-top: 20rpx;
 }
 
 .qrcode-detail-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display:block;
   font-size: 30rpx;
 }
 
 .qrcode-detail-area {
   width: 550rpx;
   height: 550rpx;
-  margin: 50rpx 75rpx 0 75rpx;
   border: 1rpx solid grey;
+  margin: 100rpx;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }

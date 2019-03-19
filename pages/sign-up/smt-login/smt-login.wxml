@@ -18,7 +18,7 @@
         </block> 
         <input 
             name="homerid"
-            password="{{true}}"
+            type='number'
             class='ipt'
             maxlength="{{idLength}}"
             focus="{{isIdFocus}}" 
@@ -38,8 +38,8 @@
               disabled catchtap='tapCode'></input> 
         </block>
         <input
-            name="messagecode"
-            password="{{true}}"
+            name='messagecode'
+            type='number'
             class='ipt'
             maxlength="{{codeLength}}"
             focus="{{isCodeFocus}}"
