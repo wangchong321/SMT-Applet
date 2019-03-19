@@ -25,6 +25,13 @@ Page({
     this.getScancount();
   },
 
+  /**
+     * 生命周期函数--监听页面显示
+     */
+  onShow: function () {
+    this.getScancount();
+  },
+
   getCustomers:function () {
     let that = this;
     WXAPI.customers().then(res => {
@@ -43,8 +50,14 @@ Page({
   },
 
   getScancount: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+
     let that = this;
     WXAPI.scancount().then(res =>{
+      wx.hideLoading();
+
       if(res.status === 'true'){
         let tipper_pos_list = res.data.tipper_pos_list;
         let tmp_totol = 0;
@@ -55,7 +68,6 @@ Page({
             primary_count = pos.count;
           }
         }
-        
         let tmpAccessNumberList = {};
         console.log(tmpAccessNumberList);
         tmpAccessNumberList.totol = tmp_totol;
@@ -65,6 +77,8 @@ Page({
         console.log(tmpAccessNumberList);
         that.setData({
           accessNumberList: tmpAccessNumberList
+        }).catch(res => {
+          wx.hideLoading();
         })
       }
     })

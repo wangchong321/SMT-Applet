@@ -13,8 +13,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx8501b9ff3b6515f1",
-	"projectname": "MSApp-Applet",
+	"appid": "wx96ac5be718727257",
+	"projectname": "SMT-Applet",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
