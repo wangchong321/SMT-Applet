@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "居间服务费"
+  "navigationBarTitleText": "居间服务费",
+  "usingComponents": {
+    "modal_warn": "../../../components/modal_warn"
+  }
 }

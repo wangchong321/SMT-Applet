@@ -1,5 +1,6 @@
 const QRCode = require('../../../utils/weapp-qrcode.js')
 const WXAPI = require('../../../wxapi/wxapi')
+import rpx2px from '../../../utils/rpx2px.js'
 let qrcode;
 
 Page({
@@ -9,7 +10,7 @@ Page({
    */
   data: {
     storesTitle: ['主要门店', '门店2','门店3'],
-    sStores: [{pos_code: "027445", pos_name: "顺德区容桂明肖通讯器材店", primary_flag: 1, pos_status: "a"}],
+    sStores: [{ pos_code: "027445", pos_name: "顺德区容桂明肖通讯器材店地地址地址地址地址", primary_flag: 1, pos_status: "a"}],
     showModalStatus: false,
     storeSelectedName: '',
   },
@@ -39,7 +40,7 @@ Page({
       showModalStatus: true
     });
     setTimeout(function () {
-      animation.translateY(-425).step()
+      animation.translateY(rpx2px(-850)).step()
       that.setData({
         animationData: animation.export()
       })

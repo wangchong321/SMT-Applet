@@ -17,6 +17,15 @@ Page({
     }],
     paymentSumAmount: '0.00',
     paymentStatus: ['付费成功', '付费失败', '付费中'],
+    dataNetworkErr: {
+      show: false,
+      height: '430rpx',
+      imageUrlNumber: '0',
+      showLeftBt: false,
+      showRightBt: true,
+      leftText: '',
+      rightText: '知道了',
+    },
   },
 
   /**
@@ -35,11 +44,17 @@ Page({
             record.payment_status = matchStatusToDisplay(record.payment_status);
           }
           that.setData({
-            serviceChargeList: temp_payment_list
+            serviceChargeList: temp_payment_list,
           });
         }
       } else {
         //显示异常弹窗
+        let temp = that.data.dataNetworkErr;
+        temp.show = true;
+        that.setData({
+          serviceChargeList: null,
+          dataNetworkErr: temp
+        });
       }
     })
   },
@@ -78,6 +93,15 @@ Page({
     wx.navigateTo({
       url: 'tip-history/tip-history',
     })
+  },
+
+  hideNetworkErrModel: function() {
+    let that = this;
+    let temp = that.data.dataNetworkErr;
+    temp.show = false;
+    that.setData({
+      dataNetworkErr: temp
+    });
   }
   
 })

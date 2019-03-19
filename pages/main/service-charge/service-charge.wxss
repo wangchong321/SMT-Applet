@@ -84,3 +84,14 @@ page {
 .text-right-margin{
   margin-right: 5rpx;
 }
+
+.modal-content {
+  height: 100rpx;
+  text-align: center;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.modal-text {
+  color: black;
+  font-size: 28rpx;
+}
