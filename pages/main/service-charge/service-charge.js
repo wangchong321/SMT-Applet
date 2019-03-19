@@ -36,10 +36,9 @@ Page({
     WXAPI.paymentList().then(res => {
       console.log(res);
       if (res.status === 'true') {
-        console.log(res.data);
         let temp_payment_list = res.data.payment_list;
         if (temp_payment_list.length > 0) {
-          let matchStatusToDisplay = temp => that.data.paymentStatus[temp - 0];
+          let matchStatusToDisplay = temp => that.data.paymentStatus[temp - 1];
           for (let record of temp_payment_list) {
             record.payment_status = matchStatusToDisplay(record.payment_status);
           }
