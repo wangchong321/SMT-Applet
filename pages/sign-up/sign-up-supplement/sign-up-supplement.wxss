@@ -9,7 +9,7 @@
   margin-top: 14rpx;
 }
 .container-view{
-  height: 128rpx;
+  /* height: 128rpx; */
   display: flex;
   flex-direction: column;
 }
@@ -42,6 +42,11 @@ input{
   height: 1rpx;
   bottom: 0rpx;
   background-color: #D8D8D8;
+}
+
+.text-tip{
+  color: #D0021B;
+  font-size: 20rpx;
 }
 
 button{

@@ -13,6 +13,7 @@
           value='{{name}}'></input>
       <view class='inpout-line'></view>
     </view>
+    <text class='text-tip' hidden='{{tipInfo.nameTip}}'>名字不符合要求</text>
   </view>
   <!-- 手机号 -->
    <view class='container-view'>
@@ -29,6 +30,7 @@
           disabled='{{numberButtonStatus}}'></input>
       <view class='inpout-line'></view>
     </view>
+    <text class='text-tip' hidden='{{tipInfo.numberTip}}'>手机号码格式不正确</text>
   </view>
   <!-- 短信验证码 -->
   <view class='container-view'>
