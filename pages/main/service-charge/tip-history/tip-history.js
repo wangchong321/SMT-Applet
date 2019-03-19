@@ -12,6 +12,9 @@ Page({
 
   getHistoryFromServer: function () {
     let that = this;
+    wx.showLoading({
+      title: '加载中',
+    });
     WXAPI.tipperPaymentHistory().then(res => {
       if (res.status === 'true') {
         console.log(res.data);
@@ -23,6 +26,7 @@ Page({
         that.setData({
           historyData : tList
         });
+        wx.hideLoading();
       }
     })
   },

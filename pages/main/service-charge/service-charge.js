@@ -26,6 +26,7 @@ Page({
       leftText: '',
       rightText: '知道了',
     },
+    networkModalShow: false,
   },
 
   /**
@@ -33,6 +34,9 @@ Page({
    */
   getServiceChargeFromServer : function () {
     let that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
     WXAPI.paymentList().then(res => {
       console.log(res);
       if (res.status === 'true') {
@@ -45,6 +49,7 @@ Page({
           that.setData({
             serviceChargeList: temp_payment_list,
           });
+          wx.hideLoading();
         }
       } else {
         //显示异常弹窗
@@ -54,6 +59,7 @@ Page({
           serviceChargeList: null,
           dataNetworkErr: temp
         });
+        wx.hideLoading();
       }
     })
   },
@@ -77,8 +83,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getPaymentSumFromServer();
-    this.getServiceChargeFromServer();
+    let that = this;
+    wx.onNetworkStatusChange(function (res) {
+      if (!res.isConnected) {
+        that.setData({
+          networkModalShow : true
+        })
+      }
+    })
+    that.getPaymentSumFromServer();
+    that.getServiceChargeFromServer();
   },
 
   //测试modal弹窗使用

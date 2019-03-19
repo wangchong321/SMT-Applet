@@ -54,7 +54,6 @@ Page({
     })
     WXAPI.getSelectableStores().then(res => {
       if (res.status === 'true') {
-        console.log(res.data);
         //这里要做一个数据的整理,目前只是清理掉无关变量获取id和名字，可能还需要判断登录的这个tipper是不是在此门店中
         if(res.data.pos_view_data.length > 0) {
           let temp_stores = [];
@@ -65,7 +64,6 @@ Page({
             }
             temp_stores[temp_stores.length++] = t_store;
           }
-          console.log(temp_stores);
           that.setData({
             selectableStores: temp_stores
           })
