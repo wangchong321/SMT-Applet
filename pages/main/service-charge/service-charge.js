@@ -9,7 +9,7 @@ Page({
   data: {
     serviceChargeList: [{
       "amount": '20.00',
-      "payment_status": '1',
+      "payment_status": '付费成功',
       "id": 1,
       "customer_name": "张三",
       "payment_time": '2018-12-13 15:07',
