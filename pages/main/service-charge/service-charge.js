@@ -37,6 +37,7 @@ Page({
           for (let record of temp_payment_list) {
             record.payment_status = matchStatusToDisplay(record.payment_status);
           }
+          temp_payment_list.push.apply(temp_payment_list, that.data.serviceChargeList);
           that.setData({
             serviceChargeList: temp_payment_list,
           });
@@ -94,6 +95,19 @@ Page({
     wx.navigateTo({
       url: 'tip-history/tip-history',
     })
+  },
+  
+  onPullDownRefresh: function () {
+    console.log('onPullDownRefresh')
+    let that = this;
+    that.getServiceChargeFromServer();
+    wx.stopPullDownRefresh();
+  },
+
+  onReachBottom: function () {
+    console.log('onReachBottom')
+    let that = this;
+    that.getServiceChargeFromServer();
   },
   
 })
