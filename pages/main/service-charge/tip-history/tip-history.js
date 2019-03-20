@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    historyData: [{payment_month: '2018年8月', amount: '800.00'}]
+    historyData: []
   },
 
   getHistoryFromServer: function () {
@@ -23,6 +23,7 @@ Page({
           item.payment_month = `${item.payment_month.substring(0, 4)}年${item.payment_month.substring(5, 7)}月`;
           item.amount = parseFloat(item.amount).toFixed(2);
         }
+        tList.push.apply(tList, that.data.historyData);
         that.setData({
           historyData : tList
         });

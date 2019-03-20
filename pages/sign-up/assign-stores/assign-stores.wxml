@@ -26,7 +26,7 @@
         </view>
         <text
             class="{{stores[0].pos_name == '' ? 'text-right-before':'text-right'}}"
-            >{{stores[0].pos_name == '' ? '请选择': stores[0].pos_name}}</text>
+            >{{stores[0].pos_name == '' ? '请选择' : stores[0].pos_name}}</text>
         <view class='right-arrow'>  </view>
       </navigator>
       <navigator
@@ -35,7 +35,7 @@
         <text class='text-left'>门店2</text>
         <text 
             class="{{stores[1].pos_name == '' ? 'text-right-before':'text-right'}}"
-            >{{stores[1].pos_name == '' ? nameTip: stores[1].pos_name}}</text>
+            >{{stores[1].pos_name == '' ? '请选择' : stores[1].pos_name}}</text>
         <view class='right-arrow'></view>
       </navigator>
       <navigator
@@ -44,7 +44,7 @@
         <text class='text-left'>门店3</text>
         <text
             class="{{stores[2].pos_name == '' ? 'text-right-before':'text-right'}}"
-            >{{stores[2].pos_name == '' ? nameTip: stores[2].pos_name}}</text>
+            >{{stores[2].pos_name == '' ? '请选择' : stores[2].pos_name}}</text>
         <view class='right-arrow'></view>
       </navigator>
     </view>

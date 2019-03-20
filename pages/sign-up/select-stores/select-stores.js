@@ -9,10 +9,7 @@ Page({
    */
   data: {
     currentSelectType: '', //当次选择的门店的类型
-    selectableStores: [{
-      "pos_code": '1001',
-      "pos_name": '我是地址我是地址我是地址我是地址我是地址我是地址我是地址我是地址',
-    }], //存储当前可选择的门店的数据，预先有个显示数据，不然第一次加载数据后位置会奇怪偏移
+    selectableStores: [],
     storeSelected: '', //本次选择的门店的ID
     storeSelectedName: '' //本次选择的门店的名字
   },
@@ -54,7 +51,6 @@ Page({
     })
     WXAPI.getSelectableStores().then(res => {
       if (res.status === 'true') {
-        //这里要做一个数据的整理,目前只是清理掉无关变量获取id和名字，可能还需要判断登录的这个tipper是不是在此门店中
         if(res.data.pos_view_data.length > 0) {
           let temp_stores = [];
           for (let record of res.data.pos_view_data){
@@ -69,6 +65,11 @@ Page({
           })
           wx.hideLoading();
         }
+      } else {
+        that.setData({
+          selectableStores : null
+        })
+        wx.hideLoading();
       }
     })
   },
