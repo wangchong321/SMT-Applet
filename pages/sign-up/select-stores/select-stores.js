@@ -11,7 +11,8 @@ Page({
     currentSelectType: '', //当次选择的门店的类型
     selectableStores: [],
     storeSelected: '', //本次选择的门店的ID
-    storeSelectedName: '' //本次选择的门店的名字
+    storeSelectedName: '', //本次选择的门店的名字
+    pageIndex : 1,
   },
 
   /**
@@ -49,9 +50,14 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    WXAPI.getSelectableStores().then(res => {
+    let data = {
+      'page' : that.data.pageIndex,
+      'page_size' : 20
+    }
+    WXAPI.getSelectableStores(data).then(res => {
       if (res.status === 'true') {
         if(res.data.pos_view_data.length > 0) {
+          that.data.pageIndex++;
           let temp_stores = [];
           for (let record of res.data.pos_view_data){
             let t_store = {
@@ -60,6 +66,7 @@ Page({
             }
             temp_stores[temp_stores.length++] = t_store;
           }
+          temp_stores.push.apply(temp_stores, that.data.selectableStores);
           that.setData({
             selectableStores: temp_stores
           })
@@ -80,7 +87,23 @@ Page({
   onLoad: function (options) {
     let that = this;
     that.data.currentSelectType = options.storeType;
+    if (that.data.currentSelectType != 'mainStore') {
+      wx.setNavigationBarTitle({
+        title: '选择其他门店',
+      })
+    }
     that.getAllStoresData();
+  },
+
+  scrollToBottom: function () {
+    let that = this;
+    that.getAllStoresData();
+  },
+
+  onPullDownRefresh: function () {
+    let that = this;
+    that.getAllStoresData();
+    wx.stopPullDownRefresh();
   },
 
 })

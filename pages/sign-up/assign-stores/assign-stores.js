@@ -8,7 +8,7 @@ Page({
    */
   data: {
     dsmValue: '12345',
-    stores: [{ pos_code: '', pos_name: '', primary_flag: 0, pos_status: ''},
+    stores: [{ pos_code: '', pos_name: '', primary_flag: 1, pos_status: ''},
       { pos_code: '', pos_name: '', primary_flag: 0, pos_status:'' },
       { pos_code: '', pos_name: '', primary_flag: 0, pos_status:'' }],
     callBackStoreType: '',

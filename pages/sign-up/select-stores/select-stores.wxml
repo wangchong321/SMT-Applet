@@ -1,7 +1,7 @@
 <!--pages/sign-up/select-stores/select-stores.wxml-->
 <view class='base-container'>
   <view class='scroll-out-container'>
-    <scroll-view class='scroll-container' scroll-y="true">
+    <scroll-view class='scroll-container' enable-back-to-top='true' scroll-y='true' style='height:100%;' bindscrolltolower='scrollToBottom'>
       <view class='inline-container' wx:for='{{selectableStores}}' wx:key='{{item.pos_code}}'>
         <view class='in-row-text'>
           <icon 

@@ -36,11 +36,11 @@ Page({
    * 注册过程尚未传递到服务器所以通过全局变量获取推客的信息
    */
   getTipperInfo: function () {
-    let that = this;
-    if (app.globalData.userInfoObj.name != null) {
-      that.data.nameValue = app.globalData.userInfoObj.name;
-      that.data.phoneValue = app.globalData.userInfoObj.number;
-    }
+    let that = this;//app.globalData.userInfoObj.number
+    that.setData({
+      nameValue : app.globalData.userInfoObj.name,
+      phoneValue : app.globalData.userInfoObj.number
+    })
   },
   
   /**
