@@ -29,7 +29,11 @@ Page({
   onShow: function () {
     this.getScancount();
   },
-
+  onReachBottom() {
+    // 下拉触底，先判断是否有请求正在进行中
+    // 以及检查当前请求页数是不是小于数据总页数，如符合条件，则发送请求
+    this.getCustomers();
+  },
   getCustomers:function () {
     let that = this;
     WXAPI.customers().then(res => {
@@ -40,7 +44,7 @@ Page({
             customer.time_remaining = that.mathTime(customer.time_remaining);
           }
           that.setData({
-            customers: payment_list,
+            customers: that.data.customers.concat(payment_list),
           })
         }
       }
