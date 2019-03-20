@@ -77,12 +77,16 @@ Page({
    */
   getStoresInfoFromServer: function () {
     let that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
     WXAPI.baseInfo().then(res => {
       if (res.status === 'true') {
         console.log(res.data);
         that.setData({
           sStores: res.data.pos_list
         })
+        wx.hideLoading();
       }
     })
   },

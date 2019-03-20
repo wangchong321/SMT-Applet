@@ -1,0 +1,11 @@
+/* components/network-err-modal/network-err-modal.wxss */
+.modal-content {
+  height: 100rpx;
+  text-align: center;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+}
+
+.modal-text {
+  color: black;
+  font-size: 28rpx;
+}
