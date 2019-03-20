@@ -69,18 +69,16 @@ Page({
           }
         }
         let tmpAccessNumberList = {};
-        console.log(tmpAccessNumberList);
         tmpAccessNumberList.totol = tmp_totol;
         tmpAccessNumberList.primary_store = primary_count;
         tmpAccessNumberList.store2 = tipper_pos_list[1].count;
         tmpAccessNumberList.store3 = tipper_pos_list[2].count;
-        console.log(tmpAccessNumberList);
         that.setData({
           accessNumberList: tmpAccessNumberList
-        }).catch(res => {
-          wx.hideLoading();
         })
       }
+    }).catch(res => {
+      wx.hideLoading();
     })
   },
 
