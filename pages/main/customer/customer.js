@@ -15,13 +15,14 @@ Page({
       store3: '',
     }, 
     customers:[],
+    page:1,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getCustomers();
+    this.getCustomers(this.page);
   },
   /**
      * 生命周期函数--监听页面显示
@@ -29,15 +30,27 @@ Page({
   onShow: function () {
     this.getScancount();
   },
+  // 上拉刷新
   onReachBottom() {
-    // 下拉触底，先判断是否有请求正在进行中
-    // 以及检查当前请求页数是不是小于数据总页数，如符合条件，则发送请求
-    this.getCustomers();
+    this.getCustomers(this.page);
   },
-  getCustomers:function () {
+  getCustomers:function (page) {
+    wx.showLoading({
+      title: '加载中',
+    })
+
     let that = this;
+    let data = {
+      'tipper_id': "123",
+      'page': page,
+      'page_size': 20,
+    }
     WXAPI.customers().then(res => {
+      wx.hideLoading();
+
       if(res.status === 'true'){
+        that.data.page++;
+        console.log(that.data.page);
         let payment_list = res.data.payment_list;
         if(payment_list.length > 0){
           for (let customer of payment_list){
@@ -48,6 +61,8 @@ Page({
           })
         }
       }
+    }).catch(res => {
+      wx.hideLoading();
     })
   },
 
