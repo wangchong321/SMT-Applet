@@ -3,6 +3,15 @@ const API_BASE_URL = 'https://mobile-ms.uat.homecreditcfc.cn/mock/5c05d3ccf8c692
 
 const request = (url, method, data) => {
   let _url = API_BASE_URL + url;
+
+  wx.getNetworkType({
+    success: function(res) {
+      if(res.networkType === "none"){
+        
+      }
+    },
+  })
+
   return new Promise((resolve, reject) => {
     wx.request({
       url: _url,
@@ -17,6 +26,10 @@ const request = (url, method, data) => {
         resolve(request.data)
       },
       fail(error){
+        wx.showToast({
+          title: '当前无网络',
+          icon: 'none',
+        })
         reject(error)
       },
       complete(complete) {

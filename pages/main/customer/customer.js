@@ -22,7 +22,6 @@ Page({
    */
   onLoad: function (options) {
     this.getCustomers();
-    this.getScancount();
   },
 
   /**
