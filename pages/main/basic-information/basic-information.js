@@ -23,7 +23,10 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    WXAPI.baseInfo().then(res => {
+    let data = {
+      tipper_id: "123",
+    }
+    WXAPI.baseInfo(data).then(res => {
       wx.hideLoading();
       if(res.status === 'true'){
         that.setData({
