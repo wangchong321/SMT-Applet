@@ -16,6 +16,7 @@ Page({
   },
 
   onSignUpGuide: function () {
+    console.log(app)
     wx.navigateTo({
       url: "../sign-up-guide/sign-up-guide",
     })
@@ -29,10 +30,4 @@ Page({
       })
     }
   },
-
-  onSignIn: function () {
-    wx.navigateTo({
-      url: "../smt-login/smt-login",
-    })
-  }
 })
