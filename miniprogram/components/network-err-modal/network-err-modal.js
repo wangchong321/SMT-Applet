@@ -32,5 +32,5 @@ Component({
     rightClickEvent: function() {
       this.setData({ show: false });
     },
-  }
+  },
 })
