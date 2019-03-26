@@ -38,8 +38,8 @@ Page({
           console.log(res.data);
           that.setData({
             codeAreaStatus: true,
-            sendCodeButtonStatus: true,
-          })
+          });
+          that.sendButtonInterval();
         }
       })
     } else {
@@ -121,26 +121,31 @@ Page({
     }
     WXAPI.tipperRegisterSendVcode(data).then(res => {
       if (res.status === 'true') {
-        let times = 60;
-        let i = setInterval(function () {
-          times--;
-          if (times <= 0) {
-            that.isSendClicked = false;
-            that.setData({
-              sendCodeButtonStatus: true,
-              buttonTittle: "发送"
-            })
-            clearInterval(i);
-          } else {
-            that.setData({
-              sendCodeButtonStatus: false,
-              buttonTittle: times + "秒",
-              numberButtonStatus: true
-            })
-          }
-        }, 1000)
+        that.sendButtonInterval();
       }
     })
   },
+
+  sendButtonInterval: function () {
+    let that = this;
+    let times = 60;
+    let i = setInterval(function () {
+      times--;
+      if (times <= 0) {
+        that.isSendClicked = false;
+        that.setData({
+          sendCodeButtonStatus: true,
+          buttonTittle: "发送"
+        })
+        clearInterval(i);
+      } else {
+        that.setData({
+          sendCodeButtonStatus: false,
+          buttonTittle: times + "秒",
+          numberButtonStatus: true
+        })
+      }
+    }, 1000);
+  }
   
 })
