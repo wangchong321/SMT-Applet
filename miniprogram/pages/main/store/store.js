@@ -10,7 +10,7 @@ Page({
    */
   data: {
     storesTitle: ['主要门店', '门店2','门店3'],
-    sStores: [{ pos_code: "027445", pos_name: "顺德区容桂明肖通讯器材店地地址地址地址地址", primary_flag: 1, pos_status: "a"}],
+    sStores: [],
     showModalStatus: false,
     storeSelectedName: '',
   },

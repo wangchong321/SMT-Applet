@@ -14,7 +14,7 @@ Page({
     isSendClicked: false, //发送验证码按钮是否点击
     codeAreaStatus: false, //验证码区域的状态
     loginButtonStatus: false, //登录按钮的状态
-    sendCodeButtonStatus: false, //发送按钮是否可点击状态
+    sendCodeButtonStatus: true, //发送按钮是否可点击状态
   },
   /**
    *获取id区域输入值，长度>6才可以输入验证码区
@@ -25,7 +25,7 @@ Page({
     that.setData({
       idValue: inputValue,
     })
-    if (inputValue.length >= 6) {
+    if (inputValue.length === 6) {
       wx.setStorage({
         key: 'dsm_homer_id',
         data: that.data.idValue
@@ -128,6 +128,9 @@ Page({
 
   sendButtonInterval: function () {
     let that = this;
+    if (that.data.sendCodeButtonStatus === false) {
+      return;
+    }
     let times = 60;
     let i = setInterval(function () {
       times--;
