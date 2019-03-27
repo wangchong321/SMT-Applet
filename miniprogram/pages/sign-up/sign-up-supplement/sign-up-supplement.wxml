@@ -1,3 +1,5 @@
+<import src='../../../template/default-button-template/default-button-template' />
+
 <view class='line'></view>
 
 <view class='container-all'>
@@ -82,10 +84,13 @@
   </view>
 
   <view class='bottom-view'>
-      <text class='bottom-text' catchtap='onProtocol'>点击下面“注册”，表明您已经阅读并同意捷信消费金融有限公司的 
-        <text class='underline-text'>《捷信推客居间服务协议》</text> 
-      </text>
-    <button class='bottom-button' catchtap='onSignUp' disabled='{{signUpButtonStatus}}'>注册</button>
+    <text class='bottom-text' catchtap='onProtocol'>点击下面“注册”，表明您已经阅读并同意捷信消费金融有限公司的 
+      <text class='underline-text'>《捷信推客居间服务协议》</text> 
+    </text>
+
+    <view class='bottom-template' catchtap='onSignUp'>
+      <template is='defaultBlueButton' data="{{title:'注册',buttonDisable:signUpButtonStatus}}" />
+    </view>
   </view>
 
 </view>

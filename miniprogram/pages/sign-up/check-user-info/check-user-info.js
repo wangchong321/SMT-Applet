@@ -25,8 +25,11 @@ Page({
    * 点击通过按钮，跳转到错误页面吧，
    */
   rejectRequest: function () {
-    wx.navigateTo({
-      url: '/pages/sign-up/login-wechat/login-wechat',
+    // wx.navigateTo({
+    //   url: '/pages/sign-up/login-wechat/login-wechat',
+    // })
+    wx.navigateBack({
+      delta: 1
     })
     console.log('tap the reject button');
   },

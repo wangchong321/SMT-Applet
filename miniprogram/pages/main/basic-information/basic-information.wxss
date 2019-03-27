@@ -1,4 +1,5 @@
 @import "../../../template/basic-cell-template/basic-cell-template";
+@import "../../../template/default-button-template/default-button-template";
 
 page {
   min-height: 100%;
@@ -11,12 +12,8 @@ page {
   overflow-y: hidden;
 }
 
-.sign-out-button {
+.sign-out-view {
   position: absolute;
-  height: 96rpx;
-  color: #fff;
-  background-color: #4a90e2;
-  line-height: 96rpx;
   bottom: 30rpx;
   left: 100rpx;
   right: 100rpx;

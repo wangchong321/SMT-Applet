@@ -1,3 +1,4 @@
+@import "../../../template/default-button-template/default-button-template";
 .container-all{
   margin-left: 30rpx;
   margin-right: 30rpx;
@@ -81,7 +82,8 @@ button{
   color: #4A90E2;
 }
 
-.bottom-button{
-  width: 550rpx;
+.bottom-template{
   margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
 }

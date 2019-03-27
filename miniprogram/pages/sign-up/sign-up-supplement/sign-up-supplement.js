@@ -13,7 +13,7 @@ Page({
     signUpButtonStatus: true, // 注册按钮状态
     name: '',
     iDCard: '',
-    tipInfo: {// 标记是否显示tip
+    tipInfo: {// 标记是否隐藏tip
       nameTip: true, 
       numberTip: true, 
       smsTip: true,
@@ -127,7 +127,7 @@ Page({
     })
   },
   setupSignUpButtonStatus: function() {
-    if (app.globalData.userInfoObj.number && app.globalData.userInfoObj.name && app.globalData.userInfoObj.verificationCode && app.globalData.userInfoObj.iDCard && app.globalData.userInfoObj.aliPayNickname) {
+    if (app.globalData.userInfoObj.number && app.globalData.userInfoObj.name && app.globalData.userInfoObj.verificationCode && app.globalData.userInfoObj.iDCard && app.globalData.userInfoObj.aliPayNickname && this.data.tipInfo.nameTip === true && this.data.tipInfo.numberTip === true && this.data.tipInfo.smsTip === true) {
       this.setData({
         signUpButtonStatus: false,
       })

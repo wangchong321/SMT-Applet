@@ -1,0 +1,21 @@
+.blue-button{
+  color: #ffffff;
+  background-color: #4A90E2;
+  font-size: 32rpx;
+  width: 591rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+}
+
+
+.white-button{
+  color: #4A90E2;
+  background-color: #ffffff;
+  border-color: #4A90E2;
+  border: 1px solid #4A90E2;
+  border-radius: 0px;
+  font-size: 32rpx;
+  width: 591rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+}

@@ -1,3 +1,5 @@
+@import "../../../template/default-button-template/default-button-template";
+
 .face-img{
   width: 503rpx;
   height: 325rpx;
@@ -17,9 +19,5 @@
 }
 
 .affirm{
-  width: 550rpx;
-  height: 96rpx;
   margin-top: 90rpx;
-  color: #ffffff;
-  background-color: #4A90E2;
 }
