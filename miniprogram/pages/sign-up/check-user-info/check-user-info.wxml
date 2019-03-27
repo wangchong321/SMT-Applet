@@ -1,4 +1,5 @@
 <!--pages/sign-up/check-user-info/check-user-info.wxml-->
+<import src='../../../template/default-button-template/default-button-template' />
 
 <view class='base-container'>
   <view class='operation-tip'>
@@ -17,6 +18,11 @@
       </view>
     </view>
   </view>
-  <button class='bt-pass' bindtap='passRequest'>通过</button>
-  <button class='bt-reject' bindtap='rejectRequest'>拒绝</button>
+  <view class='bt-pass' catchtap='passRequest'>
+      <template is='defaultBlueButton' data="{{title:'通过'}}" />
+  </view>
+  <view class='bt-reject' catchtap='rejectRequest'>
+      <template is='defaultWhiteButton' data="{{title:'拒绝'}}" />
+  </view>
+
 </view>

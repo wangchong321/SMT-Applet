@@ -1,5 +1,5 @@
 <template name='defaultBlueButton'>
-  <button class='blue-button' disabled= '{{buttonDisable}}'>{{title}}</button>
+  <button class='{{buttonDisable ? "grey-button":"blue-button"}}' disabled= '{{buttonDisable}}'>{{title}}</button>
 </template>
 
 

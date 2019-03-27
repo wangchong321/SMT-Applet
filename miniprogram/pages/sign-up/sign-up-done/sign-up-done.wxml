@@ -1,4 +1,6 @@
 <!--pages/sign-up/sign-up-done/sign-up-done.wxml-->
+<import src='../../../template/default-button-template/default-button-template' />
+
 <view class='base-container'>
   <view class='operation-tip'>
     <text class='tip-text'>恭喜！您现在是一名捷信推客了</text>
@@ -12,5 +14,7 @@
       </view>
     </view>
   </view>
-  <button class='bt-confirm' bindtap='confirmRequest'>确认并使用支付宝账号登录</button>
+  <view class='bt-confirm' bindtap='confirmRequest'>
+    <template is='defaultBlueButton' data="{{title:'确认并使用支付宝账号登录'}}" />
+  </view>
 </view>

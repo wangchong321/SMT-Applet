@@ -1,4 +1,6 @@
 <!--pages/sign-up/select-stores/select-stores.wxml-->
+<import src='../../../template/default-button-template/default-button-template' />
+
 <view class='base-container'>
   <view class='scroll-out-container'>
     <scroll-view class='scroll-container' enable-back-to-top='true' scroll-y='true' style='height:100%;' bindscrolltolower='scrollToBottom'>
@@ -18,7 +20,7 @@
       </view>
     </scroll-view>
   </view>
-  <button 
-      class="{{storeSelected == '' ? 'bt-confirm_grey':'bt-confirm_blue'}}" 
-      bindtap='confirmSelectResult'>确认</button>
+  <view class='bt-confirm' bindtap='confirmSelectResult'>
+    <template is='defaultBlueButton' data="{{title:'确认',buttonDisable:!storeSelected}}" />
+  </view>
 </view>

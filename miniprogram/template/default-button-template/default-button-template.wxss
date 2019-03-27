@@ -7,6 +7,15 @@
   line-height: 96rpx;
 }
 
+.grey-button{
+  color: #ffffff !important;
+  background-color: rgb(148, 149, 150) !important;
+  font-size: 32rpx;
+  width: 591rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+}
+
 
 .white-button{
   color: #4A90E2;

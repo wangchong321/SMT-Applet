@@ -1,4 +1,6 @@
 /* pages/sign-up/check-user-info/check-user-info.wxss */
+@import "../../../template/default-button-template/default-button-template";
+
 page {
   min-height: 100%;
   background-color: #f6f6f6;
@@ -17,27 +19,12 @@ page {
 .bt-pass{
   position: fixed;
   bottom: 175rpx;
-  width: 75%;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 30rpx;
-  background-color: #4A90E2;
-  color: white;
-  border: 0rpx solid#4A90E2;
-  border-radius: 0;
 }
 
 .bt-reject{
   position: fixed;
   bottom: 40rpx;
-  width: 75%;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 30rpx;
-  background-color: white;
-  color: #4A90E2;
-  border: 2rpx solid #4A90E2;
-  border-radius: 0;
+  text-align: center;
 }
 
 .operation-tip {
