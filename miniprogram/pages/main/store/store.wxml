@@ -18,6 +18,6 @@
     <text class='qrcode-detail-text'>{{storeSelectedName}}</text>
   </view>
   <view class='qrcode-detail-area'>
-    <canvas class='qrcode-detail-canvas' canvas-id='canvas'></canvas>
+    <canvas class='qrcode-detail-canvas' canvas-id='canvas' hidden='{{!showQRcodeCanvas}}'></canvas>
   </view>
 </view>

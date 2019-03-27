@@ -13,6 +13,7 @@ Page({
     sStores: [],
     showModalStatus: false,
     storeSelectedName: '',
+    showQRcodeCanvas: false,
   },
 
   /**
@@ -61,6 +62,7 @@ Page({
     that.animation = animation;
     animation.translateY(300).step();
     that.setData({
+      showQRcodeCanvas: false,
       animationData: animation.export(),
     });
     setTimeout(function () {
@@ -109,6 +111,12 @@ Page({
 
   makeQRcode: function (text) {
     qrcode.makeCode(text);
+    let that = this;
+    setTimeout(function () {
+      that.setData({
+        showQRcodeCanvas: true,
+      })
+    }.bind(that), 300);
   },
 
 })
