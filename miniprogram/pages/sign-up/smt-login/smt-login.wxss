@@ -29,23 +29,23 @@
 .button-large-blue {
   background: #4A90E2 !important;
   color: white !important;
-  width: 550rpx;
-  height: 95rpx;
+  font-size: 32rpx;
+  width: 591rpx;
+  height: 96rpx;
   border-radius: 0;
   margin-top: 60rpx;
-  line-height: 95rpx;
-  font-size: 30rpx;
+  line-height: 96rpx;
 }
 
 .button-large-grey {
   background: rgb(148, 149, 150) !important;
   color: white !important;
-  width: 550rpx;
-  height: 95rpx;
+  font-size: 32rpx;
+  width: 591rpx;
+  height: 96rpx;
   border-radius: 0;
   margin-top: 60rpx;
-  line-height: 95rpx;
-  font-size: 30rpx;
+  line-height: 96rpx;
 }
 
 .footerContainer{

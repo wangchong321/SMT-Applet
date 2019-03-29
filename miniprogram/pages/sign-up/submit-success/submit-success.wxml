@@ -1,4 +1,5 @@
-<!--pages/sign-up/submit-success/submit-success.wxml-->
+<import src='../../../template/default-button-template/default-button-template' />
+
 <view class='base-container'>
   <view class='image-container'>
     <image class='sucess-image' src='/images/sign-up-guide/submitted.png'></image>
@@ -8,6 +9,6 @@
     <text class='detail-text-font'>您的信息已经成功提交，请将手机转交给DSM登陆操作，请耐心等待。</text>
   </view>
   <view class='button-container' bindtap='jumpSMTLogin'>
-    <button class='button-large'>登录</button>
+    <template is='defaultBlueButton' data="{{title:'登录'}}" />
   </view>
 </view>

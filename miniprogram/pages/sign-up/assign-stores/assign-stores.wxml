@@ -1,4 +1,6 @@
 <!--pages/sign-up/assign-stores/assign-stores.wxml-->
+<import src='../../../template/default-button-template/default-button-template' />
+
 <view class='base-container'>
   <view class='operation-tip'>
     <text class='tip-text'>请选择门店并推荐给捷信推客</text>
@@ -49,8 +51,7 @@
       </navigator>
     </view>
   </view>
-  <button
-      class="{{mainStoreSelected == false ? 'bt-confirm-grey' :'bt-confirm-blue'}}"
-      bindtap='confirmRequest'
-      disabled='{{!mainStoreSelected}}'>确认</button>
+  <view class='bt-confirm' bindtap='confirmRequest'>
+    <template is='defaultBlueButton' data="{{title:'确认',buttonDisable:!mainStoreSelected}}" />
+  </view>
 </view>

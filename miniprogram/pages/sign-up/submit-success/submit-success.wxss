@@ -1,4 +1,5 @@
-/* pages/sign-up/submit-success/submit-success.wxss */
+@import "../../../template/default-button-template/default-button-template";
+
 .base-container {
   height: 100%;
   display: flex;
@@ -47,12 +48,4 @@
   font-size: 30rpx;
   text-align: center;
   margin-top: 50rpx;
-}
-
-.button-large {
-  background: rgb(0, 132, 255);
-  color: white;
-  width: 500rpx;
-  height: 90rpx;
-  font-size: 30rpx;
 }

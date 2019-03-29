@@ -1,4 +1,6 @@
 /* pages/sign-up/assign-stores/assign-stores.wxss */
+@import "../../../template/default-button-template/default-button-template";
+
 page {
   min-height: 100%;
   background-color: #f6f6f6;
@@ -14,28 +16,9 @@ page {
   justify-content: space-between;
 }
 
-.bt-confirm-grey{
+.bt-confirm{
   position: fixed;
   bottom: 50rpx;
-  width: 75%;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 30rpx;
-  background-color: rgb(160, 155, 155) !important;
-  color: white !important;
-  border-radius: 0;
-}
-
-.bt-confirm-blue{
-  position: fixed;
-  bottom: 50rpx;
-  width: 75%;
-  height: 100rpx;
-  line-height: 100rpx;
-  font-size: 30rpx;
-  background-color: #4A90E2 !important;
-  color: white !important;
-  border-radius: 0;
 }
 
 .operation-tip {
