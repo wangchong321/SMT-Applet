@@ -22,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getCustomers(this.page);
+    this.getCustomers(this.data.page);
   },
   /**
      * 生命周期函数--监听页面显示
@@ -30,15 +30,19 @@ Page({
   onShow: function () {
     this.getScancount();
   },
-  // 上拉刷新
+  // 上拉加载更多
   onReachBottom() {
     this.getCustomers(this.page);
+  },
+  // 下拉刷新
+  onPullDownRefresh: function () {
+    this.data.page = 1;
+    this.getCustomers(this.data.page);
   },
   getCustomers:function (page) {
     wx.showLoading({
       title: '加载中',
     })
-
     let that = this;
     let data = {
       'tipper_id': "123",
@@ -47,10 +51,13 @@ Page({
     }
     WXAPI.customers().then(res => {
       wx.hideLoading();
-
+      
       if(res.status === 'true'){
+        if (page === 1) {
+          that.data.customers = [];
+          wx.stopPullDownRefresh();
+        }
         that.data.page++;
-        console.log(that.data.page);
         let payment_list = res.data.payment_list;
         if(payment_list.length > 0){
           for (let customer of payment_list){
