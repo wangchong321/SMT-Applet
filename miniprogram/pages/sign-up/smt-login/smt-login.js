@@ -1,4 +1,5 @@
 const WXAPI = require('../../../wxapi/wxapi')
+const util = require('../../../utils/util.js')
 let app = getApp()
 
 Page({
@@ -85,7 +86,7 @@ Page({
   /**
    *提交输入信息，如果成功，跳转到核查信息界面
    */
-  formSubmit: function(e) {
+  formSubmit: util.throttle(function (e) {//点击事件
     let that = this;
     that.setData({
       idValue: e.detail.value.homerid,
@@ -104,8 +105,7 @@ Page({
         })
       }
     })
-  },
-
+  }, 1000),
   /**
    *发送验证码短信给输入ID的用户手机，60s后可重发
    */
