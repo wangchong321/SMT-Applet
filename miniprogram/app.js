@@ -33,6 +33,12 @@ App({
       }
     })
   },
+  onShow: function (options) {
+    console.log("场景值为" + options.scene);
+    switch(options.scene) {
+      
+    }
+  },
   globalData: {
     userInfo: null,
     faceData: null,// 身份证正面
