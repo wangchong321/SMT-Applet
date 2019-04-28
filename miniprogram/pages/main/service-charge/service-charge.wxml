@@ -33,5 +33,3 @@
     </view>
   </view>
 </view>
-
-<network-err-modal show = '{{networkModalShow}}'></network-err-modal>

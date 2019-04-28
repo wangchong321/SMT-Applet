@@ -10,7 +10,6 @@ Page({
     serviceChargeList: [],
     paymentSumAmount: '0.00',
     paymentStatus: ['付费成功', '付费失败', '付费中'],
-    networkModalShow: false,
     pageNumber: 1,
   },
 
@@ -72,13 +71,6 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    wx.onNetworkStatusChange(function (res) {
-      if (!res.isConnected) {
-        that.setData({
-          networkModalShow : true
-        })
-      }
-    })
     that.getPaymentSumFromServer();
     that.getServiceChargeFromServer();
   },

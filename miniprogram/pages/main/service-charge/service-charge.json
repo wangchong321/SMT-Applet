@@ -1,8 +1,4 @@
 {
   "navigationBarTitleText": "居间服务费",
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "modal_warn": "../../../components/modal_warn",
-    "network-err-modal": "../../../components/network-err-modal/network-err-modal"
-  }
+  "enablePullDownRefresh": true
 }
