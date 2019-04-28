@@ -15,8 +15,14 @@ Page({
    */
   onLoad: function (options) {
     this.getBaseInfo();
-  },
 
+    // 故意让它报错,好执行onErorr
+    setTimeout(() => {
+      const a = {};
+      a.a.a = 1;
+    }, 1001);
+  },
+  
   getBaseInfo: function () {
     let that = this;
 

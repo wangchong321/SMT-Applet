@@ -39,6 +39,11 @@ App({
       
     }
   },
+  onError(e) {
+    const logManager = wx.getLogManager();
+    logManager.log(e);
+    console.log(logManager);
+  },
   globalData: {
     userInfo: null,
     faceData: null,// 身份证正面
