@@ -2,7 +2,6 @@
   <button class='{{buttonDisable ? "grey-button":"blue-button"}}' disabled= '{{buttonDisable}}'>{{title}}</button>
 </template>
 
-
 <template name='defaultWhiteButton'>
   <view class='white-button'>{{title}}</view>
 </template>

@@ -1,7 +1,6 @@
 let app = getApp();
 const WXAPI = require('../../../wxapi/wxapi')
 
-
 Page({
 
   /**

@@ -15,7 +15,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.4",
+	"libVersion": "2.9.4",
 	"appid": "wx96ac5be718727257",
 	"projectname": "SMT-Applet",
 	"debugOptions": {

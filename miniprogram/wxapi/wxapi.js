@@ -1,5 +1,4 @@
-const API_BASE_URL = 'https://mobile-ms.uat.homecreditcfc.cn/mock/5c05d3ccf8c692001c64fb6c/SMT'
-
+const API_BASE_URL = 'https://mobile-ms.uat.homecreditcfc.cn/mock/5caab2b66696420027621bfc/TAPP'
 
 const request = (url, method, data) => {
   let _url = API_BASE_URL + url;
@@ -74,7 +73,7 @@ module.exports = {
   },
   //发送验证码->点击发送按钮，发送短信验证码
   tipperRegisterSendVcode: (data) => {
-    return request('/api/register/send-vcode', 'post', data)
+    return request('/api/register/send-vcode-tipper-by-mobile', 'post', data)
   },
   //验证账号->验证homer id和sms_code后登陆
   tipperRegisterValidateVcode: (data) => {
