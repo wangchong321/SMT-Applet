@@ -16,7 +16,6 @@
   line-height: 96rpx;
 }
 
-
 .white-button{
   color: #4A90E2;
   background-color: #ffffff;
